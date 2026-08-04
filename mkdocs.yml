@@ -1,0 +1,41 @@
+site_name: Kai Wang
+site_description: Kai Wang 的个人网站，记录学习、项目、作品与长期思考。
+site_url: https://nbwk123.github.io/My_website/
+
+theme:
+  name: material
+  language: zh
+  palette:
+    scheme: default
+    primary: white
+    accent: black
+  font:
+    text: Noto Sans SC
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+
+nav:
+  - 主页: index.md
+  - 课程:
+      - 课程首页: course/index.md
+      - 示例课程文档: course/example.md
+  - 项目: project/index.md
+  - 友链: friends/index.md
+  - 关于: about/index.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/interactions.js
