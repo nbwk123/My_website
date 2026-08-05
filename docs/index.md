@@ -12,7 +12,7 @@ hide:
       <img src="assets/mark.svg" alt="">
     </div>
     <p class="home-kicker">Learning · Building · Designing</p>
-    <h1>Kai Wang</h1>
+    <h1>欢迎来到我的网站！</h1>
     <p class="home-subtitle">我在这里记录学习、打磨项目，也把零散的想法整理成清晰的作品。网站保持简洁，把注意力留给真正有价值的内容。</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">查看项目</a>
