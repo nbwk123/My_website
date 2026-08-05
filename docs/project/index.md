@@ -8,20 +8,20 @@
       <img src="../assets/hero-interface.png" alt="个人网站系统的界面视觉图">
     </div>
     <div>
-      <p class="project-label">Featured Project</p>
+      <p class="project-label">精选项目</p>
       <h2>个人网站系统</h2>
       <p>从零搭建一个可长期更新的个人网站，把课程、项目、友链和自我介绍组织成一个清晰的个人品牌入口。</p>
       <a href="../">查看首页</a>
     </div>
   </article>
   <article class="project-card interaction-tilt" data-tilt>
-    <p class="project-label">Learning</p>
+    <p class="project-label">学习作品</p>
     <h2>课程笔记库</h2>
     <p>把学习内容从“看过”变成“能复用”，用固定格式沉淀目标、步骤、问题和总结。</p>
     <a href="#">查看详情</a>
   </article>
   <article class="project-card interaction-tilt" data-tilt>
-    <p class="project-label">Experiment</p>
+    <p class="project-label">设计实验</p>
     <h2>交互设计练习</h2>
     <p>观察优秀网站的视觉层级、动线和文案，把设计原则转化成自己的页面实践。</p>
     <a href="#">查看详情</a>

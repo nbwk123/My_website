@@ -4,7 +4,10 @@ site_url: https://nbwk123.github.io/My_website/
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
+  logo: assets/avatar-kai.png
+  favicon: assets/avatar-kai.png
   palette:
     scheme: default
     primary: white
@@ -26,6 +29,13 @@ nav:
   - 项目: project/index.md
   - 友链: friends/index.md
   - 关于: about/index.md
+  - English:
+      - Home: en/index.md
+      - Notes: en/course/index.md
+      - Sample Note: en/course/example.md
+      - Projects: en/project/index.md
+      - Links: en/friends/index.md
+      - About: en/about/index.md
 
 markdown_extensions:
   - attr_list

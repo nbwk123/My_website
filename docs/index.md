@@ -8,10 +8,7 @@ hide:
 
 <section class="home-hero">
   <div class="home-copy">
-    <div class="home-mark" aria-hidden="true">
-      <img src="assets/mark.svg" alt="">
-    </div>
-    <p class="home-kicker">Learning · Building · Designing</p>
+    <p class="home-kicker">学习 · 创作 · 设计</p>
     <h1>欢迎来到我的网站！</h1>
     <p class="home-subtitle">我在这里记录学习、打磨项目，也把零散的想法整理成清晰的作品。网站保持简洁，把注意力留给真正有价值的内容。</p>
     <div class="home-actions">
@@ -22,7 +19,7 @@ hide:
   <div class="home-visual interaction-tilt" data-tilt aria-label="个人网站界面视觉图">
     <img src="assets/hero-interface.png" alt="一个简洁的个人网站界面工作台视觉图">
     <div class="visual-caption">
-      <span>Portfolio system</span>
+      <span>作品集系统</span>
       <strong>从内容到作品，形成长期可更新的个人空间。</strong>
     </div>
   </div>

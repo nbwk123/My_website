@@ -1,0 +1,92 @@
+{# Custom top navigation inspired by research/personal lab websites. #}
+<header class="site-topbar" data-md-component="header">
+  {% set current_url = page.url if page and page.url else "" %}
+  {% set is_en = current_url.startswith("en/") %}
+  <nav class="site-topbar__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a class="site-topbar__brand" href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" aria-label="{{ config.site_name }}">
+      {{ config.site_name }}
+    </a>
+
+    <div class="site-topbar__nav" aria-label="主导航">
+      {% if is_en %}
+        <a class="site-topbar__link{% if current_url == 'en/' or current_url == 'en/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'en/' | url }}">Home</a>
+        <a class="site-topbar__link{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Notes</a>
+        <a class="site-topbar__link{% if current_url.startswith('en/project/') %} site-topbar__link--active{% endif %}" href="{{ 'en/project/' | url }}">Projects</a>
+        <a class="site-topbar__link{% if current_url.startswith('en/friends/') %} site-topbar__link--active{% endif %}" href="{{ 'en/friends/' | url }}">Links</a>
+        <a class="site-topbar__link{% if current_url.startswith('en/about/') %} site-topbar__link--active{% endif %}" href="{{ 'en/about/' | url }}">About</a>
+      {% else %}
+        <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">主页</a>
+        <a class="site-topbar__link{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程</a>
+        <a class="site-topbar__link{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">项目</a>
+        <a class="site-topbar__link{% if current_url.startswith('friends/') %} site-topbar__link--active{% endif %}" href="{{ 'friends/' | url }}">友链</a>
+        <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">关于</a>
+      {% endif %}
+    </div>
+
+    <div class="site-topbar__actions">
+      {% if "material/search" in config.plugins %}
+        {% set search = config.plugins["material/search"] | attr("config") %}
+        {% if search.enabled %}
+          {% set search_label = "Search" if is_en else "搜索" %}
+          <div class="site-topbar__search-wrap">
+            <div class="md-search" data-md-component="search" role="dialog">
+              <label class="md-search__overlay" for="__search"></label>
+              <div class="md-search__inner" role="search">
+                <form class="md-search__form" name="search">
+                  <input type="text" class="md-search__input" name="query" aria-label="{{ search_label }}" placeholder="{{ search_label }}" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+                  <label class="md-search__icon md-icon" for="__search" aria-label="{{ search_label }}">
+                    {% set icon = config.theme.icon.search or "material/magnify" %}
+                    {% include ".icons/" ~ icon ~ ".svg" %}
+                    {% set icon = config.theme.icon.previous or "material/arrow-left" %}
+                    {% include ".icons/" ~ icon ~ ".svg" %}
+                  </label>
+                  <nav class="md-search__options" aria-label="{{ search_label }}">
+                    <button type="reset" class="md-search__icon md-icon" title="{{ lang.t('search.reset') }}" aria-label="{{ lang.t('search.reset') }}" tabindex="-1">
+                      {% set icon = config.theme.icon.close or "material/close" %}
+                      {% include ".icons/" ~ icon ~ ".svg" %}
+                    </button>
+                  </nav>
+                  {% if "search.suggest" in features %}
+                    <div class="md-search__suggest" data-md-component="search-suggest"></div>
+                  {% endif %}
+                </form>
+                <div class="md-search__output">
+                  <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+                    <div class="md-search-result" data-md-component="search-result">
+                      <div class="md-search-result__meta">
+                        {{ lang.t("search.result.initializer") }}
+                      </div>
+                      <ol class="md-search-result__list" role="presentation"></ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+      <div class="site-topbar__lang" aria-label="语言切换">
+        {% if is_en %}
+          <a href="{{ 'index.html' | url }}">中文</a>
+          <span>EN</span>
+        {% else %}
+          <span>中文</span>
+          <a href="{{ 'en/' | url }}">EN</a>
+        {% endif %}
+      </div>
+      {% if is_en %}
+        {% set avatar_url = 'en/about/' %}
+      {% else %}
+        {% set avatar_url = 'about/' %}
+      {% endif %}
+      <a class="site-topbar__mark" href="{{ avatar_url | url }}" aria-label="{% if is_en %}About Kai Wang{% else %}关于 Kai Wang{% endif %}">
+        <img src="{{ 'assets/avatar-kai.png' | url }}" alt="Kai Wang">
+      </a>
+
+      <label class="site-topbar__menu md-icon" for="__drawer" aria-label="{{ lang.t('drawer') }}">
+        {% set icon = config.theme.icon.menu or "material/menu" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </label>
+    </div>
+  </nav>
+</header>
