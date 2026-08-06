@@ -34,7 +34,7 @@
               <div class="md-search__inner" role="search">
                 <form class="md-search__form" name="search">
                   <input type="text" class="md-search__input" name="query" aria-label="{{ search_label }}" placeholder="{{ search_label }}" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-                  <label class="md-search__icon md-icon" for="__search" aria-label="{{ search_label }}">
+                  <label class="site-topbar__search-button" for="__search" aria-label="{{ search_label }}">
                     {% set icon = config.theme.icon.search or "material/magnify" %}
                     {% include ".icons/" ~ icon ~ ".svg" %}
                     {% set icon = config.theme.icon.previous or "material/arrow-left" %}
