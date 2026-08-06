@@ -16,12 +16,28 @@ hide:
       <a href="course/" class="home-button">Read Notes</a>
     </div>
   </div>
-  <div class="home-visual interaction-tilt" data-tilt aria-label="Personal website interface visual">
-    <img src="../assets/hero-interface.png" alt="A clean personal website interface workspace visual">
-    <div class="visual-caption">
-      <span>Portfolio system</span>
-      <strong>Turning content into work and building a personal space that can keep growing.</strong>
-    </div>
+  <div class="home-card-stack" data-card-stack aria-label="Project card stack. Drag the top card to switch projects.">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
+      <img src="../assets/hero-interface.png" alt="Interface visual for the personal website system">
+      <div class="visual-caption">
+        <span>01 · Personal Website</span>
+        <strong>Turning content into work and building a personal space that can keep growing.</strong>
+      </div>
+    </a>
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="course/">
+      <img src="../assets/hero-interface.png" alt="Interface visual for the notes library">
+      <div class="visual-caption">
+        <span>02 · Notes Library</span>
+        <strong>Turning learning into reusable knowledge cards that are easy to revisit.</strong>
+      </div>
+    </a>
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
+      <img src="../assets/hero-interface.png" alt="Interface visual for interaction design practice">
+      <div class="visual-caption">
+        <span>03 · Interaction Practice</span>
+        <strong>Studying strong interfaces and translating design judgment into page practice.</strong>
+      </div>
+    </a>
   </div>
 </section>
 

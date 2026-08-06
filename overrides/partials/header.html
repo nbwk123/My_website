@@ -28,6 +28,7 @@
         {% set search = config.plugins["material/search"] | attr("config") %}
         {% if search.enabled %}
           {% set search_label = "Search" if is_en else "搜索" %}
+          {% set search_initial = "Type a keyword to see results" if is_en else "输入关键词后显示搜索结果" %}
           <div class="site-topbar__search-wrap">
             <div class="md-search" data-md-component="search" role="dialog">
               <label class="md-search__overlay" for="__search"></label>
@@ -61,6 +62,10 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="site-search-results" data-site-search-results hidden>
+              <div class="site-search-results__meta">{{ search_initial }}</div>
+              <ol class="site-search-results__list" role="list"></ol>
             </div>
           </div>
         {% endif %}

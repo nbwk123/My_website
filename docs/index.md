@@ -16,12 +16,28 @@ hide:
       <a href="course/" class="home-button">阅读笔记</a>
     </div>
   </div>
-  <div class="home-visual interaction-tilt" data-tilt aria-label="个人网站界面视觉图">
-    <img src="assets/hero-interface.png" alt="一个简洁的个人网站界面工作台视觉图">
-    <div class="visual-caption">
-      <span>作品集系统</span>
-      <strong>从内容到作品，形成长期可更新的个人空间。</strong>
-    </div>
+  <div class="home-card-stack" data-card-stack aria-label="项目作品卡片组，拖动最上方卡片可切换">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
+      <img src="assets/hero-interface.png" alt="个人网站系统的界面视觉图">
+      <div class="visual-caption">
+        <span>01 · 个人网站系统</span>
+        <strong>从内容到作品，形成长期可更新的个人空间。</strong>
+      </div>
+    </a>
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="course/">
+      <img src="assets/hero-interface.png" alt="课程笔记库的界面视觉图">
+      <div class="visual-caption">
+        <span>02 · 课程笔记库</span>
+        <strong>把学习过程整理成可复用、可回看的知识卡片。</strong>
+      </div>
+    </a>
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
+      <img src="assets/hero-interface.png" alt="交互设计练习的界面视觉图">
+      <div class="visual-caption">
+        <span>03 · 交互设计练习</span>
+        <strong>观察优秀界面，把设计判断转化成自己的页面实践。</strong>
+      </div>
+    </a>
   </div>
 </section>
 
