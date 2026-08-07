@@ -37,8 +37,8 @@
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -5;
-      const rotateY = ((x / rect.width) - 0.5) * 5;
+      const rotateX = ((y / rect.height) - 0.5) * -1.6;
+      const rotateY = ((x / rect.width) - 0.5) * 1.6;
 
       card.style.setProperty("--tilt-x", `${rotateX}deg`);
       card.style.setProperty("--tilt-y", `${rotateY}deg`);
@@ -76,9 +76,9 @@
 
     const cycleCard = (card, direction) => {
       card.classList.add("is-exiting");
-      card.style.setProperty("--drag-x", `${direction * 230}px`);
-      card.style.setProperty("--drag-y", `${dragY * 0.16}px`);
-      card.style.setProperty("--drag-rotate", `${direction * 7}deg`);
+      card.style.setProperty("--drag-x", `${direction * 190}px`);
+      card.style.setProperty("--drag-y", `${dragY * 0.1}px`);
+      card.style.setProperty("--drag-rotate", `${direction * 3.5}deg`);
 
       window.setTimeout(() => {
         stack.append(card);
@@ -143,7 +143,7 @@
       dragY = event.clientY - startY;
       activeCard.style.setProperty("--drag-x", `${dragX}px`);
       activeCard.style.setProperty("--drag-y", `${dragY}px`);
-      activeCard.style.setProperty("--drag-rotate", `${dragX / 24}deg`);
+      activeCard.style.setProperty("--drag-rotate", `${dragX / 58}deg`);
 
       if (Math.abs(dragX) > 6 || Math.abs(dragY) > 6) {
         activeCard.dataset.skipClick = "true";
