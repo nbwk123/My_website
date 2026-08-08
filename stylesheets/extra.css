@@ -775,9 +775,9 @@ body:not(:has(#__search:checked)) .site-search-results {
 .home-hero h1 {
   margin: 0;
   color: var(--site-ink);
-  font-size: clamp(2.8rem, 6.6vw, 5.15rem);
+  font-size: clamp(2.45rem, 5.4vw, 4.25rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 .home-subtitle {
@@ -1043,11 +1043,11 @@ body:not(:has(#__search:checked)) .site-search-results {
 }
 
 .site-footer-cta h2 {
-  max-width: 48rem;
+  max-width: 42rem;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 1.06;
+  font-size: clamp(2.15rem, 5.2vw, 3.7rem);
+  line-height: 1.12;
 }
 
 .site-footer-cta p:last-child {
@@ -1068,7 +1068,8 @@ body:not(:has(#__search:checked)) .site-search-results {
   border-radius: 8px;
   background: #7c3aed;
   color: #ffffff;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 900;
 }
 
 .site-footer {
@@ -1283,7 +1284,7 @@ body:not(:has(#__search:checked)) .site-search-results {
   }
 
   .home-hero h1 {
-    font-size: clamp(2.45rem, 12vw, 4.2rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.45rem);
   }
 
   .home-mark {
