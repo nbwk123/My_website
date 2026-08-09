@@ -617,6 +617,39 @@ body:not(:has(#__search:checked)) .site-search-results {
   line-height: 1.08;
 }
 
+.costory-wordmark {
+  display: inline-block;
+  color: #ffd400 !important;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transform: scaleY(0.72);
+  transform-origin: left center;
+  -webkit-text-fill-color: #ffd400;
+  -webkit-text-stroke: 0.45px #ffffff;
+  text-shadow:
+    0.055em 0.055em 0 #ffffff,
+    0.07em 0.07em 0 #ffd400,
+    0.085em 0.085em 0 #ffffff;
+}
+
+.costory-wordmark-page {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+}
+
+.page-hero .costory-wordmark-hero {
+  margin: 0;
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+}
+
+.project-card .costory-wordmark-card {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
 .page-hero p {
   max-width: 45rem;
   margin: 1rem 0 0;
@@ -940,10 +973,44 @@ body:not(:has(#__search:checked)) .site-search-results {
   font-size: 0.72rem;
 }
 
+.project-wordmark-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visual-caption .project-number {
+  display: inline-block;
+  color: #8a8a92;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.visual-caption .project-wordmark {
+  position: relative;
+  display: inline-block;
+  color: #ffd400;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: clamp(1.48rem, 2.55vw, 2.15rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transform: scaleY(0.72);
+  transform-origin: left center;
+  -webkit-text-stroke: 0.45px #ffffff;
+  text-shadow:
+    0.055em 0.055em 0 #ffffff,
+    0.07em 0.07em 0 #ffd400,
+    0.085em 0.085em 0 #ffffff;
+}
+
 .visual-caption strong {
   max-width: 22rem;
-  font-size: 0.78rem;
-  line-height: 1.55;
+  font-size: 0.92rem;
+  font-weight: 850;
+  line-height: 1.35;
   text-align: right;
 }
 
