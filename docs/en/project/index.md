@@ -23,10 +23,10 @@ This page follows an Apple-inspired product display logic: fewer items, clearer 
 </div>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
-<p class="project-label">Learning Work</p>
-<h2>Notes Library</h2>
+<p class="project-label">Work 1</p>
+<h2>COSTORY</h2>
 <p>Turning learning from something I have seen into something I can reuse, with a stable format for goals, steps, problems, and summaries.</p>
-<a href="../course/">View Notes</a>
+<a href="costory/">View Project</a>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
 <p class="project-label">Design Experiment</p>

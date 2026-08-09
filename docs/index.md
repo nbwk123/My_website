@@ -10,7 +10,7 @@ hide:
   <div class="home-copy">
     <p class="home-kicker">学习 · 创作 · 设计</p>
     <h1>欢迎来到我的网站！</h1>
-    <p class="home-subtitle">我在这里记录学习、打磨项目，也把零散的想法整理成清晰的作品。网站保持简洁，把注意力留给真正有价值的内容。</p>
+    <p class="home-subtitle">我在这里记录学习、打磨项目，也把零散的想法整理成清晰的作品。</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">查看项目</a>
       <a href="course/" class="home-button">阅读笔记</a>
@@ -18,9 +18,12 @@ hide:
   </div>
   <div class="home-card-stack" data-card-stack aria-label="项目作品卡片组，拖动最上方卡片可切换">
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
-      <img src="assets/hero-interface.png" alt="个人网站系统的界面视觉图">
+      <img src="assets/program1.png" alt="项目1封面">
       <div class="visual-caption">
-        <span>01 · 个人网站系统</span>
+        <div class="project-wordmark-group">
+          <span class="project-number">01</span>
+          <span class="project-wordmark">COSTORY</span>
+        </div>
         <strong>从内容到作品，形成长期可更新的个人空间。</strong>
       </div>
     </a>

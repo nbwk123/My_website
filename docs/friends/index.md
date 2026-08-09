@@ -1,5 +1,6 @@
 # 友链
 
+<section class="note-callout" markdown="1">
 <div class="note-page" markdown="1">
 
 <section class="page-hero" markdown="1">
@@ -31,6 +32,7 @@
 </a>
 
 </div>
+</section>
 
 ## 未来可以加入
 

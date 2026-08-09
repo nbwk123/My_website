@@ -27,6 +27,7 @@ nav:
       - 课程首页: course/index.md
       - 示例课程文档: course/example.md
   - 项目: project/index.md
+  - COSTORY: project/costory.md
   - 友链: friends/index.md
   - 关于: about/index.md
   - English:
@@ -34,6 +35,7 @@ nav:
       - Notes: en/course/index.md
       - Sample Note: en/course/example.md
       - Projects: en/project/index.md
+      - COSTORY: en/project/costory.md
       - Links: en/friends/index.md
       - About: en/about/index.md
 

@@ -23,10 +23,10 @@
 </div>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
-<p class="project-label">学习作品</p>
-<h2>课程笔记库</h2>
+<p class="project-label">作品1</p>
+<h2>COSTORY</h2>
 <p>把学习内容从“看过”变成“能复用”，用固定格式沉淀目标、步骤、问题和总结。</p>
-<a href="../course/">查看课程</a>
+<a href="costory/">查看项目</a>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
 <p class="project-label">设计实验</p>
