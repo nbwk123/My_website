@@ -1,4 +1,22 @@
 {# Custom top navigation inspired by research/personal lab websites. #}
+<script>
+  (() => {
+    const key = "kaiwang-site-theme";
+    const modes = new Set(["light", "dark", "system"]);
+    const saved = (() => {
+      try {
+        return localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    })();
+    const mode = modes.has(saved) ? saved : "system";
+    const active = mode === "system" && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : mode === "dark" ? "dark" : "light";
+    document.documentElement.dataset.siteTheme = mode;
+    document.documentElement.dataset.siteThemeActive = active;
+    document.documentElement.setAttribute("data-md-color-scheme", active === "dark" ? "slate" : "default");
+  })();
+</script>
 <header class="site-topbar" data-md-component="header">
   {% set current_url = page.url if page and page.url else "" %}
   {% set is_en = current_url.startswith("en/") %}
@@ -18,7 +36,7 @@
         <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">主页</a>
         <a class="site-topbar__link{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程</a>
         <a class="site-topbar__link{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">项目</a>
-        <a class="site-topbar__link{% if current_url.startswith('friends/') %} site-topbar__link--active{% endif %}" href="{{ 'friends/' | url }}">友链</a>
+        <a class="site-topbar__link{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">博客</a>
         <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">关于</a>
       {% endif %}
     </div>
@@ -70,6 +88,17 @@
           </div>
         {% endif %}
       {% endif %}
+      <div class="site-topbar__theme" role="group" aria-label="{% if is_en %}Color mode{% else %}颜色模式{% endif %}" data-site-theme-switcher>
+        <button type="button" data-site-theme-value="system" aria-label="{% if is_en %}Follow system{% else %}跟随系统{% endif %}" title="{% if is_en %}Follow system{% else %}跟随系统{% endif %}" aria-pressed="false">
+          {% include ".icons/material/monitor.svg" %}
+        </button>
+        <button type="button" data-site-theme-value="light" aria-label="{% if is_en %}Light mode{% else %}浅色模式{% endif %}" title="{% if is_en %}Light mode{% else %}浅色模式{% endif %}" aria-pressed="false">
+          {% include ".icons/material/weather-sunny.svg" %}
+        </button>
+        <button type="button" data-site-theme-value="dark" aria-label="{% if is_en %}Dark mode{% else %}深色模式{% endif %}" title="{% if is_en %}Dark mode{% else %}深色模式{% endif %}" aria-pressed="false">
+          {% include ".icons/material/moon-waning-crescent.svg" %}
+        </button>
+      </div>
       <div class="site-topbar__lang" aria-label="语言切换">
         {% if is_en %}
           <a href="{{ 'index.html' | url }}">中文</a>

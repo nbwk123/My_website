@@ -1,4 +1,68 @@
 (() => {
+  const storageKey = "kaiwang-site-theme";
+  const systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const allowedThemes = new Set(["light", "dark", "system"]);
+
+  const getSavedTheme = () => {
+    try {
+      const saved = window.localStorage.getItem(storageKey);
+      return allowedThemes.has(saved) ? saved : "system";
+    } catch {
+      return "system";
+    }
+  };
+
+  const resolveTheme = (mode) => (mode === "system" ? (systemQuery.matches ? "dark" : "light") : mode);
+
+  const updateControls = (mode) => {
+    document.querySelectorAll("[data-site-theme-switcher]").forEach((switcher) => {
+      switcher.querySelectorAll("[data-site-theme-value]").forEach((button) => {
+        const isActive = button.dataset.siteThemeValue === mode;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    });
+  };
+
+  const applyTheme = (mode) => {
+    const resolved = resolveTheme(mode);
+    document.documentElement.dataset.siteTheme = mode;
+    document.documentElement.dataset.siteThemeActive = resolved;
+    document.documentElement.setAttribute("data-md-color-scheme", resolved === "dark" ? "slate" : "default");
+    updateControls(mode);
+  };
+
+  const saveTheme = (mode) => {
+    try {
+      window.localStorage.setItem(storageKey, mode);
+    } catch {
+      // Local storage can be unavailable in private contexts; visual switching should still work.
+    }
+  };
+
+  let currentMode = getSavedTheme();
+  applyTheme(currentMode);
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-site-theme-value]");
+
+    if (!button) {
+      return;
+    }
+
+    currentMode = button.dataset.siteThemeValue;
+    saveTheme(currentMode);
+    applyTheme(currentMode);
+  });
+
+  systemQuery.addEventListener("change", () => {
+    if (currentMode === "system") {
+      applyTheme(currentMode);
+    }
+  });
+})();
+
+(() => {
   const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -393,4 +457,16 @@
     },
     true
   );
+
+  document.querySelectorAll(".cat").forEach(item => {
+    item.addEventListener("click", function(event) {
+      event.preventDefault();
+  
+      document.querySelectorAll(".cat").forEach(cat => {
+        cat.classList.remove("cat--active");
+      });
+  
+      this.classList.add("cat--active");
+    });
+  });
 })();

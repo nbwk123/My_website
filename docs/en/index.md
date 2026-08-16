@@ -8,59 +8,71 @@ hide:
 
 <section class="home-hero">
   <div class="home-copy">
-    <p class="home-kicker">Learning · Building · Designing</p>
-    <h1>Welcome to my website.</h1>
-    <p class="home-subtitle">I use this space to document learning, refine projects, and turn scattered ideas into clear, visible work. The site stays simple so the content can carry the weight.</p>
+    <p class="home-kicker">Learning · Creating · Designing</p>
+    <h1>Welcome to my website!</h1>
+    <p class="home-subtitle">A personal portfolio system continuously built and iterated with Vibe Coding, used to record learning, design judgment, and project practice.</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">View Projects</a>
       <a href="course/" class="home-button">Read Notes</a>
     </div>
   </div>
   <div class="home-card-stack" data-card-stack aria-label="Project card stack. Drag the top card to switch projects.">
-    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
-      <img src="../assets/hero-interface.png" alt="Interface visual for the personal website system">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/costory/">
+      <img src="../assets/program1.png" alt="Project 1 cover">
       <div class="visual-caption">
-        <span>01 · Personal Website</span>
-        <strong>Turning content into work and building a personal space that can keep growing.</strong>
+        <span class="visual-eyebrow">Project 01</span>
+        <div class="project-wordmark-group">
+          <span class="project-wordmark">COSTORY</span>
+        </div>
+        <strong>Using a physical prop and light AI prompts to help parents and children keep co-creating a story.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
-    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="course/">
-      <img src="../assets/hero-interface.png" alt="Interface visual for the notes library">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/website-system/">
+      <img src="../assets/program2.png" alt="Project 2 cover">
       <div class="visual-caption">
-        <span>02 · Notes Library</span>
-        <strong>Turning learning into reusable knowledge cards that are easy to revisit.</strong>
+        <span class="visual-eyebrow">Project 02</span>
+        <div class="project-wordmark-group">
+          <span class="project-wordmark project-wordmark-waing">WAING</span>
+        </div>
+        <strong>Turning a personal website into a portfolio system that can be edited, evaluated, and published over time.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
       <img src="../assets/hero-interface.png" alt="Interface visual for interaction design practice">
       <div class="visual-caption">
-        <span>03 · Interaction Practice</span>
-        <strong>Studying strong interfaces and translating design judgment into page practice.</strong>
+        <span class="visual-eyebrow">Project 03</span>
+        <div class="project-wordmark-group">
+          <span class="visual-title">Interaction Design Practice</span>
+        </div>
+        <strong>Observing strong interfaces and translating design judgment into my own page practice.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
   </div>
 </section>
 
 <section class="home-section home-manifesto">
-  <p class="section-kicker">Direction</p>
-  <h2>Less clutter. More judgment.</h2>
-  <p>I want this site to feel like a quiet, organized workbench: notes for learning, projects for practice, and an about page for the person and direction behind the work.</p>
+  <p class="section-kicker">Site Direction</p>
+  <h2>Less piling up. More judgment.</h2>
+  <p>This site is not only a place to display outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>
 </section>
 
 <section class="home-feature-grid">
   <a class="home-feature interaction-tilt" href="course/" data-tilt>
     <span>01</span>
-    <h2>Notes</h2>
-    <p>Turning learning into reusable knowledge rather than leaving it as scattered bookmarks.</p>
+    <h2>Course Notes</h2>
+    <p>Organize learning into reusable knowledge cards instead of leaving only scattered bookmarks.</p>
   </a>
   <a class="home-feature interaction-tilt" href="project/" data-tilt>
     <span>02</span>
     <h2>Projects</h2>
-    <p>Presenting projects like products: with a clear subject, visible value, and traceable process.</p>
+    <p>Present projects like products: with a clear subject, clear value, and a traceable process.</p>
   </a>
   <a class="home-feature interaction-tilt" href="about/" data-tilt>
     <span>03</span>
-    <h2>About</h2>
-    <p>Keeping track of my direction, current skills, and developing personal style.</p>
+    <h2>About Me</h2>
+    <p>Keep updating my direction, ability boundaries, and developing personal style.</p>
   </a>
 </section>

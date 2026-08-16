@@ -20,6 +20,7 @@ import subprocess
 import sys
 import time
 import webbrowser
+import base64
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
@@ -31,6 +32,7 @@ DOCS = ROOT / "docs"
 MKDOCS = ROOT / "mkdocs.yml"
 PORT = int(os.environ.get("WEBSITE_MANAGER_PORT", "8123"))
 SSH_COMMAND = "ssh -i ~/.ssh/id_ed25519_github -p 443 -o IdentitiesOnly=yes"
+IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
 
 
 SECTION_DIRS = {
@@ -262,6 +264,73 @@ def list_pages() -> list[dict[str, Any]]:
     return pages
 
 
+def list_assets() -> list[dict[str, Any]]:
+    assets_dir = DOCS / "assets"
+    assets = []
+    if not assets_dir.exists():
+        return assets
+    for path in sorted(assets_dir.rglob("*")):
+        if not path.is_file() or path.suffix.lower() not in IMAGE_EXTENSIONS:
+            continue
+        rel = path.relative_to(DOCS).as_posix()
+        assets.append(
+            {
+                "path": rel,
+                "name": path.name,
+                "url": "/" + rel,
+                "mtime": path.stat().st_mtime,
+            }
+        )
+    return assets
+
+
+def save_asset(payload: dict[str, Any]) -> dict[str, Any]:
+    filename = clean_asset_name(payload.get("name", ""))
+    data_url = payload.get("data", "")
+    if not filename:
+        raise ValueError("请选择图片文件。")
+    suffix = Path(filename).suffix.lower()
+    if suffix not in IMAGE_EXTENSIONS:
+        raise ValueError("只支持 png、jpg、jpeg、gif、webp、svg 图片。")
+    if "," in data_url:
+        data_url = data_url.split(",", 1)[1]
+    try:
+        raw = base64.b64decode(data_url)
+    except Exception as exc:  # noqa: BLE001
+        raise ValueError("图片读取失败，请重新选择。") from exc
+    if len(raw) > 8 * 1024 * 1024:
+        raise ValueError("图片太大了，请先压缩到 8MB 以内。")
+    target = unique_asset_path(filename)
+    target.write_bytes(raw)
+    rel = target.relative_to(DOCS).as_posix()
+    return {"path": rel, "url": "/" + rel}
+
+
+def clean_asset_name(value: str) -> str:
+    name = Path(value.strip().replace("\\", "/")).name
+    stem = re.sub(r"[^A-Za-z0-9\-_]+", "-", Path(name).stem).strip("-").lower()
+    suffix = Path(name).suffix.lower()
+    if not stem:
+        stem = f"image-{now_ms()}"
+    return stem + suffix
+
+
+def unique_asset_path(filename: str) -> Path:
+    assets_dir = DOCS / "assets"
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    candidate = assets_dir / filename
+    if not candidate.exists():
+        return candidate
+    stem = candidate.stem
+    suffix = candidate.suffix
+    counter = 2
+    while True:
+        next_candidate = assets_dir / f"{stem}-{counter}{suffix}"
+        if not next_candidate.exists():
+            return next_candidate
+        counter += 1
+
+
 def section_label(section: str, lang: str) -> str:
     if lang == "en":
         return EN_SECTION_LABELS.get(section, section.title())
@@ -411,6 +480,22 @@ def build_site() -> dict[str, Any]:
     return run_command([".venv/bin/mkdocs", "build"])
 
 
+def friendly_command_result(data: dict[str, Any], action: str) -> dict[str, Any]:
+    ok = bool(data.get("ok"))
+    stderr = data.get("stderr", "")
+    stdout = data.get("stdout", "")
+    if action == "build":
+        if ok:
+            message = "本地网站已更新，可以打开预览查看最新效果。"
+            if "not included in the \"nav\"" in stderr:
+                message += "\n提示：有页面还没有加入导航或列表，访客可能不容易找到。"
+        else:
+            message = "构建失败，请把下面的错误发给我，我来帮你修。"
+    else:
+        message = "操作成功。" if ok else "操作失败。"
+    return {**data, "summary": message, "details": (stdout + stderr).strip()}
+
+
 HTML = r"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -492,6 +577,17 @@ HTML = r"""<!doctype html>
       gap: .5rem;
       flex-wrap: wrap;
     }
+    .tools a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.35rem;
+      padding: 0 .9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 750;
+    }
     .filters {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -519,6 +615,7 @@ HTML = r"""<!doctype html>
       resize: vertical;
     }
     textarea.hidden { display: none; }
+    .hidden { display: none !important; }
     .mode-switch {
       display: inline-flex;
       padding: .16rem;
@@ -578,9 +675,20 @@ HTML = r"""<!doctype html>
       padding: 0 .55rem;
       font-size: .68rem;
     }
+    .content-block__body {
+      display: grid;
+      gap: .55rem;
+      padding: .75rem;
+    }
+    .field-label {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+    }
     .content-block textarea {
       min-height: 5rem;
-      border: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
       font-family: inherit;
       font-size: .82rem;
       line-height: 1.75;
@@ -611,9 +719,75 @@ HTML = r"""<!doctype html>
       font-family: "SFMono-Regular", Consolas, monospace;
       font-size: .72rem;
     }
+    .content-block[data-type="hero"] {
+      border-color: rgba(124,58,237,.28);
+      background: linear-gradient(135deg, #fff, #f7f2ff);
+    }
+    .content-block[data-type="image"] img {
+      width: 100%;
+      max-height: 11rem;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+    .inline-tools {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .5rem;
+      align-items: center;
+    }
+    .file-picker {
+      position: relative;
+      overflow: hidden;
+    }
+    .file-picker input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .step-list {
+      display: grid;
+      gap: .55rem;
+    }
+    .step-item {
+      display: grid;
+      gap: .45rem;
+      padding: .65rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfbfa;
+    }
+    .step-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .5rem;
+      align-items: center;
+    }
+    .step-head input {
+      font-weight: 800;
+    }
+    .step-item textarea {
+      min-height: 4.2rem;
+      background: #fff;
+    }
+    .content-block[data-type="raw"] {
+      opacity: .82;
+    }
     .page-list {
       max-height: calc(100vh - 12rem);
       overflow: auto;
+    }
+    .page-group {
+      padding: .65rem .95rem .35rem;
+      color: var(--purple);
+      background: #fbfbfa;
+      border-bottom: 1px solid var(--line);
+      font-size: .68rem;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
     .page-item {
       display: block;
@@ -626,16 +800,29 @@ HTML = r"""<!doctype html>
       background: #fff;
     }
     .page-item.active { background: #f3efff; }
+    .page-item:hover { background: #faf8ff; }
     .page-title { display: block; font-weight: 850; }
     .page-path { display: block; margin-top: .22rem; color: var(--muted); font-size: .66rem; }
     .editor-meta {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto auto auto;
       gap: .6rem;
       padding: .75rem;
       border-bottom: 1px solid var(--line);
     }
     .hint { color: var(--muted); font-size: .72rem; line-height: 1.6; }
+    .preview-note {
+      align-self: center;
+      color: var(--muted);
+      font-size: .68rem;
+      line-height: 1.4;
+    }
+    .dirty-indicator {
+      align-self: center;
+      color: #b45309;
+      font-size: .68rem;
+      font-weight: 800;
+    }
     .status {
       white-space: pre-wrap;
       max-height: 18rem;
@@ -769,6 +956,8 @@ HTML = r"""<!doctype html>
             <button id="source-mode" onclick="setEditorMode('source')">源码</button>
           </div>
           <button onclick="insertBlock('paragraph')">段落</button>
+          <button onclick="insertBlock('hero')">页面开头</button>
+          <button onclick="insertBlock('image')">图片</button>
           <button onclick="insertBlock('callout')">摘要块</button>
           <button onclick="insertBlock('dark')">深色卡片</button>
           <button onclick="insertBlock('steps')">步骤模块</button>
@@ -778,9 +967,12 @@ HTML = r"""<!doctype html>
       <div class="editor-meta">
         <input id="current-path" readonly placeholder="选择左侧页面开始编辑">
         <button onclick="previewPage()">预览此页</button>
+        <a id="preview-link" class="hidden" href="#" target="_blank" rel="noopener">打开预览</a>
+        <span id="preview-note" class="preview-note"></span>
+        <span id="dirty-indicator" class="dirty-indicator hidden">未保存</span>
       </div>
       <div id="visual-editor" class="visual-editor"></div>
-      <textarea id="editor" class="hidden" spellcheck="false" placeholder="选择一个页面，或新建页面。"></textarea>
+      <textarea id="editor" class="hidden" spellcheck="false" oninput="setDirty(true)" placeholder="选择一个页面，或新建页面。"></textarea>
     </section>
 
     <section class="panel">
@@ -803,9 +995,11 @@ HTML = r"""<!doctype html>
   </main>
   <script>
     let pages = [];
+    let assets = [];
     let currentPath = "";
     let editorMode = "visual";
     let visualBlocks = [];
+    let isDirty = false;
 
     const $ = (id) => document.getElementById(id);
 
@@ -825,9 +1019,15 @@ HTML = r"""<!doctype html>
       $("status").textContent = typeof value === "string" ? value : JSON.stringify(value, null, 2);
     }
 
+    function setDirty(value) {
+      isDirty = value;
+      $("dirty-indicator").classList.toggle("hidden", !value);
+    }
+
     async function refresh() {
-      const data = await api("/api/pages");
+      const [data, assetData] = await Promise.all([api("/api/pages"), api("/api/assets")]);
       pages = data.pages;
+      assets = assetData.assets || [];
       renderPages();
       await loadGraph();
     }
@@ -837,17 +1037,37 @@ HTML = r"""<!doctype html>
       const lang = $("filter-lang").value;
       const list = $("page-list");
       list.innerHTML = "";
-      pages
+      const visiblePages = pages
         .filter(page => !section || page.section === section)
         .filter(page => !lang || page.lang === lang)
-        .sort((a, b) => b.mtime - a.mtime)
-        .forEach(page => {
+        .sort((a, b) => {
+          if (a.lang !== b.lang) return a.lang === "zh" ? -1 : 1;
+          const groupA = `${a.lang}-${a.sectionLabel}`;
+          const groupB = `${b.lang}-${b.sectionLabel}`;
+          if (groupA !== groupB) return groupA.localeCompare(groupB);
+          return a.title.localeCompare(b.title);
+        });
+      let currentGroup = "";
+      visiblePages.forEach(page => {
+          const group = `${page.lang.toUpperCase()} · ${page.sectionLabel}`;
+          if (group !== currentGroup) {
+            currentGroup = group;
+            const label = document.createElement("div");
+            label.className = "page-group";
+            label.textContent = group;
+            list.appendChild(label);
+          }
           const btn = document.createElement("button");
           btn.className = "page-item" + (page.path === currentPath ? " active" : "");
+          btn.type = "button";
+          btn.setAttribute("aria-label", `打开 ${page.title}，路径 ${page.path}`);
           btn.innerHTML = `<span class="page-title">${escapeHtml(page.title)}</span><span class="page-path">${page.lang.toUpperCase()} · ${escapeHtml(page.sectionLabel)} · ${escapeHtml(page.path)}</span>`;
-          btn.onclick = () => loadPage(page.path);
+          btn.onclick = () => confirmDiscardChanges() && loadPage(page.path);
           list.appendChild(btn);
         });
+      if (!visiblePages.length) {
+        list.innerHTML = `<div class="hint" style="padding:.95rem">没有符合筛选条件的页面。</div>`;
+      }
     }
 
     async function loadPage(path) {
@@ -857,17 +1077,23 @@ HTML = r"""<!doctype html>
       $("editor").value = data.content;
       visualBlocks = markdownToBlocks(data.content);
       renderVisualEditor();
+      updatePreviewLink();
+      setDirty(false);
       renderPages();
     }
 
     async function savePage() {
       if (!currentPath) return setStatus("请先选择页面。");
       syncVisualToSource();
+      setStatus("正在保存并更新本地预览 ...");
       const data = await api("/api/page", {
         method: "POST",
         body: JSON.stringify({ path: currentPath, content: $("editor").value })
       });
-      setStatus(`已保存：${data.path}`);
+      setDirty(false);
+      const buildMessage = data.build?.summary || "已保存。";
+      setStatus(`已保存：${data.path}\n${buildMessage}`);
+      updatePreviewLink("已保存并更新预览，可以打开查看。");
       await refresh();
     }
 
@@ -881,9 +1107,11 @@ HTML = r"""<!doctype html>
         summary: $("new-summary").value
       };
       const data = await api("/api/create", { method: "POST", body: JSON.stringify(payload) });
-      setStatus(`已创建：${data.path}${data.navUpdated ? "\n已自动加入导航。" : ""}`);
+      const buildMessage = data.build?.summary ? "\n" + data.build.summary : "";
+      setStatus(`已创建：${data.path}${data.navUpdated ? "\n已自动加入导航。" : ""}${buildMessage}`);
       await refresh();
       await loadPage(data.path);
+      updatePreviewLink("已创建并更新预览，可以打开查看。");
     }
 
     function setEditorMode(mode) {
@@ -913,11 +1141,24 @@ HTML = r"""<!doctype html>
       renderVisualEditor();
     }
 
+    function confirmDiscardChanges() {
+      if (!isDirty) return true;
+      return window.confirm("当前页面还有未保存的修改。\n\n确定要离开吗？");
+    }
+
+    window.addEventListener("beforeunload", (event) => {
+      if (!isDirty) return;
+      event.preventDefault();
+      event.returnValue = "";
+    });
+
     function collectVisualBlocks() {
-      visualBlocks = [...document.querySelectorAll(".content-block")].map(block => ({
-        type: block.dataset.type || "paragraph",
-        text: block.querySelector("textarea").value
-      })).filter(block => block.text.trim());
+      visualBlocks = [...document.querySelectorAll(".content-block")].map(block => readBlockFields(block)).filter(block => {
+        if (block.type === "image") return block.src || block.alt || block.caption;
+        if (block.type === "hero") return block.title || block.summary;
+        if (block.type === "steps") return block.steps && block.steps.length;
+        return block.text && block.text.trim();
+      });
     }
 
     function markdownToBlocks(markdown) {
@@ -935,7 +1176,10 @@ HTML = r"""<!doctype html>
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         const trimmed = line.trim();
-        if (trimmed.startsWith("<section") || trimmed.startsWith("<div")) {
+        if (trimmed.includes('class="note-page"') || trimmed === "</div>") {
+          flush();
+          blocks.push({ type: "raw", text: line });
+        } else if (trimmed.startsWith("<section") || trimmed.startsWith("<div")) {
           flush();
           const closeTag = trimmed.startsWith("<section") ? "</section>" : "</div>";
           const html = [line];
@@ -961,6 +1205,12 @@ HTML = r"""<!doctype html>
       if (/^-\s+/m.test(text) && text.split("\n").every(line => !line.trim() || line.trim().startsWith("- "))) {
         return { type: "list", text: text.replace(/^- /gm, "") };
       }
+      if (text.includes('class="page-hero"')) {
+        return htmlHeroToBlock(text);
+      }
+      if (/^!\[[^\]]*]\([^)]+\)/m.test(text.trim())) {
+        return markdownImageToBlock(text.trim());
+      }
       if (text.includes('class="note-callout"')) {
         return { type: "callout", text: stripWrapper(text, "section") };
       }
@@ -968,10 +1218,44 @@ HTML = r"""<!doctype html>
         return { type: "dark", text: stripWrapper(text, "section") };
       }
       if (text.includes('class="note-steps"')) {
-        return { type: "steps", text };
+        return htmlStepsToBlock(text);
       }
       if (text.startsWith("<")) return { type: "raw", text };
       return { type: "paragraph", text };
+    }
+
+    function htmlHeroToBlock(text) {
+      const match = text.match(/<section[^>]*class="page-hero"[^>]*>\n?([\s\S]*?)\n?<\/section>/);
+      const inner = match ? match[1].trim() : stripWrapper(text, "section");
+      const titleMatch = inner.match(/^#\s+(.+)$/m);
+      const title = titleMatch ? titleMatch[1].trim() : "";
+      const summary = inner.replace(/^#\s+.+$/m, "").trim();
+      return { type: "hero", title, summary };
+    }
+
+    function markdownImageToBlock(text) {
+      const match = text.match(/^!\[([^\]]*)]\(([^)]+)\)(?:\n+(.+))?/s);
+      if (!match) return { type: "paragraph", text };
+      return {
+        type: "image",
+        alt: match[1] || "",
+        src: match[2] || "",
+        caption: (match[3] || "").trim()
+      };
+    }
+
+    function htmlStepsToBlock(text) {
+      const stepPattern = /<section[^>]*class="note-step"[^>]*>\s*([\s\S]*?)\s*<\/section>/g;
+      const steps = [];
+      let match;
+      while ((match = stepPattern.exec(text)) !== null) {
+        const inner = match[1].trim();
+        const titleMatch = inner.match(/^###\s+(.+)$/m);
+        const title = titleMatch ? titleMatch[1].trim() : "步骤";
+        const body = inner.replace(/^###\s+.+$/m, "").trim();
+        steps.push({ title, body });
+      }
+      return steps.length ? { type: "steps", steps } : { type: "raw", text };
     }
 
     function stripWrapper(text, tag) {
@@ -983,17 +1267,100 @@ HTML = r"""<!doctype html>
 
     function blocksToMarkdown(blocks) {
       return blocks.map(block => {
-        const text = block.text.trim();
-        if (!text) return "";
+        const text = (block.text || "").trim();
+        if (!text && block.type !== "hero" && block.type !== "image") return "";
         if (block.type === "heading1") return "# " + text;
         if (block.type === "heading2") return "## " + text;
         if (block.type === "heading3") return "### " + text;
         if (block.type === "list") return text.split("\n").filter(Boolean).map(line => "- " + line.replace(/^-\s*/, "")).join("\n");
+        if (block.type === "hero") return `<section class="page-hero" markdown="1">\n\n# ${block.title || "页面标题"}\n\n${block.summary || ""}\n\n</section>`;
+        if (block.type === "image") return imageBlockToMarkdown(block);
         if (block.type === "callout") return `<section class="note-callout" markdown="1">\n${text}\n</section>`;
         if (block.type === "dark") return `<section class="note-dark-panel" markdown="1">\n\n${text}\n\n</section>`;
-        if (block.type === "steps" || block.type === "raw") return text;
+        if (block.type === "steps") return stepsBlockToMarkdown(block);
+        if (block.type === "raw") return text;
         return text;
       }).filter(Boolean).join("\n\n") + "\n";
+    }
+
+    function imageBlockToMarkdown(block) {
+      const src = (block.src || "").trim();
+      const alt = (block.alt || "").trim();
+      const caption = (block.caption || "").trim();
+      if (!src) return caption;
+      return `![${alt}](${src})${caption ? "\n\n" + caption : ""}`;
+    }
+
+    function assetOptions(current) {
+      const normalized = normalizeAssetPath(current);
+      return assets.map(asset => {
+        const selected = asset.path === normalized ? " selected" : "";
+        return `<option value="${escapeHtml(asset.path)}"${selected}>${escapeHtml(asset.name)}</option>`;
+      }).join("");
+    }
+
+    function normalizeAssetPath(value) {
+      return String(value || "").replace(/^(\.\.\/)+/, "").replace(/^\//, "");
+    }
+
+    function assetPreviewUrl(value) {
+      const path = normalizeAssetPath(value);
+      return path ? "/site/" + path : "";
+    }
+
+    function chooseAsset(index, value) {
+      if (!value) return;
+      visualBlocks[index].src = relativeAssetPath(value);
+      if (!visualBlocks[index].alt) {
+        visualBlocks[index].alt = value.split("/").pop().replace(/\.[^.]+$/, "");
+      }
+      setDirty(true);
+      renderVisualEditor();
+    }
+
+    async function uploadAsset(index, file) {
+      if (!file) return;
+      setStatus("正在上传图片 ...");
+      const reader = new FileReader();
+      reader.onload = async () => {
+        try {
+          const data = await api("/api/assets", {
+            method: "POST",
+            body: JSON.stringify({ name: file.name, data: reader.result })
+          });
+          assets.push({ path: data.path, name: data.path.split("/").pop(), url: data.url });
+          visualBlocks[index].src = relativeAssetPath(data.path);
+          if (!visualBlocks[index].alt) visualBlocks[index].alt = file.name.replace(/\.[^.]+$/, "");
+          setDirty(true);
+          renderVisualEditor();
+          setStatus("图片已上传，并放入当前图片模块。");
+        } catch (err) {
+          setStatus(err.message);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function relativeAssetPath(assetPath) {
+      const pageParts = currentPath ? currentPath.split("/").slice(0, -1) : [];
+      const assetParts = String(assetPath || "").split("/");
+      let common = 0;
+      while (pageParts[common] && assetParts[common] && pageParts[common] === assetParts[common]) {
+        common += 1;
+      }
+      const up = "../".repeat(pageParts.length - common);
+      return up + assetParts.slice(common).join("/");
+    }
+
+    function stepsBlockToMarkdown(block) {
+      const steps = block.steps || [];
+      if (!steps.length) return "";
+      const body = steps.map(step => {
+        const title = (step.title || "步骤").trim();
+        const body = (step.body || "").trim();
+        return `<section class="note-step" markdown="1">\n### ${title}\n${body}\n</section>`;
+      }).join("\n\n");
+      return `<div class="note-steps" markdown="1">\n\n${body}\n\n</div>`;
     }
 
     function renderVisualEditor() {
@@ -1013,6 +1380,8 @@ HTML = r"""<!doctype html>
             <option value="heading2">二级标题</option>
             <option value="heading3">三级标题</option>
             <option value="paragraph">段落</option>
+            <option value="hero">页面开头</option>
+            <option value="image">图片</option>
             <option value="list">列表</option>
             <option value="callout">摘要块</option>
             <option value="dark">深色卡片</option>
@@ -1025,19 +1394,131 @@ HTML = r"""<!doctype html>
             <button onclick="deleteBlock(${index})">删除</button>
           </div>
         </div>
-        <textarea oninput="updateBlock(${index}, this.value)" placeholder="输入内容"></textarea>
+        <div class="content-block__body">${renderBlockBody(block, index)}</div>
       `;
       wrap.querySelector("select").value = block.type || "paragraph";
-      wrap.querySelector("textarea").value = block.text || "";
       return wrap;
+    }
+
+    function renderBlockBody(block, index) {
+      if (block.type === "hero") {
+        return `
+          <label class="field-label">页面标题</label>
+          <input value="${escapeHtml(block.title || "")}" oninput="updateBlockField(${index}, 'title', this.value)" placeholder="例如：课程">
+          <label class="field-label">页面摘要</label>
+          <textarea oninput="updateBlockField(${index}, 'summary', this.value)" placeholder="写一段页面开头说明">${escapeHtml(block.summary || "")}</textarea>
+        `;
+      }
+      if (block.type === "image") {
+        return `
+          <label class="field-label">选择图片</label>
+          <div class="inline-tools">
+            <select onchange="chooseAsset(${index}, this.value)">
+              <option value="">从已有图片中选择</option>
+              ${assetOptions(block.src || "")}
+            </select>
+            <button class="file-picker">上传图片<input type="file" accept="image/*" onchange="uploadAsset(${index}, this.files[0])"></button>
+          </div>
+          <label class="field-label">图片路径</label>
+          <input data-field="src" value="${escapeHtml(block.src || "")}" oninput="updateBlockField(${index}, 'src', this.value)" placeholder="也可以手动输入图片路径">
+          <label class="field-label">图片说明</label>
+          <input data-field="alt" value="${escapeHtml(block.alt || "")}" oninput="updateBlockField(${index}, 'alt', this.value)" placeholder="给图片写一个简短名字">
+          ${block.src ? `<img src="${assetPreviewUrl(block.src)}" alt="${escapeHtml(block.alt || "")}">` : ""}
+          <label class="field-label">图片下方文字（可选）</label>
+          <textarea data-field="caption" oninput="updateBlockField(${index}, 'caption', this.value)" placeholder="可以写图片说明">${escapeHtml(block.caption || "")}</textarea>
+        `;
+      }
+      if (block.type === "steps") {
+        const steps = block.steps || [];
+        const items = steps.map((step, stepIndex) => `
+          <div class="step-item">
+            <div class="step-head">
+              <input value="${escapeHtml(step.title || "")}" oninput="updateStep(${index}, ${stepIndex}, 'title', this.value)" placeholder="步骤标题">
+              <button onclick="deleteStep(${index}, ${stepIndex})">删除步骤</button>
+            </div>
+            <textarea oninput="updateStep(${index}, ${stepIndex}, 'body', this.value)" placeholder="步骤说明">${escapeHtml(step.body || "")}</textarea>
+          </div>
+        `).join("");
+        return `
+          <div class="step-list">${items}</div>
+          <button onclick="addStep(${index})">添加步骤</button>
+        `;
+      }
+      if (block.type === "raw") {
+        return `
+          <p class="hint">这是页面的结构保护区。一般不用改；如果要调整复杂排版，可以切到“源码”。</p>
+          <textarea oninput="updateBlock(${index}, this.value)" placeholder="保留模块">${escapeHtml(block.text || "")}</textarea>
+        `;
+      }
+      return `<textarea oninput="updateBlock(${index}, this.value)" placeholder="输入内容">${escapeHtml(block.text || "")}</textarea>`;
     }
 
     function updateBlock(index, value) {
       visualBlocks[index].text = value;
+      setDirty(true);
+    }
+
+    function updateBlockField(index, field, value) {
+      visualBlocks[index][field] = value;
+      setDirty(true);
+    }
+
+    function updateStep(index, stepIndex, field, value) {
+      visualBlocks[index].steps[stepIndex][field] = value;
+      setDirty(true);
+    }
+
+    function addStep(index) {
+      visualBlocks[index].steps = visualBlocks[index].steps || [];
+      visualBlocks[index].steps.push({ title: "新步骤", body: "写下步骤说明。" });
+      setDirty(true);
+      renderVisualEditor();
+    }
+
+    function deleteStep(index, stepIndex) {
+      if (!window.confirm("确定删除这个步骤吗？")) return;
+      visualBlocks[index].steps.splice(stepIndex, 1);
+      setDirty(true);
+      renderVisualEditor();
+    }
+
+    function readBlockFields(block) {
+      const type = block.dataset.type || "paragraph";
+      if (type === "hero") {
+        const values = [...block.querySelectorAll("input, textarea")].map(field => field.value);
+        return { type, title: values[0] || "", summary: values[1] || "" };
+      }
+      if (type === "image") {
+        return {
+          type,
+          src: block.querySelector('[data-field="src"]')?.value || "",
+          alt: block.querySelector('[data-field="alt"]')?.value || "",
+          caption: block.querySelector('[data-field="caption"]')?.value || ""
+        };
+      }
+      if (type === "steps") {
+        const steps = [...block.querySelectorAll(".step-item")].map(item => ({
+          title: item.querySelector("input")?.value || "",
+          body: item.querySelector("textarea")?.value || ""
+        })).filter(step => step.title || step.body);
+        return { type, steps };
+      }
+      return { type, text: block.querySelector("textarea")?.value || "" };
     }
 
     function changeBlockType(index, type) {
-      visualBlocks[index].type = type;
+      const current = visualBlocks[index] || {};
+      const text = current.text || current.summary || current.caption || "";
+      if (type === "hero") {
+        visualBlocks[index] = { type, title: current.title || "页面标题", summary: text || "页面摘要。" };
+      } else if (type === "image") {
+        visualBlocks[index] = { type, src: current.src || "", alt: current.alt || "", caption: text || "" };
+      } else if (type === "steps") {
+        visualBlocks[index] = { type, steps: current.steps || [{ title: "第一步", body: text || "写下步骤说明。" }] };
+      } else {
+        visualBlocks[index] = { type, text };
+      }
+      setDirty(true);
       renderVisualEditor();
     }
 
@@ -1046,17 +1527,22 @@ HTML = r"""<!doctype html>
       if (target < 0 || target >= visualBlocks.length) return;
       const [block] = visualBlocks.splice(index, 1);
       visualBlocks.splice(target, 0, block);
+      setDirty(true);
       renderVisualEditor();
     }
 
     function deleteBlock(index) {
+      if (!window.confirm("确定删除这个模块吗？")) return;
       visualBlocks.splice(index, 1);
+      setDirty(true);
       renderVisualEditor();
     }
 
     function insertBlock(type) {
       const blocks = {
         paragraph: `\n新段落内容。\n`,
+        hero: `\n<section class="page-hero" markdown="1">\n\n# 页面标题\n\n这里写一段页面开头说明。\n\n</section>\n`,
+        image: `\n![图片说明](../assets/example.png)\n\n这里写图片说明。\n`,
         callout: `\n<section class="note-callout" markdown="1">\n**核心观点：** 在这里写一句需要突出的结论。\n</section>\n`,
         dark: `\n<section class="note-dark-panel" markdown="1">\n\n## 重点模块\n\n这里适合放核心模型、项目结论或一组重要链接。\n\n</section>\n`,
         steps: `\n<div class="note-steps" markdown="1">\n\n<section class="note-step" markdown="1">\n### 第一步\n写下步骤说明。\n</section>\n\n<section class="note-step" markdown="1">\n### 第二步\n继续补充。\n</section>\n\n</div>\n`
@@ -1064,11 +1550,14 @@ HTML = r"""<!doctype html>
       if (editorMode === "visual") {
         const visualDefaults = {
           paragraph: { type: "paragraph", text: "新段落内容。" },
+          hero: { type: "hero", title: "页面标题", summary: "这里写一段页面开头说明。" },
+          image: { type: "image", src: "../assets/example.png", alt: "图片说明", caption: "这里写图片说明。" },
           callout: { type: "callout", text: "**核心观点：** 在这里写一句需要突出的结论。" },
           dark: { type: "dark", text: "## 重点模块\n\n这里适合放核心模型、项目结论或一组重要链接。" },
           steps: { type: "steps", text: blocks.steps.trim() }
         };
         visualBlocks.push(visualDefaults[type] || visualDefaults.paragraph);
+        setDirty(true);
         renderVisualEditor();
         return;
       }
@@ -1079,6 +1568,7 @@ HTML = r"""<!doctype html>
       editor.value = editor.value.slice(0, start) + insert + editor.value.slice(end);
       editor.focus();
       editor.selectionStart = editor.selectionEnd = start + insert.length;
+      setDirty(true);
     }
 
     async function loadGraph() {
@@ -1131,6 +1621,7 @@ HTML = r"""<!doctype html>
     }
 
     async function runAction(name) {
+      if ((name === "build" || name === "deploy") && !confirmAction(name)) return;
       setStatus("正在执行 " + name + " ...");
       try {
         const data = await api("/api/" + name, { method: "POST", body: "{}" });
@@ -1141,6 +1632,7 @@ HTML = r"""<!doctype html>
     }
 
     async function commitPush() {
+      if (!confirmAction("push")) return;
       setStatus("正在提交并推送 main ...");
       const message = $("commit-message").value || "Update website content";
       try {
@@ -1155,6 +1647,10 @@ HTML = r"""<!doctype html>
     }
 
     function formatCommandResult(data) {
+      if (data.summary) {
+        const details = !data.ok && data.details ? `\n\n详细信息：\n${data.details}` : "";
+        return `${data.ok ? "成功" : "失败"}：${data.summary}${details}`;
+      }
       if (data.steps) {
         return data.steps.map(step => `# ${step.name} (${step.ok ? "OK" : "FAIL"})\n${step.stdout || ""}${step.stderr || ""}`).join("\n\n") + (data.message ? "\n\n" + data.message : "");
       }
@@ -1165,11 +1661,36 @@ HTML = r"""<!doctype html>
       if (!currentPath) return;
       const page = pages.find(page => page.path === currentPath);
       if (!page) return;
-      window.open("/site/" + page.url, "_blank");
+      const url = "/site/" + page.url;
+      updatePreviewLink("已打开预览。如果没有看到新页面，请点“打开预览”。");
+      window.open(url, "_blank");
     }
 
     function openSite() {
       window.open("/site/", "_blank");
+    }
+
+    function updatePreviewLink(message = "") {
+      const link = $("preview-link");
+      const note = $("preview-note");
+      const page = pages.find(page => page.path === currentPath);
+      if (!page) {
+        link.classList.add("hidden");
+        note.textContent = "";
+        return;
+      }
+      link.href = "/site/" + page.url;
+      link.classList.remove("hidden");
+      note.textContent = message || "保存后再预览，看到的是最新构建结果。";
+    }
+
+    function confirmAction(name) {
+      const labels = {
+        build: "构建本地网站",
+        push: "提交并推送到 GitHub main 分支",
+        deploy: "部署到 GitHub Pages"
+      };
+      return window.confirm(`确认要${labels[name] || name}吗？\n\n建议先保存页面并打开预览检查。`);
     }
 
     function escapeHtml(value) {
@@ -1223,6 +1744,8 @@ class Handler(BaseHTTPRequestHandler):
                 for page in pages:
                     page["url"] = page_url(page["path"])
                 self._send_json({"ok": True, "pages": pages})
+            elif parsed.path == "/api/assets":
+                self._send_json({"ok": True, "assets": list_assets()})
             elif parsed.path == "/api/page":
                 query = parse_qs(parsed.query)
                 rel = query.get("path", [""])[0]
@@ -1249,11 +1772,16 @@ class Handler(BaseHTTPRequestHandler):
                 content = payload.get("content", "")
                 path = safe_rel_path(rel)
                 write_text(path, content)
-                self._send_json({"ok": True, "path": rel})
+                build = friendly_command_result(build_site(), "build")
+                self._send_json({"ok": True, "path": rel, "build": build})
             elif parsed.path == "/api/create":
-                self._send_json({"ok": True, **create_page(payload)})
+                created = create_page(payload)
+                build = friendly_command_result(build_site(), "build")
+                self._send_json({"ok": True, **created, "build": build})
             elif parsed.path == "/api/build":
-                self._send_json(build_site())
+                self._send_json(friendly_command_result(build_site(), "build"))
+            elif parsed.path == "/api/assets":
+                self._send_json({"ok": True, **save_asset(payload)})
             elif parsed.path == "/api/status":
                 self._send_json(git_status())
             elif parsed.path == "/api/push":

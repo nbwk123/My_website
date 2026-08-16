@@ -1,14 +1,19 @@
-# 项目
+<div class="project-page" markdown="1">
 
-<div class="note-page" markdown="1">
+<section class="page-hero page-hero--plain course-hero" markdown="1">
 
-<section class="page-hero" markdown="1">
+<div class="section-heading-line">
+  <h1>个人项目分享</h1>
+  <span>PROJECT</span>
+</div>
 
-# 项目
-
-项目页采用 Apple 式的展示逻辑：少而精、主角清楚、先讲价值，再讲细节。每个项目都应该让人快速理解它是什么、为什么值得看、你在其中做了什么。
+记录并分享个人学术经历、生活体验等。
 
 </section>
+
+<div class="side-layout" markdown="1">
+
+<div class="side-main" markdown="1">
 
 <div class="project-grid" markdown="1">
 <article class="project-card project-card-featured interaction-tilt" data-tilt markdown="1">
@@ -18,21 +23,21 @@
 <div markdown="1">
 <p class="project-label">精选项目</p>
 <h2>个人网站系统</h2>
-<p>从零搭建一个可长期更新的个人网站，把课程、项目、友链和自我介绍组织成一个清晰的个人品牌入口。</p>
-<a href="../">查看首页</a>
+<p>用 Vibe Coding 从零搭建一个可长期更新、可低代码管理、可持续发布的个人作品集系统。</p>
+<a href="website-system/" class="case-look">查看案例</a>
 </div>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
 <p class="project-label">作品1</p>
 <h2>COSTORY</h2>
-<p>把学习内容从“看过”变成“能复用”，用固定格式沉淀目标、步骤、问题和总结。</p>
-<a href="costory/">查看项目</a>
+<p>一个 AI 辅助的亲子即兴故事共创系统，用实体道具和轻量提示降低故事停滞风险。</p>
+<a href="costory/" class="case-look">查看项目</a>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
 <p class="project-label">设计实验</p>
 <h2>交互设计练习</h2>
 <p>观察优秀网站的视觉层级、动线和文案，把设计原则转化成自己的页面实践。</p>
-<a href="../about/">了解方向</a>
+<a href="../about/" class="case-look">了解方向</a>
 </article>
 </div>
 
@@ -63,6 +68,27 @@
 ### 结果与反思
 最终产出了什么？还有哪些地方可以继续改进？
 </section>
+
+</div>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="side-card">
+<p class="side-h">类型</p>
+<div class="cat-list">
+  <a href="#" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
+  <a href="#" class="cat"><span>News</span><span class="cat__count"></span></a>
+  <a href="#" class="cat"><span>Publications</span><span class="cat__count">3</span></a>
+  <a href="#" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+</div>
+</div>
+
+</aside>
+
+</div>
 
 </div>
 

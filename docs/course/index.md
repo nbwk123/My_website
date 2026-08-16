@@ -1,18 +1,19 @@
-# 课程
-
 <div class="note-page" markdown="1">
 
-<section class="page-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero" markdown="1">
 
-# 课程
+<div class="section-heading-line">
+  <h1>课程资源与学习总结</h1>
+  <span>COURSE</span>
+</div>
 
-这里不是“学过什么”的清单，而是一个正在形成的知识系统。每篇文章都围绕一个清晰问题展开：它解决什么、怎么实践、最后留下什么判断。
+记录正在学习和已经完成的课程，整理其中的内容、方法与反思。
 
 </section>
 
-<section class="note-callout" markdown="1">
-**整理原则：** 把学习过程从零散记录变成可复用的知识卡片，让以后做项目、写文章、复盘设计时可以直接调用。
-</section>
+<div class="side-layout" markdown="1">
+
+<div class="side-main" markdown="1">
 
 ## 文章列表
 
@@ -20,25 +21,22 @@
 
 <article class="module-row" markdown="1">
 <span>NOTE 01</span>
+
 <div markdown="1">
-<strong>示例课程文档</strong>
-<p>一个可复制的课程笔记模板，展示摘要、深色卡片、资源块和步骤模块的写法。</p>
+
+**示例课程文档**
+
+一个可复制的课程笔记模板，展示摘要、深色卡片、资源块和步骤模块的写法。
+
 </div>
+
 [阅读](example.md)
+
 </article>
 
 </div>
 
-<section class="note-dark-panel" markdown="1">
-
-## 写作原则
-
-- 标题要具体，不写空泛的大词
-- 开头先说明这篇文章解决的问题
-- 中间写步骤，也写为什么这样做
-- 结尾留下可复用的结论
-
-</section>
+<!-- 后面的正文也继续写在这里 -->
 
 ## 未来可以整理的方向
 
@@ -63,6 +61,31 @@
 ### 个人知识管理
 把课程、阅读、项目和想法连接成长期可更新的系统。
 </section>
+
+</div>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="side-card">
+<p class="side-h">类型</p>
+<div class="cat-list">
+  <a href="#" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
+  <a href="#" class="cat"><span>News</span><span class="cat__count"></span></a>
+  <a href="#" class="cat"><span>Publications</span><span class="cat__count">3</span></a>
+  <a href="#" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+</div>
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+
 
 </div>
 

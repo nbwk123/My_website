@@ -1,12 +1,13 @@
-# 关于
-
 <div class="note-page" markdown="1">
 
-<section class="page-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero" markdown="1">
 
-# 关于 Kai Wang
+<div class="section-heading-line">
+  <h1>个人简介</h1>
+  <span>ABOUT</span>
+</div>
 
-你好，我是 Kai Wang。我正在搭建自己的个人网站，也在学习如何把技术、设计和表达结合起来。这个网站会记录我的课程笔记、项目作品、工具实践和阶段性思考。
+你好，我是 **Kai Wang**。我正在搭建自己的个人网站，也在学习如何把技术、设计和表达结合起来。这个网站会记录我的课程笔记、项目作品、工具实践和阶段性思考。
 
 </section>
 

@@ -11,7 +11,7 @@
         <p>This site records my notes, project practice, and interaction design observations. If you are exploring similar things, start with the projects.</p>
       {% else %}
         <p class="site-footer-cta__kicker">下一步</p>
-        <h2>把学习、设计和代码，整理成可以被看见的作品。</h2>
+        <h2 style="font-size: 1.7rem !important;">把学习、设计和代码，整理成可以被看见的作品。</h2>
         <p>这个网站会持续记录我的课程笔记、项目实践和交互设计观察。如果你也在做类似的探索，欢迎从项目页开始看起。</p>
       {% endif %}
     </div>
@@ -31,16 +31,16 @@
       {% if is_en %}
         <p>Learning, building, and designing thoughtful digital experiences.</p>
       {% else %}
-        <p>持续学习、创作和设计有判断力的数字体验。</p>
+        <p style="font-size: 0.7rem;">持续学习、创作和设计有判断力的数字体验。</p>
       {% endif %}
     </div>
 
     <nav class="site-footer__group" aria-label="Explore">
-      <h3>{% if is_en %}Explore{% else %}探索{% endif %}</h3>
+      <h3 style="font-size: 0.8rem;">{% if is_en %}Explore{% else %}探索{% endif %}</h3>
       {% if is_en %}
         <a href="{{ 'en/course/' | url }}">Notes</a>
         <a href="{{ 'en/project/' | url }}">Projects</a>
-        <a href="{{ 'en/friends/' | url }}">Links</a>
+        <a href="{{ 'en/friends/' | url }}">Blogs</a>
         <a href="{{ 'en/about/' | url }}">About</a>
       {% else %}
         <a href="{{ 'course/' | url }}">课程</a>
@@ -51,7 +51,7 @@
     </nav>
 
     <nav class="site-footer__group" aria-label="Work">
-      <h3>{% if is_en %}Work{% else %}作品{% endif %}</h3>
+      <h3 style="font-size: 0.8rem;">{% if is_en %}Work{% else %}作品{% endif %}</h3>
       {% if is_en %}
         <a href="{{ 'en/project/' | url }}">Portfolio System</a>
         <a href="{{ 'en/course/' | url }}">Notes Library</a>
@@ -64,7 +64,7 @@
     </nav>
 
     <nav class="site-footer__group" aria-label="Keep in touch">
-      <h3>{% if is_en %}Keep in Touch{% else %}保持联系{% endif %}</h3>
+      <h3 style="font-size: 0.8rem;">{% if is_en %}Keep in Touch{% else %}保持联系{% endif %}</h3>
       <a href="https://github.com/nbwk123/My_website">GitHub</a>
       {% if is_en %}
         <a href="{{ 'en/course/' | url }}">Notes</a>
@@ -77,7 +77,9 @@
   </div>
 
   <div class="site-footer__bottom md-grid">
-    <span>© 2026 Kai Wang</span>
+    <p>© 2026 Kai Wang all rights reserved</p>
+    <span>make with <a href="https://www.mkdocs.org/">Mkdocs</a></span>
+    
     <div>
       {% if is_en %}
         <a href="{{ 'en/about/' | url }}">About</a>

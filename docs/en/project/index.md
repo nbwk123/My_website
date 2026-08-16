@@ -18,14 +18,14 @@ This page follows an Apple-inspired product display logic: fewer items, clearer 
 <div markdown="1">
 <p class="project-label">Featured Project</p>
 <h2>Personal Website System</h2>
-<p>A long-term personal website that organizes notes, projects, links, and self-introduction into a clear personal brand entry point.</p>
-<a href="../">View Home</a>
+<p>A personal portfolio system built from scratch with Vibe Coding, low-code management, and a publishing workflow.</p>
+<a href="website-system/">View Case</a>
 </div>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">
 <p class="project-label">Work 1</p>
 <h2>COSTORY</h2>
-<p>Turning learning from something I have seen into something I can reuse, with a stable format for goals, steps, problems, and summaries.</p>
+<p>An AI-assisted parent-child improvisational storytelling system that uses a physical prop and light prompts to reduce story stagnation.</p>
 <a href="costory/">View Project</a>
 </article>
 <article class="project-card interaction-tilt" data-tilt markdown="1">

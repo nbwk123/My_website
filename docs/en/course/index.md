@@ -1,12 +1,13 @@
-# Notes
-
 <div class="note-page" markdown="1">
 
-<section class="page-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero" markdown="1">
 
-# Notes
+<div class="section-heading-line">
+  <h1>Course Resources and Learning Notes</h1>
+  <span>COURSE</span>
+</div>
 
-This is not only a list of things I have learned. It is a growing knowledge system that turns learning into something reusable. Each note starts from a clear question: what problem it solves, how to practice it, and what judgment remains afterward.
+Notes from current and completed courses, organized around key content, methods, and reflections.
 
 </section>
 
