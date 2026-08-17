@@ -1,3 +1,11 @@
+<style>
+  .md-nav__item--active > .md-nav__link,
+  .md-nav__link--active {
+      color: rgb(255, 204, 0) !important;
+      font-weight: bold;
+  }
+</style>
+
 <div class="blogs-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero" markdown="1">
@@ -41,7 +49,7 @@ BLOG
 <div class="post__content">
 
 <p class="post__meta">2024-06-27～28 · 会议展会</p>
-<p class="post__title">2024年D20大会</p>
+<h2 class="post__title">2024年D20大会</h2>
 <p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
 <a href="../blogs/2024D20" class="post__link">阅读更多 →</a>
 
@@ -54,25 +62,51 @@ BLOG
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/program1.png" alt="Example post">
+<img class="post__img" src="../assets/Japan_Osaka_Kyoto.jpeg" alt="Example post">
 
 <div class="post-tags">
-<span class="post-tag">Design</span>
-<span class="post-tag">AI</span>
+<span class="post-tag">个人</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>
 </div>
 
 </div>
 
 <div class="post__content">
 
-<p class="post__meta">Apr 09, 2026 · Lab Life</p>
-<p class="post__title">April 9 Running and Eating</p>
-<p class="post__excerpt">A short record of daily experience, research life and personal reflection.</p>
-<a href="#" class="post__link">Read more →</a>
+<p class="post__meta">2025-06-30～07-04 · 旅行</p>
+<h2 class="post__title">日本·大阪·京都</h2>
+<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
+<a href="../blogs/2025D20" class="post__link">阅读更多 →</a>
 
 </div>
 
 </article>
+
+<!-- 第三篇文章 -->
+<article class="post">
+
+<div class="post__media">
+
+<img class="post__img" src="../assets/2025D20.jpeg" alt="Example post">
+
+<div class="post-tags">
+<span class="post-tag">个人</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>
+</div>
+
+</div>
+
+<div class="post__content">
+
+<p class="post__meta">2025-07-11 · 会议展会</p>
+<h2 class="post__title">2025年D20大会</h2>
+<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
+<a href="../blogs/2025D20" class="post__link">阅读更多 →</a>
+
+</div>
+
+</article>
+
 
 <!-- 地球模块的容器 -->
 <div style="
@@ -119,7 +153,7 @@ myGlobe.pointOfView({ altitude:3.5 });
 
 <div class="cat-list">
 
-<a href="#" class="cat cat--active" style="background:rgba(248,212,69,0.35)!important;color:rgb(255,204,0)!important;">
+<a href="#" class="cat cat--active">
 <span>所有</span>
 <span class="cat__count">31</span>
 </a>

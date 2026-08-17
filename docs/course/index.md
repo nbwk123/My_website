@@ -1,10 +1,18 @@
-<div class="note-page" markdown="1">
+<style>
+  .md-nav__item--active > .md-nav__link,
+  .md-nav__link--active {
+      color: rgb(236 99 123) !important;
+      font-weight: bold;
+  }
+</style>
+
+<div class="courses-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero" markdown="1">
 
 <div class="section-heading-line">
   <h1>课程资源与学习总结</h1>
-  <span>COURSE</span>
+  <span style="color:rgb(236 99 123 / 0.25)!important;">COURSE</span>
 </div>
 
 记录正在学习和已经完成的课程，整理其中的内容、方法与反思。
@@ -80,12 +88,6 @@
 </div>
 
 </aside>
-
-</div>
-
-</div>
-
-
 
 </div>
 

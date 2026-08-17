@@ -1,10 +1,12 @@
+<div class="projects-page" markdown="1">
+
+<section class="page-hero page-hero--plain course-hero">
+
+<div class="post_info">亲子即兴故事共创</div>
+
 <h1 class="costory-wordmark costory-wordmark-page">COSTORY</h1>
 
 <div class="note-page costory-case" markdown="1">
-
-<section class="case-hero" markdown="1">
-
-<p class="case-eyebrow">AI 辅助的亲子即兴故事共创系统</p>
 
 <p class="case-lead">借助实体道具与 AI 辅助提供情节引导与反馈，让亲子在高质量互动中共创故事。</p>
 
@@ -16,9 +18,11 @@
 <span>AI 原型</span>
 </div>
 
-<img class="case-cover-image" src="../../assets/costory-case/cover.jpg" alt="COSTORY 项目封面">
+</div>
 
 </section>
+
+<img class="case-cover-image" src="../../assets/costory-case/cover.jpg" alt="COSTORY 项目封面">
 
 <section class="case-dark-intro" markdown="1">
 <p class="case-section-label">核心命题</p>
@@ -243,5 +247,7 @@ AI 生成“角色-场景-事件”方向，不直接给完整答案。
 </section>
 
 <p class="case-back-link"><a href="../">返回项目列表</a></p>
+
+</div>
 
 </div>

@@ -25,11 +25,11 @@ nav:
   - 主页: index.md
   - 课程:
       - 课程首页: course/index.md
-      - 示例课程文档: course/example.md
   - 项目: project/index.md
   - 个人网站系统: project/website-system.md
   - COSTORY: project/costory.md
   - 博客: blogs/index.md
+  - D20全球设计院长峰会: blogs/2024D20.md
   - 关于: about/index.md
   - English:
       - Home: en/index.md

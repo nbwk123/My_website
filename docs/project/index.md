@@ -1,3 +1,11 @@
+<style>
+  .md-nav__item--active > .md-nav__link,
+  .md-nav__link--active {
+      color: #7c3aed !important;
+      font-weight: bold;
+  }
+</style>
+
 <div class="project-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero" markdown="1">
@@ -87,8 +95,6 @@
 </div>
 
 </aside>
-
-</div>
 
 </div>
 
