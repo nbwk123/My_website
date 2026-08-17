@@ -1,4 +1,4 @@
-<div class="note-page" markdown="1">
+<div class="about-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero" markdown="1">
 

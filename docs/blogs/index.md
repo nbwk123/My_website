@@ -48,9 +48,9 @@ BLOG
 
 <div class="post__content">
 
-<p class="post__meta">2024-06-27～28 · 会议展会</p>
+<p class="post__meta">2024-06-27～28·会议展会</p>
 <h2 class="post__title">2024年D20大会</h2>
-<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
+<p class="post__excerpt">AI时代的设计</p>
 <a href="../blogs/2024D20" class="post__link">阅读更多 →</a>
 
 </div>
@@ -73,10 +73,10 @@ BLOG
 
 <div class="post__content">
 
-<p class="post__meta">2025-06-30～07-04 · 旅行</p>
+<p class="post__meta">2025-06-30～07-04·旅行</p>
 <h2 class="post__title">日本·大阪·京都</h2>
 <p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="../blogs/2025D20" class="post__link">阅读更多 →</a>
+<a href="../blogs/Japan-travel" class="post__link">阅读更多 →</a>
 
 </div>
 
@@ -98,9 +98,9 @@ BLOG
 
 <div class="post__content">
 
-<p class="post__meta">2025-07-11 · 会议展会</p>
+<p class="post__meta">2025-07-11·会议展会</p>
 <h2 class="post__title">2025年D20大会</h2>
-<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
+<p class="post__excerpt">AI时代的设计师</p>
 <a href="../blogs/2025D20" class="post__link">阅读更多 →</a>
 
 </div>

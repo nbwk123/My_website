@@ -469,4 +469,40 @@
       this.classList.add("cat--active");
     });
   });
+
+  function initScrollReveal() {
+    // 1. 设置监视器：元素露出屏幕 10% 就开始动画
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // 弹一次就固定住
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // 2. 核心魔法：自动抓取 MkDocs 正文里的所有元素 和 你的卡片
+    // md-typeset p 是普通段落，img 是图片，h2/h3 是标题，.post 是你写的卡片
+    const elements = document.querySelectorAll('.md-typeset p, .md-typeset img, .md-typeset h2, .md-typeset h3, .post, figure');
+
+    // 3. 给这些元素统统加上动画装备，并放进监视器
+    elements.forEach((el) => {
+      // 为了防止页面初始加载时闪烁，只有当元素还没有 active 时才添加
+      if (!el.classList.contains('active')) {
+        el.classList.add('auto-reveal');
+        observer.observe(el);
+      }
+    });
+  }
+
+// 正常加载页面时运行
+  document.addEventListener("DOMContentLoaded", initScrollReveal);
+
+// 兼容 MkDocs Material 的 Instant Loading (页面无刷新加载功能)
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(function() {
+      initScrollReveal();
+    });
+  }
+
 })();

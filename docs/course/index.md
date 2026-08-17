@@ -53,7 +53,7 @@
 <p class="post__meta">2026-2027学年 · 秋冬学期</p>                                                              
 <h3 class="post__title">设计研究</h3>                                                                     
 <p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>                                                            
-<a href="../blogs/2024D20" class="post__link" style="color:rgb(236 99 123) !important;">阅读更多 →</a>                                                    
+<a href="../course/design-research" class="post__link" style="color:rgb(236 99 123) !important;">阅读更多 →</a>                                                    
 
 </div>                                                                                                      
 

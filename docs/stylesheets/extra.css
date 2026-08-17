@@ -1441,7 +1441,7 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
     grid-template-columns: minmax(15rem, 1.35fr) repeat(3, minmax(7rem, 0.8fr));
     gap: clamp(1.6rem, 3.2vw, 3rem);
     max-width: 62rem;
-    padding: 4.5rem 1.2rem 3.6rem;
+    padding: 2.5rem 1.2rem 3.6rem;
 }
 
 .site-footer__brand h2 {
@@ -1465,7 +1465,7 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
 
 .site-footer__group h3 {
     margin: 0 0 0.42rem;
-    color: #000000;
+    color: #af8d03;
     font-size: 0.72rem;
     font-weight: 900;
     letter-spacing: 0.22em;
@@ -2338,7 +2338,7 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
 }
 
 .project-page {
-    background: #f8f6fb;
+    background: #f1e9e3;
 }
 
 body:has(.project-page),
@@ -2348,7 +2348,7 @@ body:has(.project-page) .md-content,
 body:has(.project-page) .md-sidebar--primary,
 body:has(.project-page) .md-sidebar__scrollwrap,
 body:has(.project-page) .md-sidebar__inner {
-    background: #f8f6fb;
+    background: #f1e9e3;
 }
 
 .blogs-page {
@@ -2363,6 +2363,20 @@ body:has(.blogs-page) .md-sidebar--primary,
 body:has(.blogs-page) .md-sidebar__scrollwrap,
 body:has(.blogs-page) .md-sidebar__inner {
     background: #faf6e9;
+}
+
+.about-page {
+    background: #f8f6fb;
+}
+
+body:has(.about-page),
+body:has(.about-page) .md-container,
+body:has(.about-page) .md-main,
+body:has(.about-page) .md-content,
+body:has(.about-page) .md-sidebar--primary,
+body:has(.about-page) .md-sidebar__scrollwrap,
+body:has(.about-page) .md-sidebar__inner {
+    background: #f8f6fb;
 }
 
 .courses-page {
@@ -2469,7 +2483,6 @@ body:has(.courses-page) .md-sidebar__inner {
     font-weight: 600;
 }
 
-
 /* 内容 */
 .post__content {
     display: flex;
@@ -2477,11 +2490,10 @@ body:has(.courses-page) .md-sidebar__inner {
     height: 100%;
 }
 
-
 .post__meta {
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.2em;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #af8d03 !important;
     margin: 0;
@@ -2491,7 +2503,7 @@ body:has(.courses-page) .md-sidebar__inner {
     font-size: 16px;
     line-height: 26px;
     color: #000 !important;
-    margin-top: 0rem;
+    margin-top: 0;
 }
 
 
@@ -2551,10 +2563,42 @@ h2.post__title {
     color: rgb(236 99 123) !important;
 }
 
+.project-page .cat:hover {
+    background: rgb(232 108 8 / 0.2)!important;
+    color: #E86C08 !important;
+}
+
+.project-page .cat--active {
+    background: rgb(232 108 8 / 0.2)!important;
+    color: #E86C08 !important;
+}
+
 h3.post__title {
     font-weight: 600;
     font-size: 20px;
     line-height: 1.15;
     color: #000 !important;
     margin-top: 0.3rem;
+}
+
+img + em {
+    display: block;
+    text-align: left;
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 8px;
+    font-style: normal; /* 如果不想让字倾斜，可以加这句把它“扶正” */
+}
+
+/* 自动注入的全局隐藏状态（稍微偏移一点即可，30px 比较自然） */
+.auto-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 划入屏幕后的激活状态 */
+.auto-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }

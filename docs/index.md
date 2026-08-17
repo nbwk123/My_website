@@ -9,8 +9,8 @@ hide:
 <section class="home-hero">
   <div class="home-copy">
     <p class="home-kicker">学习 · 创作 · 设计</p>
-    <h1>欢迎来到我的网站！</h1>
-    <p class="home-subtitle">一个用 Vibe Coding 持续搭建和迭代的个人作品集系统，用来记录学习、设计判断和项目实践。</p>
+    <h1>代码即设计</h1>
+    <p class="home-subtitle">一个持续搭建和迭代的个人作品集系统，用来记录学习、设计判断和项目实践。</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">查看项目</a>
       <a href="course/" class="home-button">阅读笔记</a>
