@@ -1,5 +1,5 @@
 site_name: Kai Wang
-site_description: Kai Wang 的个人网站，记录学习、项目、作品与长期思考。
+site_description: Kai Wang 的个人网站，记录学习、项目、作品与思考等。
 site_url: https://nbwk123.github.io/My_website/
 
 theme:
@@ -23,8 +23,7 @@ theme:
 
 nav:
   - 主页: index.md
-  - 课程:
-      - 课程首页: course/index.md
+  - 课程: course/index.md
   - 项目: project/index.md
   - 个人网站系统: project/website-system.md
   - COSTORY: project/costory.md

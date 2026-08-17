@@ -21,54 +21,68 @@
 
 <div class="side-layout" markdown="1">
 
-<div class="side-main" markdown="1">
+<div class="blog__posts">
 
-## 文章列表
+<section class="page-hero page-hero--plain course-hero" style="margin-top: -2rem" markdown="1">                                             
+                                                                                                                                            
+<div class="section-heading-line" style="margin-top: -1.2rem;">                                                                                                          
+  <h2 style="font-size:32px !important; font-weight: 550; margin-bottom: -0.5vw !important;">秋冬学期</h2>                                      
+  <span style="color:rgb(236 99 123 / 0.25)!important; font-size:55px !important; --course-watermark-left: 85%;">2026--2027-1</span>              
+</div>                                                                                                                                      
+                                                                                                                                            
+</section>                                                                                                                                  
 
-<div class="module-list" markdown="1">
+<div class="blog__posts" style="margin-top: -4rem;">                                                                                   
 
-<article class="module-row" markdown="1">
-<span>NOTE 01</span>
+<!-- 第一篇文章 -->                                                                                              
+<article class="post">                                                                                      
 
-<div markdown="1">
+<div class="post__media">                                                                                   
 
-**示例课程文档**
+<img class="post__img" src="../assets/design-research.jpg" alt="设计研究">                                
 
-一个可复制的课程笔记模板，展示摘要、深色卡片、资源块和步骤模块的写法。
+<div class="post-tags">                                                                                     
+<span class="post-tag">个人</span>                                                                            
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>     
+</div>                                                                                                      
 
-</div>
+</div>                                                                                                      
 
-[阅读](example.md)
+<div class="post__content">                                                                                 
+
+<p class="post__meta">2026-2027学年 · 秋冬学期</p>                                                              
+<h3 class="post__title">设计研究</h3>                                                                     
+<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>                                                            
+<a href="../blogs/2024D20" class="post__link" style="color:rgb(236 99 123) !important;">阅读更多 →</a>                                                    
+
+</div>                                                                                                      
 
 </article>
 
-</div>
+<!-- 第二篇文章 -->                                                                                              
+<article class="post">                                                                                      
 
-<!-- 后面的正文也继续写在这里 -->
+<div class="post__media">                                                                                   
 
-## 未来可以整理的方向
+<img class="post__img" src="../assets/design-research.jpg" alt="设计研究">                                
 
-<div class="note-grid" markdown="1">
+<div class="post-tags">                                                                                     
+<span class="post-tag">个人</span>                                                                            
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>     
+</div>                                                                                                      
 
-<section class="note-block" markdown="1">
-### 编程与网站搭建
-记录环境配置、网页结构、部署流程和常见问题。
-</section>
+</div>                                                                                                      
 
-<section class="note-block" markdown="1">
-### 产品与交互设计
-拆解优秀页面的层级、动线、反馈和内容组织。
-</section>
+<div class="post__content">                                                                                 
 
-<section class="note-block" markdown="1">
-### AI 工具使用方法
-沉淀提示词、自动化流程和实际学习场景。
-</section>
+<p class="post__meta">2026-2027学年 · 秋冬学期</p>                                                              
+<h3 class="post__title">设计研究</h3>                                                                     
+<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>                                                            
+<a href="../blogs/2024D20" class="post__link" style="color:rgb(236 99 123) !important;">阅读更多 →</a>                                                    
 
-<section class="note-block" markdown="1">
-### 个人知识管理
-把课程、阅读、项目和想法连接成长期可更新的系统。
-</section>
+</div>                                                                                                      
+
+</article>
 
 </div>
 
@@ -80,8 +94,8 @@
 <p class="side-h">类型</p>
 <div class="cat-list">
   <a href="#" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
-  <a href="#" class="cat"><span>News</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Publications</span><span class="cat__count">3</span></a>
+  <a href="#" class="cat"><span>技术类</span><span class="cat__count"></span></a>
+  <a href="#" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
   <a href="#" class="cat"><span>Events</span><span class="cat__count"></span></a>
   <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
