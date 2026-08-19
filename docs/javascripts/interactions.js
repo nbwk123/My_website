@@ -471,38 +471,100 @@
   });
 
   function initScrollReveal() {
-    // 1. 设置监视器：元素露出屏幕 10% 就开始动画
+
+    // 1. 设置监视器
     const observer = new IntersectionObserver((entries) => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
+
           entry.target.classList.add('active');
-          observer.unobserve(entry.target); // 弹一次就固定住
+
+          // 动画只播放一次
+          observer.unobserve(entry.target);
         }
+
       });
-    }, { threshold: 0.1 });
 
-    // 2. 核心魔法：自动抓取 MkDocs 正文里的所有元素 和 你的卡片
-    // md-typeset p 是普通段落，img 是图片，h2/h3 是标题，.post 是你写的卡片
-    const elements = document.querySelectorAll('.md-typeset p, .md-typeset img, .md-typeset h2, .md-typeset h3, .post, figure');
+    }, {
+      threshold: 0.1,
 
-    // 3. 给这些元素统统加上动画装备，并放进监视器
+      // 元素稍微进入屏幕以后再出现
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+
+    // 2. 保留你原来的元素选择方式
+    const elements = document.querySelectorAll(
+        '.md-typeset p, ' +
+        '.md-typeset img, ' +
+        '.md-typeset h2, ' +
+        '.md-typeset h3, ' +
+        '.post, ' +
+        'figure'
+    );
+
+
+    // 3. 给元素添加动画
     elements.forEach((el) => {
-      // 为了防止页面初始加载时闪烁，只有当元素还没有 active 时才添加
-      if (!el.classList.contains('active')) {
+
+      /*
+       * 如果元素处于 .post 内部，
+       * 就让整个 .post 动，而不是里面的 p / img 再重复动。
+       *
+       * 但 .post 自己不受影响。
+       */
+      if (
+          el.closest('.post') &&
+          !el.classList.contains('post')
+      ) {
+        return;
+      }
+
+
+      /*
+       * 如果图片已经放在 figure 里面，
+       * 就让 figure 整体动，
+       * 避免 figure 和 img 重复动画。
+       */
+      if (
+          el.tagName === 'IMG' &&
+          el.closest('figure')
+      ) {
+        return;
+      }
+
+
+      // 防止重复初始化
+      if (
+          !el.classList.contains('auto-reveal') &&
+          !el.classList.contains('active')
+      ) {
+
         el.classList.add('auto-reveal');
+
         observer.observe(el);
       }
+
     });
   }
 
-// 正常加载页面时运行
-  document.addEventListener("DOMContentLoaded", initScrollReveal);
 
-// 兼容 MkDocs Material 的 Instant Loading (页面无刷新加载功能)
+// 正常加载页面时运行
+  document.addEventListener(
+      "DOMContentLoaded",
+      initScrollReveal
+  );
+
+
+// 兼容 MkDocs Material Instant Loading
   if (typeof document$ !== "undefined") {
+
     document$.subscribe(function() {
       initScrollReveal();
     });
+
   }
 
 })();

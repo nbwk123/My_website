@@ -55,7 +55,7 @@ hide:
 
 <section class="home-section home-manifesto">
   <p class="section-kicker">网站的方向</p>
-  <p class="home-tittle">少一点堆砌，多一点判断。</p>
+  <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">重在分享想法，兼项目展示。</p>
   <p>这个网站不仅展示结果，也记录我如何借助 AI 协作、低代码管理和设计评估，把一个个人空间持续打磨成可维护的作品集系统。</p>
 </section>
 
@@ -76,3 +76,6 @@ hide:
     <p>持续更新我的方向、能力边界和正在形成的个人风格。</p>
   </a>
 </section>
+
+<h1 style="font-weight: bold">课程笔记</h1>
+<h1 style="font-weight: bold">项目作品</h1>

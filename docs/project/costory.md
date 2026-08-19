@@ -8,7 +8,7 @@
 
 <div class="note-page costory-case" markdown="1">
 
-<p class="case-lead">借助实体道具与 AI 辅助提供情节引导与反馈，让亲子在高质量互动中共创故事。</p>
+借助实体道具与 AI 辅助提供情节引导与反馈，让亲子在高质量互动中共创故事。
 
 <div class="case-meta" markdown="1">
 <span>3 Weeks</span>
@@ -21,6 +21,19 @@
 </div>
 
 </section>
+
+<div class="blog__posts">
+
+<section class="page-hero page-hero--plain course-hero" style="margin-top: -2rem" markdown="1">                                             
+
+<div class="section-heading-line" style="margin-top: -1.2rem;">                                                                                                          
+  <h2 style="font-size:32px !important; font-weight: 550; margin-bottom: -0.5vw !important;">项目初心</h2>                                      
+  <span style="color:rgb(236 99 123 / 0.25)!important; font-size:55px !important; --course-watermark-left: 85%;">BEGIN</span>              
+</div>                                                                                                                                      
+
+</section>
+
+</div>
 
 <img class="case-cover-image" src="../../assets/costory-case/cover.jpg" alt="COSTORY 项目封面">
 

@@ -94,7 +94,7 @@
 <p class="post__meta">2024-06-27～28 · 会议展会</p>
 <h2 class="post__title">个人网页搭建</h2>
 <p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="../blogs/2024D20" class="post__link">阅读更多 →</a>
+<a href="./My_website_design" class="post__link">阅读更多 →</a>
 
 </div>
 

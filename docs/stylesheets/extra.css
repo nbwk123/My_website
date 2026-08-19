@@ -2590,15 +2590,31 @@ img + em {
     font-style: normal; /* 如果不想让字倾斜，可以加这句把它“扶正” */
 }
 
-/* 自动注入的全局隐藏状态（稍微偏移一点即可，30px 比较自然） */
+/* 自动注入的全局隐藏状态 */
 .auto-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    transition:
+            opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
 }
+
 
 /* 划入屏幕后的激活状态 */
 .auto-reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* 尊重系统的“减少动画”设置 */
+@media (prefers-reduced-motion: reduce) {
+    .auto-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
