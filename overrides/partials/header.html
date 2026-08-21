@@ -28,15 +28,61 @@
     <div class="site-topbar__nav" aria-label="主导航">
       {% if is_en %}
         <a class="site-topbar__link{% if current_url == 'en/' or current_url == 'en/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'en/' | url }}">Home</a>
-        <a class="site-topbar__link{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Notes</a>
-        <a class="site-topbar__link{% if current_url.startswith('en/project/') %} site-topbar__link--active{% endif %}" href="{{ 'en/project/' | url }}">Projects</a>
-        <a class="site-topbar__link{% if current_url.startswith('en/friends/') %} site-topbar__link--active{% endif %}" href="{{ 'en/friends/' | url }}">Links</a>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Notes<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Notes submenu">
+            <a href="{{ 'en/course/' | url }}">Overview</a>
+            <a href="{{ 'en/course/design-research/' | url }}">Design Research</a>
+            <a href="{{ 'en/course/example/' | url }}">Sample Note</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/project/') %} site-topbar__link--active{% endif %}" href="{{ 'en/project/' | url }}">Projects<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Projects submenu">
+            <a href="{{ 'en/project/' | url }}">Overview</a>
+            <a href="{{ 'en/project/website-system/' | url }}">Personal Website System</a>
+            <a href="{{ 'en/project/costory/' | url }}">COSTORY</a>
+            <a href="{{ 'en/project/My_website_design/' | url }}">Personal Website Design</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'en/blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Blog submenu">
+            <a href="{{ 'en/blogs/' | url }}">Overview</a>
+            <a href="{{ 'en/blogs/2024D20/' | url }}">2024 D20 Summit</a>
+            <a href="{{ 'en/blogs/Japan-travel/' | url }}">Japan · Osaka · Kyoto</a>
+            <a href="{{ 'en/blogs/2025D20/' | url }}">2025 D20 Summit</a>
+          </div>
+        </div>
         <a class="site-topbar__link{% if current_url.startswith('en/about/') %} site-topbar__link--active{% endif %}" href="{{ 'en/about/' | url }}">About</a>
       {% else %}
         <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">主页</a>
-        <a class="site-topbar__link{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程</a>
-        <a class="site-topbar__link{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">项目</a>
-        <a class="site-topbar__link{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">博客</a>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="课程子菜单">
+            <a href="{{ 'course/' | url }}">课程总览</a>
+            <a href="{{ 'course/design-research/' | url }}">设计研究</a>
+            <a href="{{ 'course/example/' | url }}">示例课程文档</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">项目<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="项目子菜单">
+            <a href="{{ 'project/' | url }}">项目总览</a>
+            <a href="{{ 'project/website-system/' | url }}">个人网站系统</a>
+            <a href="{{ 'project/costory/' | url }}">COSTORY</a>
+            <a href="{{ 'project/My_website_design/' | url }}">个人网页搭建</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">博客<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="博客子菜单">
+            <a href="{{ 'blogs/' | url }}">博客总览</a>
+            <a href="{{ 'blogs/2024D20/' | url }}">2024年D20大会</a>
+            <a href="{{ 'blogs/Japan-travel/' | url }}">日本·大阪·京都</a>
+            <a href="{{ 'blogs/2025D20/' | url }}">2025年D20大会</a>
+          </div>
+        </div>
         <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">关于</a>
       {% endif %}
     </div>

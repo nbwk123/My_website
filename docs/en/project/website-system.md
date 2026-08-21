@@ -20,7 +20,7 @@ A personal portfolio system continuously built and iterated with Vibe Coding. It
 <span>GOAL 01</span>
 <div markdown="1">
 <strong>Turn the portfolio into a system, not a one-off page.</strong>
-<p>The site needs to hold the homepage, notes, project cases, links, and self-introduction while staying clear as more content is added.</p>
+<p>The site needs to hold the homepage, notes, project cases, blogs, and self-introduction while staying clear as more content is added.</p>
 </div>
 </article>
 
@@ -65,7 +65,7 @@ The homepage uses a large headline, stacked project cards, and drag-to-switch in
 
 <section class="note-step" markdown="1">
 ### Modular content
-The notes, projects, links, and about pages use richer modules instead of plain Markdown paragraphs only.
+The notes, projects, blogs, and about pages use richer modules instead of plain Markdown paragraphs only.
 </section>
 
 <section class="note-step" markdown="1">

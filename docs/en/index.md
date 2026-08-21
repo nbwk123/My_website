@@ -9,14 +9,14 @@ hide:
 <section class="home-hero">
   <div class="home-copy">
     <p class="home-kicker">Learning · Creating · Designing</p>
-    <h1>Welcome to my website!</h1>
-    <p class="home-subtitle">A personal portfolio system continuously built and iterated with Vibe Coding, used to record learning, design judgment, and project practice.</p>
+    <h1>Code as Design</h1>
+    <p class="home-subtitle">A personal portfolio system that is continuously built and iterated, used to record learning, design judgment, and project practice.</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">View Projects</a>
       <a href="course/" class="home-button">Read Notes</a>
     </div>
   </div>
-  <div class="home-card-stack" data-card-stack aria-label="Project card stack. Drag the top card to switch projects.">
+  <div class="home-card-stack" data-card-stack aria-label="Project portfolio card stack. Drag the top card to switch.">
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/costory/">
       <img src="../assets/program1.png" alt="Project 1 cover">
       <div class="visual-caption">
@@ -35,7 +35,7 @@ hide:
         <div class="project-wordmark-group">
           <span class="project-wordmark project-wordmark-waing">WAING</span>
         </div>
-        <strong>Turning a personal website into a portfolio system that can be edited, evaluated, and published over time.</strong>
+        <strong>Turning a personal website into a portfolio system that can be continuously edited, evaluated, and published.</strong>
         <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
@@ -55,8 +55,8 @@ hide:
 
 <section class="home-section home-manifesto">
   <p class="section-kicker">Site Direction</p>
-  <h2>Less piling up. More judgment.</h2>
-  <p>This site is not only a place to display outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>
+  <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">Focused on sharing ideas, with projects as support.</p>
+  <p>This site not only displays outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>
 </section>
 
 <section class="home-feature-grid">
@@ -76,3 +76,6 @@ hide:
     <p>Keep updating my direction, ability boundaries, and developing personal style.</p>
   </a>
 </section>
+
+<h1 style="font-weight: bold">Course Notes</h1>
+<h1 style="font-weight: bold">Projects</h1>

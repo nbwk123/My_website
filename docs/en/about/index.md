@@ -1,12 +1,13 @@
-# About
+<div class="about-page" markdown="1">
 
-<div class="note-page" markdown="1">
+<section class="page-hero page-hero--plain course-hero" markdown="1">
 
-<section class="page-hero" markdown="1">
+<div class="section-heading-line">
+  <h1>Profile</h1>
+  <span>ABOUT</span>
+</div>
 
-# About Kai Wang
-
-Hi, I am Kai Wang. I am building my personal website while learning how to connect technology, design, and expression. This site records my notes, projects, tool practice, and current thoughts.
+Hi, I am **Kai Wang**. I am building my personal website while learning how to connect technology, design, and expression. This site records my course notes, projects, tool practice, and stage-by-stage reflections.
 
 </section>
 
@@ -16,7 +17,7 @@ Hi, I am Kai Wang. I am building my personal website while learning how to conne
 
 ## Current Position
 
-I want to become someone who can clarify problems, design clear interfaces, and turn ideas into real work. This website is my long-term practice space.
+I hope to gradually become someone who can explain problems clearly, make interfaces clear, and turn ideas into real work. This website is my long-term practice space.
 
 </section>
 
@@ -26,8 +27,8 @@ I want to become someone who can clarify problems, design clear interfaces, and 
 
 - A clear learning archive
 - A continuously updated portfolio
-- A personal space with taste and judgment
-- A place where ideas become real work
+- A personal space that reflects taste and judgment
+- A place where I can truly turn ideas into reality
 
 </section>
 
@@ -38,23 +39,23 @@ I want to become someone who can clarify problems, design clear interfaces, and 
 <div class="note-grid" markdown="1">
 
 <section class="note-block" markdown="1">
-### Website Building and Content Structure
-Learning how page structure, navigation, search, and long-term maintenance connect.
+### Website Building and Content Organization
+Learning how page structure, navigation, search, and long-term content maintenance connect.
 </section>
 
 <section class="note-block" markdown="1">
 ### Product Display and Interaction Design
-Observing hierarchy, rhythm, and feedback in strong websites, then turning them into practice.
+Observing the hierarchy, rhythm, and feedback of strong websites, then translating them into my own design practice.
 </section>
 
 <section class="note-block" markdown="1">
 ### AI-assisted Learning and Creation
-Using AI as a learning partner and production tool, not only a one-time generator.
+Treating AI as a learning partner and production tool, rather than using it only to generate one-off content.
 </section>
 
 <section class="note-block" markdown="1">
-### Long-term Personal Branding
-Letting projects, notes, and thoughts gradually form a stable and credible personal entry point.
+### Long-term Personal Brand Building
+Letting projects, notes, and thoughts gradually form a stable, credible, and updateable personal entry point.
 </section>
 
 </div>
@@ -63,7 +64,7 @@ Letting projects, notes, and thoughts gradually form a stable and credible perso
 
 ## Next Step
 
-I will continue improving the site's content structure and gradually fill in notes, projects, and design observations. Instead of finishing it all at once, I want this site to grow with me.
+I will continue improving the content structure of this site and gradually fill in courses, projects, and design observations. Instead of finishing everything at once, I hope it becomes a space that grows with me.
 
 </section>
 
