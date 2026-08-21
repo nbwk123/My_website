@@ -2,58 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nbwk123.github.io/My_website/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/links/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/about/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/blogs/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/blogs/2024D20/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/blogs/2025D20/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/blogs/Japan-travel/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/course/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/course/design-research/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/course/example/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/about/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/blogs/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/blogs/2024D20/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/blogs/2025D20/</loc>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/blogs/Japan-travel/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/course/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/course/design-research/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/course/example/</loc>
-         <lastmod>2026-08-09</lastmod>
-    </url>
-    <url>
-         <loc>https://nbwk123.github.io/My_website/en/friends/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/project/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/en/project/My_website_design/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/en/project/costory/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
-         <loc>https://nbwk123.github.io/My_website/friends/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <loc>https://nbwk123.github.io/My_website/en/project/website-system/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/project/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/project/My_website_design/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://nbwk123.github.io/My_website/project/costory/</loc>
-         <lastmod>2026-08-09</lastmod>
+         <lastmod>2026-08-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nbwk123.github.io/My_website/project/website-system/</loc>
+         <lastmod>2026-08-21</lastmod>
     </url>
 </urlset>

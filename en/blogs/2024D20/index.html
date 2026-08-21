@@ -6,35 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Kai Wang 的个人网站，记录学习、项目、作品与长期思考。">
+        <meta name="description" content="Kai Wang 的个人网站，记录学习、项目、作品与思考等。">
       
       
       
-        <link rel="canonical" href="https://nbwk123.github.io/My_website/en/friends/">
+        <link rel="canonical" href="https://nbwk123.github.io/My_website/en/blogs/2024D20/">
       
       
-        <link rel="prev" href="../project/costory/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../about/">
+        <link rel="next" href="../Japan-travel/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/avatar-kai.png">
+      <link rel="icon" href="../../../assets/avatar-kai.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Links - Kai Wang</title>
+        <title>2024 D20 Global Design Deans Summit - Kai Wang</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#links" class="md-skip">
+        <a href="#d20-global-design-deans-summit" class="md-skip">
           跳转至
         </a>
       
@@ -89,21 +89,62 @@
     
     
       
+<script>
+  (() => {
+    const key = "kaiwang-site-theme";
+    const modes = new Set(["light", "dark", "system"]);
+    const saved = (() => {
+      try {
+        return localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    })();
+    const mode = modes.has(saved) ? saved : "system";
+    const active = mode === "system" && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : mode === "dark" ? "dark" : "light";
+    document.documentElement.dataset.siteTheme = mode;
+    document.documentElement.dataset.siteThemeActive = active;
+    document.documentElement.setAttribute("data-md-color-scheme", active === "dark" ? "slate" : "default");
+  })();
+</script>
 <header class="site-topbar" data-md-component="header">
   
   
   <nav class="site-topbar__inner md-grid" aria-label="页眉">
-    <a class="site-topbar__brand" href="../.." aria-label="Kai Wang">
+    <a class="site-topbar__brand" href="../../.." aria-label="Kai Wang">
       Kai Wang
     </a>
 
     <div class="site-topbar__nav" aria-label="主导航">
       
-        <a class="site-topbar__link" href="../">Home</a>
-        <a class="site-topbar__link" href="../course/">Notes</a>
-        <a class="site-topbar__link" href="../project/">Projects</a>
-        <a class="site-topbar__link site-topbar__link--active" href="./">Links</a>
-        <a class="site-topbar__link" href="../about/">About</a>
+        <a class="site-topbar__link" href="../../">Home</a>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown" href="../../course/">Notes<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Notes submenu">
+            <a href="../../course/">Overview</a>
+            <a href="../../course/design-research/">Design Research</a>
+            <a href="../../course/example/">Sample Note</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown" href="../../project/">Projects<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Projects submenu">
+            <a href="../../project/">Overview</a>
+            <a href="../../project/website-system/">Personal Website System</a>
+            <a href="../../project/costory/">COSTORY</a>
+            <a href="../../project/My_website_design/">Personal Website Design</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown site-topbar__link--active" href="../">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Blog submenu">
+            <a href="../">Overview</a>
+            <a href="./">2024 D20 Summit</a>
+            <a href="../Japan-travel/">Japan · Osaka · Kyoto</a>
+            <a href="../2025D20/">2025 D20 Summit</a>
+          </div>
+        </div>
+        <a class="site-topbar__link" href="../../about/">About</a>
       
     </div>
 
@@ -152,17 +193,28 @@
           </div>
         
       
+      <div class="site-topbar__theme" role="group" aria-label="Color mode" data-site-theme-switcher>
+        <button type="button" data-site-theme-value="system" aria-label="Follow system" title="Follow system" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+        </button>
+        <button type="button" data-site-theme-value="light" aria-label="Light mode" title="Light mode" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+        </button>
+        <button type="button" data-site-theme-value="dark" aria-label="Dark mode" title="Dark mode" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 0 13 9.54 10 10 0 0 1 0-19.08A10 10 0 0 0 2 12"/></svg>
+        </button>
+      </div>
       <div class="site-topbar__lang" aria-label="语言切换">
         
-          <a href="../../index.html">中文</a>
+          <a href="../../../index.html">中文</a>
           <span>EN</span>
         
       </div>
       
         
       
-      <a class="site-topbar__mark" href="../about/" aria-label="About Kai Wang">
-        <img src="../../assets/avatar-kai.png" alt="Kai Wang">
+      <a class="site-topbar__mark" href="../../about/" aria-label="About Kai Wang">
+        <img src="../../../assets/avatar-kai.png" alt="Kai Wang">
       </a>
 
       <label class="site-topbar__menu md-icon" for="__drawer" aria-label="drawer">
@@ -189,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -207,18 +259,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../course/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../../course/" class="md-tabs__link">
+        
   
+  
+    
   
   课程
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -228,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../project/" class="md-tabs__link">
+      <a href="../../../project/" class="md-tabs__link">
         
   
   
@@ -247,7 +298,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../project/costory/" class="md-tabs__link">
+      <a href="../../../project/website-system/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  个人网站系统
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../project/costory/" class="md-tabs__link">
         
   
   
@@ -266,13 +336,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../friends/" class="md-tabs__link">
+      <a href="../../../blogs/" class="md-tabs__link">
         
   
   
     
   
-  友链
+  博客
 
       </a>
     </li>
@@ -285,7 +355,45 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../blogs/2024D20/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  D20全球设计院长峰会
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../blogs/Japan-travel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日本·大阪·京都
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -308,7 +416,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -344,9 +452,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kai Wang" class="md-nav__button md-logo" aria-label="Kai Wang" data-md-component="logo">
+    <a href="../../.." title="Kai Wang" class="md-nav__button md-logo" aria-label="Kai Wang" data-md-component="logo">
       
-  <img src="../../assets/avatar-kai.png" alt="logo">
+  <img src="../../../assets/avatar-kai.png" alt="logo">
 
     </a>
     Kai Wang
@@ -361,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -387,25 +495,9 @@
   
   
   
-    
-    
-    
-    
-      
-      
+    <li class="md-nav__item">
+      <a href="../../../course/" class="md-nav__link">
         
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -419,82 +511,10 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    课程
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../course/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    课程首页
-  
-
-    
-  </span>
-  
-  
-
       </a>
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../course/example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    示例课程文档
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -503,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/" class="md-nav__link">
+      <a href="../../../project/" class="md-nav__link">
         
   
   
@@ -530,7 +550,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/costory/" class="md-nav__link">
+      <a href="../../../project/website-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人网站系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/costory/" class="md-nav__link">
         
   
   
@@ -557,14 +604,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../friends/" class="md-nav__link">
+      <a href="../../../blogs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    友链
+    博客
   
 
     
@@ -584,7 +631,61 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../blogs/2024D20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D20全球设计院长峰会
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/Japan-travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本·大阪·京都
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -629,10 +730,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -650,8 +751,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -668,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -696,14 +797,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../course/" class="md-nav__link">
+      <a href="../../course/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Notes
+    Courses
   
 
     
@@ -724,35 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../course/example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sample Note
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
+      <a href="../../project/" class="md-nav__link">
         
   
   
@@ -780,7 +853,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/costory/" class="md-nav__link">
+      <a href="../../project/website-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Website System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/costory/" class="md-nav__link">
         
   
   
@@ -788,6 +889,34 @@
     
   
     COSTORY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
   
 
     
@@ -824,7 +953,7 @@
   <span class="md-ellipsis">
     
   
-    Links
+    2024 D20 Global Design Deans Summit
   
 
     
@@ -846,7 +975,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../Japan-travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan · Osaka · Kyoto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -891,47 +1048,32 @@
 
 
 
-<h1 id="links">Links</h1>
-<div class="note-page">
-<section class="page-hero">
-<h1 id="links_1">Links</h1>
-<p>This page is not a random bookmark list. It is for people, blogs, tools, and sources I would like to revisit over time.</p>
-</section>
-<section class="note-callout">
-<p><strong>Selection rule:</strong> A link should continue to inspire me or help visitors understand the learning, design, and creative directions I care about.</p>
-</section>
-<h2 id="recommended-links">Recommended Links</h2>
-<div class="link-card-grid">
-<p><a class="link-card" href="https://www.mkdocs.org/" markdown="1">
-<span>DOCS</span></p>
-<h3 id="mkdocs-documentation">MkDocs Documentation</h3>
-<p>A static documentation site generator, useful for lightweight and maintainable personal websites.</p>
-<p></a></p>
-<p><a class="link-card" href="https://squidfunk.github.io/mkdocs-material/" markdown="1">
-<span>THEME</span></p>
-<h3 id="material-for-mkdocs">Material for MkDocs</h3>
-<p>The theme used by this site, with navigation, search, extensions, and a strong reading experience.</p>
-<p></a></p>
+<style>
+  .md-nav__item--active > .md-nav__link,
+  .md-nav__link--active {
+      color: rgb(255, 204, 0) !important;
+      font-weight: bold;
+  }
+</style>
+
+<div class="blogs-page">
+<section class="page-hero page-hero--plain course-hero">
+<div class="post_info">2024.06.27-28</div>
+<div class="section-heading-line">
+<h1 id="d20-global-design-deans-summit">D20 Global Design Deans Summit</h1>
+
+<span style="color:rgba(255,227,113,0.48)!important; --course-watermark-left: 90%;">
+2024
+</span>
+
 </div>
-<h2 id="future-additions">Future Additions</h2>
-<div class="note-grid">
-<section class="note-block">
-<h3 id="friends-websites">Friends' Websites</h3>
-<p>Personal spaces that are worth revisiting and updating over time.</p>
-</section>
-<section class="note-block">
-<h3 id="long-term-blogs">Long-term Blogs</h3>
-<p>Authors with consistent thought density and useful methods.</p>
-</section>
-<section class="note-block">
-<h3 id="tools-and-learning-resources">Tools and Learning Resources</h3>
-<p>Resources for website building, design, AI, and writing.</p>
-</section>
-<section class="note-block">
-<h3 id="design-references">Design References</h3>
-<p>Interaction, visual, and content-structure examples worth observing.</p>
-</section>
+<div class="post-tags" style="margin-top:0.2rem">
+<span class="post-tag">Personal</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
 </div>
+<p style="font-size: 20px; font-weight:500 !important; margin-top:0.7rem">Design in the AI Era</p>
+</section>
+<p><img alt="20240627-28 D20 Summit" src="../../../assets/2024D20.jpeg" style="border-radius: 16px; margin-top:-1.3rem;" width="700" /></p>
 </div>
 
 
@@ -976,40 +1118,41 @@
     </div>
 
     <nav class="site-footer__group" aria-label="Explore">
-      <h3>Explore</h3>
+      <h3 style="font-size: 0.8rem;">Explore</h3>
       
-        <a href="../course/">Notes</a>
-        <a href="../project/">Projects</a>
-        <a href="./">Links</a>
-        <a href="../about/">About</a>
+        <a href="../../course/">Notes</a>
+        <a href="../../project/">Projects</a>
+        <a href="../">Blog</a>
+        <a href="../../about/">About</a>
       
     </nav>
 
     <nav class="site-footer__group" aria-label="Work">
-      <h3>Work</h3>
+      <h3 style="font-size: 0.8rem;">Work</h3>
       
-        <a href="../project/">Portfolio System</a>
-        <a href="../course/">Notes Library</a>
-        <a href="../project/">Interaction Design Practice</a>
+        <a href="../../project/">Portfolio System</a>
+        <a href="../../course/">Notes Library</a>
+        <a href="../../project/">Interaction Design Practice</a>
       
     </nav>
 
     <nav class="site-footer__group" aria-label="Keep in touch">
-      <h3>Keep in Touch</h3>
+      <h3 style="font-size: 0.8rem;">Keep in Touch</h3>
       <a href="https://github.com/nbwk123/My_website">GitHub</a>
       
-        <a href="../course/">Notes</a>
-        <a href="../about/">Contact</a>
+        <a href="../../course/">Notes</a>
+        <a href="../../about/">Contact</a>
       
     </nav>
   </div>
 
   <div class="site-footer__bottom md-grid">
-    <span>© 2026 Kai Wang</span>
+    <p style="white-space: pre-wrap;">Copyright © 2026 Kai Wang   All Rights Reserved.               made with <a href="https://www.mkdocs.org/">Mkdocs</a></p>
+
     <div>
       
-        <a href="../about/">About</a>
-        <a href="./">Links</a>
+        <a href="../../about/">About</a>
+        <a href="../">Blog</a>
       
     </div>
   </div>
@@ -1024,12 +1167,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../javascripts/interactions.js"></script>
+        <script src="../../../javascripts/interactions.js"></script>
       
     
   </body>

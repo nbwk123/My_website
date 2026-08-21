@@ -1,4 +1,68 @@
 (() => {
+  const storageKey = "kaiwang-site-theme";
+  const systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const allowedThemes = new Set(["light", "dark", "system"]);
+
+  const getSavedTheme = () => {
+    try {
+      const saved = window.localStorage.getItem(storageKey);
+      return allowedThemes.has(saved) ? saved : "system";
+    } catch {
+      return "system";
+    }
+  };
+
+  const resolveTheme = (mode) => (mode === "system" ? (systemQuery.matches ? "dark" : "light") : mode);
+
+  const updateControls = (mode) => {
+    document.querySelectorAll("[data-site-theme-switcher]").forEach((switcher) => {
+      switcher.querySelectorAll("[data-site-theme-value]").forEach((button) => {
+        const isActive = button.dataset.siteThemeValue === mode;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    });
+  };
+
+  const applyTheme = (mode) => {
+    const resolved = resolveTheme(mode);
+    document.documentElement.dataset.siteTheme = mode;
+    document.documentElement.dataset.siteThemeActive = resolved;
+    document.documentElement.setAttribute("data-md-color-scheme", resolved === "dark" ? "slate" : "default");
+    updateControls(mode);
+  };
+
+  const saveTheme = (mode) => {
+    try {
+      window.localStorage.setItem(storageKey, mode);
+    } catch {
+      // Local storage can be unavailable in private contexts; visual switching should still work.
+    }
+  };
+
+  let currentMode = getSavedTheme();
+  applyTheme(currentMode);
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-site-theme-value]");
+
+    if (!button) {
+      return;
+    }
+
+    currentMode = button.dataset.siteThemeValue;
+    saveTheme(currentMode);
+    applyTheme(currentMode);
+  });
+
+  systemQuery.addEventListener("change", () => {
+    if (currentMode === "system") {
+      applyTheme(currentMode);
+    }
+  });
+})();
+
+(() => {
   const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -393,4 +457,114 @@
     },
     true
   );
+
+  document.querySelectorAll(".cat").forEach(item => {
+    item.addEventListener("click", function(event) {
+      event.preventDefault();
+  
+      document.querySelectorAll(".cat").forEach(cat => {
+        cat.classList.remove("cat--active");
+      });
+  
+      this.classList.add("cat--active");
+    });
+  });
+
+  function initScrollReveal() {
+
+    // 1. 设置监视器
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add('active');
+
+          // 动画只播放一次
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    }, {
+      threshold: 0.1,
+
+      // 元素稍微进入屏幕以后再出现
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+
+    // 2. 保留你原来的元素选择方式
+    const elements = document.querySelectorAll(
+        '.md-typeset p, ' +
+        '.md-typeset img, ' +
+        '.md-typeset h2, ' +
+        '.md-typeset h3, ' +
+        '.post, ' +
+        'figure'
+    );
+
+
+    // 3. 给元素添加动画
+    elements.forEach((el) => {
+
+      /*
+       * 如果元素处于 .post 内部，
+       * 就让整个 .post 动，而不是里面的 p / img 再重复动。
+       *
+       * 但 .post 自己不受影响。
+       */
+      if (
+          el.closest('.post') &&
+          !el.classList.contains('post')
+      ) {
+        return;
+      }
+
+
+      /*
+       * 如果图片已经放在 figure 里面，
+       * 就让 figure 整体动，
+       * 避免 figure 和 img 重复动画。
+       */
+      if (
+          el.tagName === 'IMG' &&
+          el.closest('figure')
+      ) {
+        return;
+      }
+
+
+      // 防止重复初始化
+      if (
+          !el.classList.contains('auto-reveal') &&
+          !el.classList.contains('active')
+      ) {
+
+        el.classList.add('auto-reveal');
+
+        observer.observe(el);
+      }
+
+    });
+  }
+
+
+// 正常加载页面时运行
+  document.addEventListener(
+      "DOMContentLoaded",
+      initScrollReveal
+  );
+
+
+// 兼容 MkDocs Material Instant Loading
+  if (typeof document$ !== "undefined") {
+
+    document$.subscribe(function() {
+      initScrollReveal();
+    });
+
+  }
+
 })();

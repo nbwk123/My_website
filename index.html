@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Kai Wang 的个人网站，记录学习、项目、作品与长期思考。">
+        <meta name="description" content="Kai Wang 的个人网站，记录学习、项目、作品与思考等。">
       
       
       
@@ -82,6 +82,24 @@
     
     
       
+<script>
+  (() => {
+    const key = "kaiwang-site-theme";
+    const modes = new Set(["light", "dark", "system"]);
+    const saved = (() => {
+      try {
+        return localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    })();
+    const mode = modes.has(saved) ? saved : "system";
+    const active = mode === "system" && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : mode === "dark" ? "dark" : "light";
+    document.documentElement.dataset.siteTheme = mode;
+    document.documentElement.dataset.siteThemeActive = active;
+    document.documentElement.setAttribute("data-md-color-scheme", active === "dark" ? "slate" : "default");
+  })();
+</script>
 <header class="site-topbar" data-md-component="header">
   
   
@@ -93,9 +111,32 @@
     <div class="site-topbar__nav" aria-label="主导航">
       
         <a class="site-topbar__link site-topbar__link--active" href="index.html">主页</a>
-        <a class="site-topbar__link" href="course/">课程</a>
-        <a class="site-topbar__link" href="project/">项目</a>
-        <a class="site-topbar__link" href="friends/">友链</a>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown" href="course/">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="课程子菜单">
+            <a href="course/">课程总览</a>
+            <a href="course/design-research/">设计研究</a>
+            <a href="course/example/">示例课程文档</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown" href="project/">项目<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="项目子菜单">
+            <a href="project/">项目总览</a>
+            <a href="project/website-system/">个人网站系统</a>
+            <a href="project/costory/">COSTORY</a>
+            <a href="project/My_website_design/">个人网页搭建</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown" href="blogs/">博客<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="博客子菜单">
+            <a href="blogs/">博客总览</a>
+            <a href="blogs/2024D20/">2024年D20大会</a>
+            <a href="blogs/Japan-travel/">日本·大阪·京都</a>
+            <a href="blogs/2025D20/">2025年D20大会</a>
+          </div>
+        </div>
         <a class="site-topbar__link" href="about/">关于</a>
       
     </div>
@@ -145,6 +186,17 @@
           </div>
         
       
+      <div class="site-topbar__theme" role="group" aria-label="颜色模式" data-site-theme-switcher>
+        <button type="button" data-site-theme-value="system" aria-label="跟随系统" title="跟随系统" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+        </button>
+        <button type="button" data-site-theme-value="light" aria-label="浅色模式" title="浅色模式" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+        </button>
+        <button type="button" data-site-theme-value="dark" aria-label="深色模式" title="深色模式" aria-pressed="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 0 13 9.54 10 10 0 0 1 0-19.08A10 10 0 0 0 2 12"/></svg>
+        </button>
+      </div>
       <div class="site-topbar__lang" aria-label="语言切换">
         
           <span>中文</span>
@@ -202,18 +254,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="course/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="course/" class="md-tabs__link">
+        
   
+  
+    
   
   课程
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -230,6 +281,25 @@
     
   
   项目
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="project/website-system/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  个人网站系统
 
       </a>
     </li>
@@ -261,13 +331,51 @@
   
   
     <li class="md-tabs__item">
-      <a href="friends/" class="md-tabs__link">
+      <a href="blogs/" class="md-tabs__link">
         
   
   
     
   
-  友链
+  博客
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blogs/2024D20/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  D20全球设计院长峰会
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blogs/Japan-travel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  日本·大阪·京都
 
       </a>
     </li>
@@ -390,58 +498,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    课程
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    课程
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="course/" class="md-nav__link">
         
@@ -450,7 +506,7 @@
   <span class="md-ellipsis">
     
   
-    课程首页
+    课程
   
 
     
@@ -459,42 +515,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="course/example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    示例课程文档
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -514,6 +534,33 @@
     
   
     项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project/website-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    个人网站系统
   
 
     
@@ -560,14 +607,68 @@
   
   
     <li class="md-nav__item">
-      <a href="friends/" class="md-nav__link">
+      <a href="blogs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    友链
+    博客
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="blogs/2024D20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D20全球设计院长峰会
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="blogs/Japan-travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本·大阪·京都
   
 
     
@@ -627,10 +728,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -648,8 +749,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -701,35 +802,7 @@
   <span class="md-ellipsis">
     
   
-    Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="en/course/example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sample Note
+    Courses
   
 
     
@@ -778,6 +851,34 @@
   
   
     <li class="md-nav__item">
+      <a href="en/project/website-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Website System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="en/project/costory/" class="md-nav__link">
         
   
@@ -806,14 +907,70 @@
   
   
     <li class="md-nav__item">
-      <a href="en/friends/" class="md-nav__link">
+      <a href="en/blogs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Links
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="en/blogs/2024D20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024 D20 Global Design Deans Summit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="en/blogs/Japan-travel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Japan · Osaka · Kyoto
   
 
     
@@ -886,36 +1043,45 @@
 <section class="home-hero">
   <div class="home-copy">
     <p class="home-kicker">学习 · 创作 · 设计</p>
-    <h1>欢迎来到我的网站！</h1>
-    <p class="home-subtitle">我在这里记录学习、打磨项目，也把零散的想法整理成清晰的作品。</p>
+    <h1>代码即设计</h1>
+    <p class="home-subtitle">一个持续搭建和迭代的个人作品集系统，用来记录学习、设计判断和项目实践。</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">查看项目</a>
       <a href="course/" class="home-button">阅读笔记</a>
     </div>
   </div>
   <div class="home-card-stack" data-card-stack aria-label="项目作品卡片组，拖动最上方卡片可切换">
-    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/costory/">
       <img src="assets/program1.png" alt="项目1封面">
       <div class="visual-caption">
+        <span class="visual-eyebrow">项目 01</span>
         <div class="project-wordmark-group">
-          <span class="project-number">01</span>
           <span class="project-wordmark">COSTORY</span>
         </div>
-        <strong>从内容到作品，形成长期可更新的个人空间。</strong>
+        <strong>用实体道具和 AI 轻提示，帮助亲子在共创中把故事继续讲下去。</strong>
+        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
       </div>
     </a>
-    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="course/">
-      <img src="assets/hero-interface.png" alt="课程笔记库的界面视觉图">
+    <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/website-system/">
+      <img src="assets/program2.png" alt="项目2封面">
       <div class="visual-caption">
-        <span>02 · 课程笔记库</span>
-        <strong>把学习过程整理成可复用、可回看的知识卡片。</strong>
+        <span class="visual-eyebrow">项目 02</span>
+        <div class="project-wordmark-group">
+          <span class="project-wordmark project-wordmark-waing">WAING</span>
+        </div>
+        <strong>把个人网站变成可以被持续编辑、评估和发布的作品集系统。</strong>
+        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
       </div>
     </a>
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
       <img src="assets/hero-interface.png" alt="交互设计练习的界面视觉图">
       <div class="visual-caption">
-        <span>03 · 交互设计练习</span>
+        <span class="visual-eyebrow">项目 03</span>
+        <div class="project-wordmark-group">
+          <span class="visual-title">交互设计练习</span>
+        </div>
         <strong>观察优秀界面，把设计判断转化成自己的页面实践。</strong>
+        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
       </div>
     </a>
   </div>
@@ -923,8 +1089,8 @@
 
 <section class="home-section home-manifesto">
   <p class="section-kicker">网站的方向</p>
-  <h2>少一点堆砌，多一点判断。</h2>
-  <p>我希望这个网站像一个安静但有秩序的工作台：课程笔记用来沉淀知识，项目页面用来展示实践，关于页面用来说明我是谁、我正在靠近什么。</p>
+  <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">重在分享想法，兼项目展示。</p>
+  <p>这个网站不仅展示结果，也记录我如何借助 AI 协作、低代码管理和设计评估，把一个个人空间持续打磨成可维护的作品集系统。</p>
 </section>
 
 <section class="home-feature-grid">
@@ -944,6 +1110,9 @@
     <p>持续更新我的方向、能力边界和正在形成的个人风格。</p>
   </a>
 </section>
+
+<h1 style="font-weight: bold">课程笔记</h1>
+<h1 style="font-weight: bold">项目作品</h1>
 
 
 
@@ -986,7 +1155,7 @@
     <div>
       
         <p class="site-footer-cta__kicker">下一步</p>
-        <h2>把学习、设计和代码，整理成可以被看见的作品。</h2>
+        <h2 style="font-size: 1.7rem !important;">把学习、设计和代码，整理成可以被看见的作品。</h2>
         <p>这个网站会持续记录我的课程笔记、项目实践和交互设计观察。如果你也在做类似的探索，欢迎从项目页开始看起。</p>
       
     </div>
@@ -1002,22 +1171,22 @@
     <div class="site-footer__brand">
       <h2>Kai Wang</h2>
       
-        <p>持续学习、创作和设计有判断力的数字体验。</p>
+        <p style="font-size: 0.7rem;">持续学习、创作和设计有判断力的数字体验。</p>
       
     </div>
 
     <nav class="site-footer__group" aria-label="Explore">
-      <h3>探索</h3>
+      <h3 style="font-size: 0.8rem;">探索</h3>
       
         <a href="course/">课程</a>
         <a href="project/">项目</a>
-        <a href="friends/">友链</a>
+        <a href="blogs/">博客</a>
         <a href="about/">关于</a>
       
     </nav>
 
     <nav class="site-footer__group" aria-label="Work">
-      <h3>作品</h3>
+      <h3 style="font-size: 0.8rem;">作品</h3>
       
         <a href="project/">个人网站系统</a>
         <a href="course/">课程笔记库</a>
@@ -1026,7 +1195,7 @@
     </nav>
 
     <nav class="site-footer__group" aria-label="Keep in touch">
-      <h3>保持联系</h3>
+      <h3 style="font-size: 0.8rem;">保持联系</h3>
       <a href="https://github.com/nbwk123/My_website">GitHub</a>
       
         <a href="course/">笔记</a>
@@ -1036,11 +1205,12 @@
   </div>
 
   <div class="site-footer__bottom md-grid">
-    <span>© 2026 Kai Wang</span>
+    <p style="white-space: pre-wrap;">Copyright © 2026 Kai Wang   All Rights Reserved.               made with <a href="https://www.mkdocs.org/">Mkdocs</a></p>
+
     <div>
       
         <a href="about/">关于</a>
-        <a href="friends/">友链</a>
+        <a href="links/">链接</a>
       
     </div>
   </div>
