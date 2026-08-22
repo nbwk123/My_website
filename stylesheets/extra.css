@@ -159,7 +159,7 @@ button {
 
 .site-topbar__link:hover,
 .site-topbar__link--active {
-    color: #7c3aed;
+    color: #0F0F0E;
 }
 
 .site-topbar__link::after {
@@ -167,10 +167,10 @@ button {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -0.2rem;
+    bottom: 0.2rem;
     height: 2px;
     border-radius: 999px;
-    background: #7c3aed;
+    background: #0F0F0E;
     opacity: 0;
     transform: scaleX(0.72);
     transition: opacity 160ms ease, transform 160ms ease;
@@ -211,20 +211,38 @@ button {
 }
 
 .site-topbar__menu-panel a {
+    position: relative;
     display: block;
-    border-radius: 0.55rem;
+    border-radius: 0;
     color: var(--site-ink);
     font-size: 0.78rem;
     font-weight: 590;
     line-height: 1.25;
     padding: 0.52rem 0.62rem;
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
     white-space: nowrap;
 }
 
+.site-topbar__menu-panel a::after {
+    content: none;
+}
+
 .site-topbar__menu-panel a:hover,
-.site-topbar__menu-panel a:focus {
-    background: rgba(124, 58, 237, 0.08);
-    color: #7c3aed;
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent;
+    color: #0F0F0E;
+    text-decoration-line: underline;
+}
+
+.site-topbar__menu-panel a:hover::after,
+.site-topbar__menu-panel a:focus::after,
+.site-topbar__menu-panel a[aria-current="page"]::after,
+.site-topbar__menu-panel a.site-topbar__menu-link--active::after {
+    content: none;
 }
 
 .site-topbar__dropdown:hover .site-topbar__menu-panel,
@@ -237,6 +255,25 @@ button {
 .site-topbar__dropdown:hover .site-topbar__chevron,
 .site-topbar__dropdown:focus-within .site-topbar__chevron {
     transform: translateY(9px) rotate(180deg);
+}
+
+.detail-top-back {
+    display: flex;
+    width: fit-content;
+    margin: 0 0 clamp(2.2rem, 4vw, 3.6rem);
+    color: rgba(86, 54, 54, 0.86) !important;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.88rem;
+    font-weight: 620;
+    letter-spacing: 0;
+    text-decoration: none;
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.detail-top-back:hover,
+.detail-top-back:focus {
+    color: #0F0F0E !important;
+    transform: translateX(-0.18rem);
 }
 
 .site-topbar__actions {
@@ -337,7 +374,7 @@ button {
 }
 
 .site-topbar__lang a:hover {
-    color: #7c3aed;
+    color: #0F0F0E;
 }
 
 .site-topbar__menu {
@@ -632,9 +669,32 @@ html[data-site-theme-active="dark"] .site-topbar__menu-panel a {
 }
 
 html[data-site-theme-active="dark"] .site-topbar__menu-panel a:hover,
-html[data-site-theme-active="dark"] .site-topbar__menu-panel a:focus {
-    background: rgba(167, 139, 250, 0.16);
-    color: #c4b5fd;
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a:focus,
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a[aria-current="page"],
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent;
+    color: #f5f3ff;
+}
+
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a::after {
+    background: #a78bfa;
+}
+
+html[data-site-theme-active="dark"] .detail-top-back {
+    color: rgba(245, 243, 255, 0.78) !important;
+}
+
+html[data-site-theme-active="dark"] .detail-top-back:hover,
+html[data-site-theme-active="dark"] .detail-top-back:focus {
+    color: #f5f3ff !important;
+}
+
+html[data-site-theme-active="dark"] .site-toc-marker-track {
+    background: rgba(245, 243, 255, 0.14);
+}
+
+html[data-site-theme-active="dark"] .site-toc-marker-thumb {
+    background: #f5f3ff;
 }
 
 html[data-site-theme-active="dark"] .site-topbar__lang,
@@ -1652,7 +1712,7 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
 }
 
 .site-footer__group a:hover {
-    color: #7c3aed;
+    color: #0F0F0E;
 }
 
 .site-footer__bottom {
@@ -2377,7 +2437,6 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
     }
 }
 
-
 /* Course hero watermark visible tuning. */
 .md-typeset .course-hero .section-heading-line {
     --course-watermark-size: clamp(3.75rem, 1.25vw, 6.25rem);
@@ -2646,6 +2705,42 @@ body:has(.courses-page) .md-sidebar__inner {
 .md-nav__item--active > .md-nav__link,
 .md-nav__item--active > .md-nav__label {
     box-shadow: none !important;
+}
+
+/* Add a scroll-following marker to MkDocs' original integrated TOC only. */
+.md-nav--integrated .md-nav--secondary [data-md-component="toc"] {
+    --toc-marker-opacity: 0;
+    --toc-marker-top: 0px;
+    --toc-marker-height: 1.2rem;
+    position: relative;
+}
+
+.site-toc-marker-track,
+.site-toc-marker-thumb {
+    position: absolute;
+    left: 0.08rem;
+    width: 2px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.site-toc-marker-track {
+    top: 0.15rem;
+    bottom: 0.15rem;
+    background: rgba(86, 54, 54, 0.32);
+}
+
+.site-toc-marker-thumb {
+    top: 0;
+    height: var(--toc-marker-height);
+    background: rgba(64, 28, 28, 0.96);
+    opacity: var(--toc-marker-opacity);
+    transform: translateY(var(--toc-marker-top));
+    transition:
+        transform 220ms ease,
+        height 220ms ease,
+        opacity 160ms ease;
 }
 
 .blog__layout {
