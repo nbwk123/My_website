@@ -19,73 +19,73 @@
 </script>
 <header class="site-topbar" data-md-component="header">
   {% set current_url = page.url if page and page.url else "" %}
-  {% set is_en = current_url.startswith("en/") %}
+  {% set is_zh = current_url.startswith("zh/") %}
   <nav class="site-topbar__inner md-grid" aria-label="{{ lang.t('header') }}">
     <a class="site-topbar__brand" href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" aria-label="{{ config.site_name }}">
       {{ config.site_name }}
     </a>
 
     <div class="site-topbar__nav" aria-label="主导航">
-      {% if is_en %}
-        <a class="site-topbar__link{% if current_url == 'en/' or current_url == 'en/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'en/' | url }}">Home</a>
+      {% if not is_zh %}
+        <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">Home</a>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="Notes submenu">
-            <a href="{{ 'en/course/' | url }}">Overview</a>
-            <a href="{{ 'en/course/technology-site/' | url }}">Technology Notes</a>
-            <a href="{{ 'en/course/design-research/' | url }}">Design Research</a>
-            <a href="{{ 'en/course/example/' | url }}">Sample Note</a>
+            <a href="{{ 'course/' | url }}">Overview</a>
+            <a href="{{ 'course/technology-site/' | url }}">Technology Notes</a>
+            <a href="{{ 'course/design-research/' | url }}">Design Research</a>
+            <a href="{{ 'course/example/' | url }}">Sample Note</a>
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/project/') %} site-topbar__link--active{% endif %}" href="{{ 'en/project/' | url }}">Projects<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">Projects<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="Projects submenu">
-            <a href="{{ 'en/project/' | url }}">Overview</a>
-            <a href="{{ 'en/project/website-system/' | url }}">Personal Website System</a>
-            <a href="{{ 'en/project/costory/' | url }}">COSTORY</a>
-            <a href="{{ 'en/project/My_website_design/' | url }}">Personal Website Design</a>
-          </div>
-        </div>
-        <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'en/blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
-          <div class="site-topbar__menu-panel" aria-label="Blog submenu">
-            <a href="{{ 'en/blogs/' | url }}">Overview</a>
-            <a href="{{ 'en/blogs/2024D20/' | url }}">2024 D20 Summit</a>
-            <a href="{{ 'en/blogs/Japan-travel/' | url }}">Japan · Osaka · Kyoto</a>
-            <a href="{{ 'en/blogs/2025D20/' | url }}">2025 D20 Summit</a>
-          </div>
-        </div>
-        <a class="site-topbar__link{% if current_url.startswith('en/about/') %} site-topbar__link--active{% endif %}" href="{{ 'en/about/' | url }}">About</a>
-      {% else %}
-        <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">主页</a>
-        <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
-          <div class="site-topbar__menu-panel" aria-label="课程子菜单">
-            <a href="{{ 'course/' | url }}">课程总览</a>
-            <a href="{{ 'course/technology-site/' | url }}">技术类笔记</a>
-            <a href="{{ 'course/design-research/' | url }}">设计研究</a>
-            <a href="{{ 'course/example/' | url }}">示例课程文档</a>
-          </div>
-        </div>
-        <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">项目<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
-          <div class="site-topbar__menu-panel" aria-label="项目子菜单">
-            <a href="{{ 'project/' | url }}">项目总览</a>
-            <a href="{{ 'project/website-system/' | url }}">个人网站系统</a>
+            <a href="{{ 'project/' | url }}">Overview</a>
+            <a href="{{ 'project/website-system/' | url }}">Personal Website System</a>
             <a href="{{ 'project/costory/' | url }}">COSTORY</a>
-            <a href="{{ 'project/My_website_design/' | url }}">个人网页搭建</a>
+            <a href="{{ 'project/My_website_design/' | url }}">Personal Website Design</a>
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">博客<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
-          <div class="site-topbar__menu-panel" aria-label="博客子菜单">
-            <a href="{{ 'blogs/' | url }}">博客总览</a>
-            <a href="{{ 'blogs/2024D20/' | url }}">2024年D20大会</a>
-            <a href="{{ 'blogs/Japan-travel/' | url }}">日本·大阪·京都</a>
-            <a href="{{ 'blogs/2025D20/' | url }}">2025年D20大会</a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="Blog submenu">
+            <a href="{{ 'blogs/' | url }}">Overview</a>
+            <a href="{{ 'blogs/2024D20/' | url }}">2024 D20 Summit</a>
+            <a href="{{ 'blogs/Japan-travel/' | url }}">Japan · Osaka · Kyoto</a>
+            <a href="{{ 'blogs/2025D20/' | url }}">2025 D20 Summit</a>
           </div>
         </div>
-        <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">关于</a>
+        <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">About</a>
+      {% else %}
+        <a class="site-topbar__link{% if current_url == 'zh/' or current_url == 'zh/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'zh/' | url }}">主页</a>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/course/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="课程子菜单">
+            <a href="{{ 'zh/course/' | url }}">课程总览</a>
+            <a href="{{ 'zh/course/technology-site/' | url }}">技术类笔记</a>
+            <a href="{{ 'zh/course/design-research/' | url }}">设计研究</a>
+            <a href="{{ 'zh/course/example/' | url }}">示例课程文档</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/project/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/project/' | url }}">项目<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="项目子菜单">
+            <a href="{{ 'zh/project/' | url }}">项目总览</a>
+            <a href="{{ 'zh/project/website-system/' | url }}">个人网站系统</a>
+            <a href="{{ 'zh/project/costory/' | url }}">COSTORY</a>
+            <a href="{{ 'zh/project/My_website_design/' | url }}">个人网页搭建</a>
+          </div>
+        </div>
+        <div class="site-topbar__dropdown">
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/blogs/' | url }}">博客<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <div class="site-topbar__menu-panel" aria-label="博客子菜单">
+            <a href="{{ 'zh/blogs/' | url }}">博客总览</a>
+            <a href="{{ 'zh/blogs/2024D20/' | url }}">2024年D20大会</a>
+            <a href="{{ 'zh/blogs/Japan-travel/' | url }}">日本·大阪·京都</a>
+            <a href="{{ 'zh/blogs/2025D20/' | url }}">2025年D20大会</a>
+          </div>
+        </div>
+        <a class="site-topbar__link{% if current_url.startswith('zh/about/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/about/' | url }}">关于</a>
       {% endif %}
     </div>
 
@@ -93,8 +93,8 @@
       {% if "material/search" in config.plugins %}
         {% set search = config.plugins["material/search"] | attr("config") %}
         {% if search.enabled %}
-          {% set search_label = "Search" if is_en else "搜索" %}
-          {% set search_initial = "Type a keyword to see results" if is_en else "输入关键词后显示搜索结果" %}
+          {% set search_label = "搜索" if is_zh else "Search" %}
+          {% set search_initial = "输入关键词后显示搜索结果" if is_zh else "Type a keyword to see results" %}
           <div class="site-topbar__search-wrap">
             <div class="md-search" data-md-component="search" role="dialog">
               <label class="md-search__overlay" for="__search"></label>
@@ -136,32 +136,32 @@
           </div>
         {% endif %}
       {% endif %}
-      <div class="site-topbar__theme" role="group" aria-label="{% if is_en %}Color mode{% else %}颜色模式{% endif %}" data-site-theme-switcher>
-        <button type="button" data-site-theme-value="system" aria-label="{% if is_en %}Follow system{% else %}跟随系统{% endif %}" title="{% if is_en %}Follow system{% else %}跟随系统{% endif %}" aria-pressed="false">
+      <div class="site-topbar__theme" role="group" aria-label="{% if is_zh %}颜色模式{% else %}Color mode{% endif %}" data-site-theme-switcher>
+        <button type="button" data-site-theme-value="system" aria-label="{% if is_zh %}跟随系统{% else %}Follow system{% endif %}" title="{% if is_zh %}跟随系统{% else %}Follow system{% endif %}" aria-pressed="false">
           {% include ".icons/material/monitor.svg" %}
         </button>
-        <button type="button" data-site-theme-value="light" aria-label="{% if is_en %}Light mode{% else %}浅色模式{% endif %}" title="{% if is_en %}Light mode{% else %}浅色模式{% endif %}" aria-pressed="false">
+        <button type="button" data-site-theme-value="light" aria-label="{% if is_zh %}浅色模式{% else %}Light mode{% endif %}" title="{% if is_zh %}浅色模式{% else %}Light mode{% endif %}" aria-pressed="false">
           {% include ".icons/material/weather-sunny.svg" %}
         </button>
-        <button type="button" data-site-theme-value="dark" aria-label="{% if is_en %}Dark mode{% else %}深色模式{% endif %}" title="{% if is_en %}Dark mode{% else %}深色模式{% endif %}" aria-pressed="false">
+        <button type="button" data-site-theme-value="dark" aria-label="{% if is_zh %}深色模式{% else %}Dark mode{% endif %}" title="{% if is_zh %}深色模式{% else %}Dark mode{% endif %}" aria-pressed="false">
           {% include ".icons/material/moon-waning-crescent.svg" %}
         </button>
       </div>
       <div class="site-topbar__lang" aria-label="语言切换">
-        {% if is_en %}
-          <a href="{{ 'index.html' | url }}">中文</a>
-          <span>EN</span>
-        {% else %}
+        {% if is_zh %}
+          <a href="{{ 'index.html' | url }}">EN</a>
           <span>中文</span>
-          <a href="{{ 'en/' | url }}">EN</a>
+        {% else %}
+          <span>EN</span>
+          <a href="{{ 'zh/' | url }}">中文</a>
         {% endif %}
       </div>
-      {% if is_en %}
-        {% set avatar_url = 'en/about/' %}
+      {% if is_zh %}
+        {% set avatar_url = 'zh/about/' %}
       {% else %}
         {% set avatar_url = 'about/' %}
       {% endif %}
-      <a class="site-topbar__mark" href="{{ avatar_url | url }}" aria-label="{% if is_en %}About Kai Wang{% else %}关于 Kai Wang{% endif %}">
+      <a class="site-topbar__mark" href="{{ avatar_url | url }}" aria-label="{% if is_zh %}关于 Kai Wang{% else %}About Kai Wang{% endif %}">
         <img src="{{ 'assets/avatar-kai.png' | url }}" alt="Kai Wang">
       </a>
 

@@ -1,11 +1,11 @@
 site_name: Kai Wang
-site_description: Kai Wang 的个人网站，记录学习、项目、作品与思考等。
+site_description: Kai Wang's personal website for learning notes, projects, writing, and design practice.
 site_url: https://nbwk123.github.io/My_website/
 
 theme:
   name: material
   custom_dir: overrides
-  language: zh
+  language: en
   logo: assets/avatar-kai.png
   favicon: assets/avatar-kai.png
   palette:
@@ -22,24 +22,25 @@ theme:
     - toc.integrate
 
 nav:
-  - 主页: index.md
-  - 课程: course/index.md
-  - 项目: project/index.md
-  - 个人网站系统: project/website-system.md
+  - Home: index.md
+  - Courses: course/index.md
+  - Projects: project/index.md
+  - Personal Website System: project/website-system.md
   - COSTORY: project/costory.md
-  - 博客: blogs/index.md
-  - D20全球设计院长峰会: blogs/2024D20.md
-  - 日本·大阪·京都: blogs/Japan-travel.md
-  - 关于: about/index.md
-  - Home: en/index.md
-  - Courses: en/course/index.md
-  - Projects: en/project/index.md
-  - Personal Website System: en/project/website-system.md
-  - COSTORY: en/project/costory.md
-  - Blog: en/blogs/index.md
-  - 2024 D20 Global Design Deans Summit: en/blogs/2024D20.md
-  - Japan · Osaka · Kyoto: en/blogs/Japan-travel.md
-  - About: en/about/index.md
+  - Blog: blogs/index.md
+  - 2024 D20 Global Design Deans Summit: blogs/2024D20.md
+  - Japan · Osaka · Kyoto: blogs/Japan-travel.md
+  - About: about/index.md
+  - 中文:
+      - 主页: zh/index.md
+      - 课程: zh/course/index.md
+      - 项目: zh/project/index.md
+      - 个人网站系统: zh/project/website-system.md
+      - COSTORY: zh/project/costory.md
+      - 博客: zh/blogs/index.md
+      - D20全球设计院长峰会: zh/blogs/2024D20.md
+      - 日本·大阪·京都: zh/blogs/Japan-travel.md
+      - 关于: zh/about/index.md
 
 markdown_extensions:
   - attr_list

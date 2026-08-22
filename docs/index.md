@@ -8,78 +8,78 @@ hide:
 
 <section class="home-hero">
   <div class="home-copy">
-    <p class="home-kicker">学习 · 创作 · 设计</p>
-    <h1>代码即设计</h1>
-    <p class="home-subtitle">一个持续搭建和迭代的个人作品集系统，用来记录学习、设计判断和项目实践。</p>
+    <p class="home-kicker">Learning · Creating · Designing</p>
+    <h1>Code as Design</h1>
+    <p class="home-subtitle">A personal portfolio system that is continuously built and iterated, used to record learning, design judgment, and project practice.</p>
     <div class="home-actions">
-      <a href="project/" class="home-button home-button-primary">查看项目</a>
-      <a href="course/" class="home-button">阅读笔记</a>
+      <a href="project/" class="home-button home-button-primary">View Projects</a>
+      <a href="course/" class="home-button">Read Notes</a>
     </div>
   </div>
-  <div class="home-card-stack" data-card-stack aria-label="项目作品卡片组，拖动最上方卡片可切换">
+  <div class="home-card-stack" data-card-stack aria-label="Project portfolio card stack. Drag the top card to switch.">
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/costory/">
-      <img src="assets/program1.png" alt="项目1封面">
+      <img src="assets/program1.png" alt="Project 1 cover">
       <div class="visual-caption">
-        <span class="visual-eyebrow">项目 01</span>
+        <span class="visual-eyebrow">Project 01</span>
         <div class="project-wordmark-group">
           <span class="project-wordmark">COSTORY</span>
         </div>
-        <strong>用实体道具和 AI 轻提示，帮助亲子在共创中把故事继续讲下去。</strong>
-        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
+        <strong>Using a physical prop and light AI prompts to help parents and children keep co-creating a story.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/website-system/">
-      <img src="assets/program2.png" alt="项目2封面">
+      <img src="assets/program2.png" alt="Project 2 cover">
       <div class="visual-caption">
-        <span class="visual-eyebrow">项目 02</span>
+        <span class="visual-eyebrow">Project 02</span>
         <div class="project-wordmark-group">
           <span class="project-wordmark project-wordmark-waing">WAING</span>
         </div>
-        <strong>把个人网站变成可以被持续编辑、评估和发布的作品集系统。</strong>
-        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
+        <strong>Turning a personal website into a portfolio system that can be continuously edited, evaluated, and published.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
     <a class="home-visual home-visual-card interaction-tilt" data-tilt href="project/">
-      <img src="assets/hero-interface.png" alt="交互设计练习的界面视觉图">
+      <img src="assets/hero-interface.png" alt="Interface visual for interaction design practice">
       <div class="visual-caption">
-        <span class="visual-eyebrow">项目 03</span>
+        <span class="visual-eyebrow">Project 03</span>
         <div class="project-wordmark-group">
-          <span class="visual-title">交互设计练习</span>
+          <span class="visual-title">Interaction Design Practice</span>
         </div>
-        <strong>观察优秀界面，把设计判断转化成自己的页面实践。</strong>
-        <span class="visual-action">查看项目 <span aria-hidden="true">→</span></span>
+        <strong>Observing strong interfaces and translating design judgment into my own page practice.</strong>
+        <span class="visual-action">View Project <span aria-hidden="true">→</span></span>
       </div>
     </a>
   </div>
 </section>
 
 <section class="home-section home-manifesto">
-  <section class="lead-card" data-expand-card>
-    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">你好</h1>
-    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">我们见个面吧</p>
+  <section class="lead-card" src="assets/program2.png" data-expand-card>
+    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">Hello</h1>
+    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">Let us meet.</p>
   </section>
-  <p class="section-kicker">网站的方向</p>
-  <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">重在分享想法，兼项目展示。</p>
-  <p>这个网站不仅展示结果，也记录我如何借助 AI 协作、低代码管理和设计评估，把一个个人空间持续打磨成可维护的作品集系统。</p>
+  <p class="section-kicker">Site Direction</p>
+  <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">Focused on sharing ideas, with projects as support.</p>
+  <p>This site not only displays outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>
 </section>
 
 <section class="home-feature-grid">
   <a class="home-feature interaction-tilt" href="course/" data-tilt>
     <span>01</span>
-    <h2>课程笔记</h2>
-    <p>把学习过程整理成可复用的知识卡片，而不是只留下零散收藏。</p>
+    <h2>Course Notes</h2>
+    <p>Organize learning into reusable knowledge cards instead of leaving only scattered bookmarks.</p>
   </a>
   <a class="home-feature interaction-tilt" href="project/" data-tilt>
     <span>02</span>
-    <h2>项目作品</h2>
-    <p>像展示产品一样展示项目：主角明确，价值清楚，过程可追溯。</p>
+    <h2>Projects</h2>
+    <p>Present projects like products: with a clear subject, clear value, and a traceable process.</p>
   </a>
   <a class="home-feature interaction-tilt" href="about/" data-tilt>
     <span>03</span>
-    <h2>关于我</h2>
-    <p>持续更新我的方向、能力边界和正在形成的个人风格。</p>
+    <h2>About Me</h2>
+    <p>Keep updating my direction, ability boundaries, and developing personal style.</p>
   </a>
 </section>
 
-<h1 style="font-weight: bold">课程笔记</h1>
-<h1 style="font-weight: bold">项目作品</h1>
+<h1 style="font-weight: bold">Course Notes</h1>
+<h1 style="font-weight: bold">Projects</h1>

@@ -1,11 +1,11 @@
 {% set current_url = page.url if page and page.url else "" %}
-{% set is_en = current_url.startswith("en/") %}
+{% set is_zh = current_url.startswith("zh/") %}
 
-{% if current_url == "index.html" or current_url == "" or current_url == "en/index.html" %}
+{% if current_url == "index.html" or current_url == "" or current_url == "zh/index.html" %}
 <section class="site-footer-cta">
   <div class="site-footer-cta__inner md-grid">
     <div>
-      {% if is_en %}
+      {% if not is_zh %}
         <p class="site-footer-cta__kicker">Next step</p>
         <h2>Turn learning, design, and code into visible work.</h2>
         <p>This site records my notes, project practice, and interaction design observations. If you are exploring similar things, start with the projects.</p>
@@ -15,10 +15,10 @@
         <p>这个网站会持续记录我的课程笔记、项目实践和交互设计观察。如果你也在做类似的探索，欢迎从项目页开始看起。</p>
       {% endif %}
     </div>
-    {% if is_en %}
-      <a class="site-footer-cta__button" href="{{ 'en/project/' | url }}">View Projects →</a>
+    {% if not is_zh %}
+      <a class="site-footer-cta__button" href="{{ 'project/' | url }}">View Projects →</a>
     {% else %}
-      <a class="site-footer-cta__button" href="{{ 'project/' | url }}">查看项目 →</a>
+      <a class="site-footer-cta__button" href="{{ 'zh/project/' | url }}">查看项目 →</a>
     {% endif %}
   </div>
 </section>
@@ -28,7 +28,7 @@
   <div class="site-footer__inner md-grid">
     <div class="site-footer__brand">
       <h2>Kai Wang</h2>
-      {% if is_en %}
+      {% if not is_zh %}
         <p>Learning, building, and designing thoughtful digital experiences.</p>
       {% else %}
         <p style="font-size: 0.7rem;">持续学习、创作和设计有判断力的数字体验。</p>
@@ -36,42 +36,42 @@
     </div>
 
     <nav class="site-footer__group" aria-label="Explore">
-      <h3 style="font-size: 0.8rem;">{% if is_en %}Explore{% else %}探索{% endif %}</h3>
-      {% if is_en %}
-        <a href="{{ 'en/course/' | url }}">Notes</a>
-        <a href="{{ 'en/project/' | url }}">Projects</a>
-        <a href="{{ 'en/blogs/' | url }}">Blog</a>
-        <a href="{{ 'en/about/' | url }}">About</a>
+      <h3 style="font-size: 0.8rem;">{% if is_zh %}探索{% else %}Explore{% endif %}</h3>
+      {% if is_zh %}
+        <a href="{{ 'zh/course/' | url }}">课程</a>
+        <a href="{{ 'zh/project/' | url }}">项目</a>
+        <a href="{{ 'zh/blogs/' | url }}">博客</a>
+        <a href="{{ 'zh/about/' | url }}">关于</a>
       {% else %}
-        <a href="{{ 'course/' | url }}">课程</a>
-        <a href="{{ 'project/' | url }}">项目</a>
-        <a href="{{ 'blogs/' | url }}">博客</a>
-        <a href="{{ 'about/' | url }}">关于</a>
+        <a href="{{ 'course/' | url }}">Notes</a>
+        <a href="{{ 'project/' | url }}">Projects</a>
+        <a href="{{ 'blogs/' | url }}">Blog</a>
+        <a href="{{ 'about/' | url }}">About</a>
       {% endif %}
     </nav>
 
     <nav class="site-footer__group" aria-label="Work">
-      <h3 style="font-size: 0.8rem;">{% if is_en %}Work{% else %}作品{% endif %}</h3>
-      {% if is_en %}
-        <a href="{{ 'en/project/' | url }}">Portfolio System</a>
-        <a href="{{ 'en/course/' | url }}">Notes Library</a>
-        <a href="{{ 'en/project/' | url }}">Interaction Design Practice</a>
+      <h3 style="font-size: 0.8rem;">{% if is_zh %}作品{% else %}Work{% endif %}</h3>
+      {% if is_zh %}
+        <a href="{{ 'zh/project/' | url }}">个人网站系统</a>
+        <a href="{{ 'zh/course/' | url }}">课程笔记库</a>
+        <a href="{{ 'zh/project/' | url }}">交互设计练习</a>
       {% else %}
-        <a href="{{ 'project/' | url }}">个人网站系统</a>
-        <a href="{{ 'course/' | url }}">课程笔记库</a>
-        <a href="{{ 'project/' | url }}">交互设计练习</a>
+        <a href="{{ 'project/' | url }}">Portfolio System</a>
+        <a href="{{ 'course/' | url }}">Notes Library</a>
+        <a href="{{ 'project/' | url }}">Interaction Design Practice</a>
       {% endif %}
     </nav>
 
     <nav class="site-footer__group" aria-label="Keep in touch">
-      <h3 style="font-size: 0.8rem;">{% if is_en %}Keep in Touch{% else %}保持联系{% endif %}</h3>
+      <h3 style="font-size: 0.8rem;">{% if is_zh %}保持联系{% else %}Keep in Touch{% endif %}</h3>
       <a href="https://github.com/nbwk123/My_website">GitHub</a>
-      {% if is_en %}
-        <a href="{{ 'en/course/' | url }}">Notes</a>
-        <a href="{{ 'en/about/' | url }}">Contact</a>
+      {% if is_zh %}
+        <a href="{{ 'zh/course/' | url }}">笔记</a>
+        <a href="{{ 'zh/about/' | url }}">联系</a>
       {% else %}
-        <a href="{{ 'course/' | url }}">笔记</a>
-        <a href="{{ 'about/' | url }}">联系</a>
+        <a href="{{ 'course/' | url }}">Notes</a>
+        <a href="{{ 'about/' | url }}">Contact</a>
       {% endif %}
     </nav>
   </div>
@@ -80,12 +80,12 @@
     <p style="white-space: pre-wrap;">Copyright © 2026 Kai Wang   All Rights Reserved.               made with <a href="https://www.mkdocs.org/">Mkdocs</a></p>
 
     <div>
-      {% if is_en %}
-        <a href="{{ 'en/about/' | url }}">About</a>
-        <a href="{{ 'en/blogs/' | url }}">Blog</a>
+      {% if is_zh %}
+        <a href="{{ 'zh/about/' | url }}">关于</a>
+        <a href="{{ 'zh/links/' | url }}">链接</a>
       {% else %}
-        <a href="{{ 'about/' | url }}">关于</a>
-        <a href="{{ 'links/' | url }}">链接</a>
+        <a href="{{ 'about/' | url }}">About</a>
+        <a href="{{ 'links/' | url }}">Links</a>
       {% endif %}
     </div>
   </div>

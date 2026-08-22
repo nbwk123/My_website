@@ -11,11 +11,11 @@
 <section class="page-hero page-hero--plain course-hero" markdown="1">
 
 <div class="section-heading-line">
-  <h1>个人项目分享</h1>
+  <h1>Personal Project Sharing</h1>
   <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span>
 </div>
 
-记录并分享个人科研竞赛成果、项目等。
+Recording and sharing personal research competition outcomes, projects, and related work.
 
 </section>
 
@@ -25,76 +25,76 @@
 
 <div class="blog__posts">
 
-<!-- 第一篇文章 -->
+<!-- Article 1 -->
 <article class="post">
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/program1.png" alt="项目1">
+<img class="post__img" src="../assets/program1.png" alt="Project 1">
 
 <div class="post-tags">
-<span class="post-tag">个人</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>
+<span class="post-tag">Personal</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
 </div>
 
 </div>
 
 <div class="post__content">
 
-<p class="post__meta">2024-06-27～28 · 会议展会</p>
-<h2 class="post__title">2024年D20大会</h2>
-<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="../project/costory" class="post__link">阅读更多 →</a>
+<p class="post__meta">2024-06-27-28 · Conference</p>
+<h2 class="post__title">2024 D20 Summit</h2>
+<p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
+<a href="../project/costory" class="post__link">Read More →</a>
 
 </div>
 
 </article>
 
-<!-- 第二篇文章 -->
+<!-- Article 2 -->
 <article class="post">
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/program2.png" alt="项目2">
+<img class="post__img" src="../assets/program2.png" alt="Project 2">
 
 <div class="post-tags">
-<span class="post-tag">个人</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>
+<span class="post-tag">Personal</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
 </div>
 
 </div>
 
 <div class="post__content">
 
-<p class="post__meta">2024-06-27～28 · 会议展会</p>
-<h2 class="post__title">2024年D20大会</h2>
-<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="../blogs/2024D20" class="post__link">阅读更多 →</a>
+<p class="post__meta">2024-06-27-28 · Conference</p>
+<h2 class="post__title">2024 D20 Summit</h2>
+<p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
+<a href="../blogs/2024D20" class="post__link">Read More →</a>
 
 </div>
 
 </article>
 
-<!-- 第三篇文章 -->
+<!-- Article 3 -->
 <article class="post">
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/program2.png" alt="项目3">
+<img class="post__img" src="../assets/program2.png" alt="Project 3">
 
 <div class="post-tags">
-<span class="post-tag">个人</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">高校</span>
+<span class="post-tag">Personal</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
 </div>
 
 </div>
 
 <div class="post__content">
 
-<p class="post__meta">2024-06-27～28 · 会议展会</p>
-<h2 class="post__title">个人网页搭建</h2>
-<p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="./My_website_design" class="post__link">阅读更多 →</a>
+<p class="post__meta">2024-06-27-28 · Conference</p>
+<h2 class="post__title">Personal Website Building</h2>
+<p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
+<a href="./My_website_design" class="post__link">Read More →</a>
 
 </div>
 
@@ -107,12 +107,12 @@
 <aside class="sidebar">
 
 <div class="side-card">
-<p class="side-h">类型</p>
+<p class="side-h">Type</p>
 <div class="cat-list">
-  <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
-  <a href="./" class="cat"><span>论文</span><span class="cat__count"></span></a>
-  <a href="costory/" class="cat"><span>设计作品</span><span class="cat__count">3</span></a>
-  <a href="My_website_design/" class="cat"><span>竞赛成果</span><span class="cat__count"></span></a>
+  <a href="./" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
+  <a href="./" class="cat"><span>Papers</span><span class="cat__count"></span></a>
+  <a href="costory/" class="cat"><span>Design Works</span><span class="cat__count">3</span></a>
+  <a href="My_website_design/" class="cat"><span>Competition Outcomes</span><span class="cat__count"></span></a>
   <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>

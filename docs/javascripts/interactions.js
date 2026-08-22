@@ -276,7 +276,7 @@
   };
 
   const getSearchCopy = () => {
-    const isEnglish = window.location.pathname.includes("/en/");
+    const isEnglish = !window.location.pathname.includes("/zh/");
 
     return {
       empty: isEnglish ? "Type a keyword to see results" : "输入关键词后显示搜索结果",
@@ -286,11 +286,11 @@
     };
   };
 
-  const isEnglishPage = () => window.location.pathname.includes("/en/");
+  const isEnglishPage = () => !window.location.pathname.includes("/zh/");
 
   const isCurrentLanguageDoc = (doc) => {
     const location = doc.location || "";
-    return isEnglishPage() ? location.startsWith("en/") : !location.startsWith("en/");
+    return isEnglishPage() ? !location.startsWith("zh/") : location.startsWith("zh/");
   };
 
   const createExcerpt = (text, query) => {

@@ -3,11 +3,11 @@
 <section class="page-hero page-hero--plain course-hero" markdown="1">
 
 <div class="section-heading-line">
-  <h1>友情链接</h1>
-  <span>LINKS</span>
+  <h1>Friendly Links</h1>
+  <span style="letter-spacing: 0.01em !important;">LINKS</span>
 </div>
 
-恭喜你发现了隐藏惊喜🎉。在这里我会放置一些曾经或正在对我的学习生活产生帮助的链接，欢迎大家按需取阅👏！
+Congratulations on discovering a hidden surprise! 🎉 Here I'll include some links that have been or are currently helping my studies and life. Feel free to browse them as needed! 👏
 
 </section>
 
@@ -15,26 +15,36 @@
 
 <div class="side-main" markdown="1">
 
-<a href="https://www.zju.edu.cn">
-浙江大学
+<div class="link-card-grid friendly-link-grid">
+
+<a class="link-card friendly-link-card" href="https://www.zju.edu.cn">
+<span>UNIVERSITY</span>
+<h3>Zhejiang University</h3>
+<p>University homepage and public information.</p>
+<small>zju.edu.cn →</small>
 </a>
 
-<a href="http://www.idi.zju.edu.cn">
-浙大设计
+<a class="link-card friendly-link-card" href="http://www.idi.zju.edu.cn">
+<span>DESIGN</span>
+<h3>ZJU Design</h3>
+<p>Design discipline, institute updates, and learning resources.</p>
+<small>idi.zju.edu.cn →</small>
 </a>
+
+</div>
 
 </div>
 
 <aside class="sidebar">
 
 <div class="side-card">
-<p class="side-h">类型</p>
+<p class="side-h">Type</p>
 <div class="cat-list">
-  <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
-  <a href="http://www.idi.zju.edu.cn" class="cat"><span>设计机构</span><span class="cat__count"></span></a>
-  <a href="course/design-research/" class="cat"><span>设计课程</span><span class="cat__count">3</span></a>
-  <a href="https://www.zju.edu.cn" class="cat"><span>设计资源</span><span class="cat__count"></span></a>
-  <a href="blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
+  <a href="http://www.idi.zju.edu.cn" class="cat"><span>Design Institutions</span><span class="cat__count"></span></a>
+  <a href="../course/design-research/" class="cat"><span>Design Courses</span><span class="cat__count">3</span></a>
+  <a href="https://www.zju.edu.cn" class="cat"><span>Design Resources</span><span class="cat__count"></span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

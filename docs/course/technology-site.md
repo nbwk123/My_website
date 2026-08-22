@@ -11,16 +11,16 @@
 <section class="page-hero page-hero--plain course-hero" markdown="1">
 
 <div class="section-heading-line">
-  <h1>技术类笔记</h1>
+  <h1>Technology Notes</h1>
   <span style="color:rgb(236 99 123 / 0.25)!important;">TECH</span>
 </div>
 
-整理和网站搭建、本地开发、部署发布、工具流程有关的技术记录。
+Collecting technical notes related to website building, local development, deployment, and tool workflows.
 
 </section>
 
 <section class="note-callout" markdown="1">
-**当前重点：** 把个人网站相关的技术记录整理成后续可以复用的笔记。
+**Current focus:** Organize website-related technical records into reusable notes for future iteration.
 </section>
 
 </div>
