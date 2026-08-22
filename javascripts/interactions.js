@@ -460,7 +460,10 @@
 
   document.querySelectorAll(".cat").forEach(item => {
     item.addEventListener("click", function(event) {
-      event.preventDefault();
+      const href = this.getAttribute("href") || "";
+      if (href === "#" || href.trim() === "") {
+        event.preventDefault();
+      }
   
       document.querySelectorAll(".cat").forEach(cat => {
         cat.classList.remove("cat--active");
@@ -550,11 +553,63 @@
     });
   }
 
+  function initLeadCardExpand() {
+    const cards = Array.from(document.querySelectorAll("[data-expand-card]"));
+
+    if (window.__leadCardExpandCleanup) {
+      window.__leadCardExpandCleanup();
+      window.__leadCardExpandCleanup = null;
+    }
+
+    if (!cards.length) {
+      return;
+    }
+
+    let ticking = false;
+
+    const update = function() {
+      ticking = false;
+      const triggerY = window.innerHeight * 0.75;
+      const keepOpenY = window.innerHeight * 0.12;
+
+      cards.forEach(function(card) {
+        const rect = card.getBoundingClientRect();
+        const shouldExpand = rect.top <= triggerY && rect.bottom >= keepOpenY;
+
+        card.classList.toggle("lead-card--expanded", shouldExpand);
+      });
+    };
+
+    const requestUpdate = function() {
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    update();
+
+    window.__leadCardExpandCleanup = function() {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      cards.forEach(function(card) {
+        card.classList.remove("lead-card--expanded");
+      });
+    };
+  }
+
 
 // 正常加载页面时运行
   document.addEventListener(
       "DOMContentLoaded",
-      initScrollReveal
+      function() {
+        initScrollReveal();
+        initLeadCardExpand();
+      }
   );
 
 
@@ -563,6 +618,7 @@
 
     document$.subscribe(function() {
       initScrollReveal();
+      initLeadCardExpand();
     });
 
   }
