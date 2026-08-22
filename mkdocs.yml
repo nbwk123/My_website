@@ -18,28 +18,46 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.top
     - toc.integrate
+    - navigation.top
 
 nav:
   - Home: index.md
-  - Courses: course/index.md
-  - Projects: project/index.md
-  - Personal Website System: project/website-system.md
-  - COSTORY: project/costory.md
-  - Blog: blogs/index.md
-  - 2024 D20 Global Design Deans Summit: blogs/2024D20.md
-  - Japan · Osaka · Kyoto: blogs/Japan-travel.md
+  - Courses:
+      - Overview: course/index.md
+      - Technology Notes: course/technology-site.md
+      - Design Research: course/design-research.md
+      - Sample Note: course/example.md
+  - Projects:
+      - Overview: project/index.md
+      - Personal Website System: project/website-system.md
+      - COSTORY: project/costory.md
+      - Personal Website Design: project/My_website_design.md
+  - Blog:
+      - Overview: blogs/index.md
+      - 2024 D20 Global Design Deans Summit: blogs/2024D20.md
+      - Japan · Osaka · Kyoto: blogs/Japan-travel.md
+      - 2025 D20 Global Design Deans Summit: blogs/2025D20.md
+      - Friendly Links: links.md
   - About: about/index.md
   - 中文:
       - 主页: zh/index.md
-      - 课程: zh/course/index.md
-      - 项目: zh/project/index.md
-      - 个人网站系统: zh/project/website-system.md
-      - COSTORY: zh/project/costory.md
-      - 博客: zh/blogs/index.md
-      - D20全球设计院长峰会: zh/blogs/2024D20.md
-      - 日本·大阪·京都: zh/blogs/Japan-travel.md
+      - 课程:
+          - 课程总览: zh/course/index.md
+          - 技术类笔记: zh/course/technology-site.md
+          - 设计研究: zh/course/design-research.md
+          - 示例课程文档: zh/course/example.md
+      - 项目:
+          - 项目总览: zh/project/index.md
+          - 个人网站系统: zh/project/website-system.md
+          - COSTORY: zh/project/costory.md
+          - 个人网页搭建: zh/project/My_website_design.md
+      - 博客:
+          - 博客总览: zh/blogs/index.md
+          - D20全球设计院长峰会 2024: zh/blogs/2024D20.md
+          - 日本·大阪·京都: zh/blogs/Japan-travel.md
+          - D20全球设计院长峰会 2025: zh/blogs/2025D20.md
+          - 友链: zh/links.md
       - 关于: zh/about/index.md
 
 markdown_extensions:

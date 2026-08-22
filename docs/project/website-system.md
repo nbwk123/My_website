@@ -47,6 +47,8 @@ GitHub Repository
 
 </section>  
 
+As a non-technical student, it is hard for me to build a personal site from bottom to the end, which is also a good chance for me to take this attemptation.
+
 </div>
 
 <div class="module-list" markdown="1">

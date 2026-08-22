@@ -27,7 +27,6 @@
 
     <div class="site-topbar__nav" aria-label="主导航">
       {% if not is_zh %}
-        <a class="site-topbar__link{% if current_url == 'index.html' or current_url == '' %} site-topbar__link--active{% endif %}" href="{{ 'index.html' | url }}">Home</a>
         <div class="site-topbar__dropdown">
           <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="Notes submenu">
@@ -57,7 +56,6 @@
         </div>
         <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">About</a>
       {% else %}
-        <a class="site-topbar__link{% if current_url == 'zh/' or current_url == 'zh/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'zh/' | url }}">主页</a>
         <div class="site-topbar__dropdown">
           <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/course/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="课程子菜单">

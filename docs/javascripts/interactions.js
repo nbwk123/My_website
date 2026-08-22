@@ -602,6 +602,111 @@
     };
   }
 
+  function initDetailNavigation() {
+    document.querySelectorAll(".detail-rail").forEach((rail) => rail.remove());
+    document.querySelectorAll(".detail-top-back").forEach((back) => back.remove());
+    document.body.classList.remove("site-detail-page");
+
+    const pathParts = window.location.pathname.split("/").filter(Boolean);
+    const languageIndex = pathParts.indexOf("zh");
+    const isZh = languageIndex !== -1;
+    const sectionName = isZh ? pathParts[languageIndex + 1] : pathParts.find((part) => part === "project" || part === "blogs");
+    const sectionIndex = pathParts.indexOf(sectionName);
+    const slug = sectionIndex >= 0 ? pathParts[sectionIndex + 1] : "";
+    const isDetailPage = (sectionName === "project" || sectionName === "blogs") && slug && slug !== "index.html";
+
+    if (!isDetailPage) {
+      return;
+    }
+
+    document.body.classList.add("site-detail-page");
+
+    const parentUrl = new URL("../", window.location.href).href;
+    const backLabel = isZh ? "返回" : "Back";
+    const hero = document.querySelector(".md-content__inner .page-hero");
+
+    if (hero) {
+      const topBack = document.createElement("a");
+      topBack.className = "detail-top-back";
+      topBack.href = parentUrl;
+      topBack.textContent = `← ${backLabel}`;
+      hero.prepend(topBack);
+    }
+  }
+
+  function initTocMarker() {
+    if (window.__siteTocMarkerCleanup) {
+      window.__siteTocMarkerCleanup();
+    }
+
+    const navs = Array.from(document.querySelectorAll(".md-nav--integrated .md-nav--secondary [data-md-component='toc']"));
+
+    if (!navs.length) {
+      window.__siteTocMarkerCleanup = null;
+      return;
+    }
+
+    let frame = 0;
+
+    const updateMarker = (nav) => {
+      let track = nav.querySelector(":scope > .site-toc-marker-track");
+      let thumb = nav.querySelector(":scope > .site-toc-marker-thumb");
+
+      if (!track) {
+        track = document.createElement("span");
+        track.className = "site-toc-marker-track";
+        track.setAttribute("aria-hidden", "true");
+        nav.prepend(track);
+      }
+
+      if (!thumb) {
+        thumb = document.createElement("span");
+        thumb.className = "site-toc-marker-thumb";
+        thumb.setAttribute("aria-hidden", "true");
+        nav.prepend(thumb);
+      }
+
+      const activeLink = nav.querySelector(".md-nav__link--active");
+
+      if (!activeLink) {
+        nav.style.setProperty("--toc-marker-opacity", "0");
+        return;
+      }
+
+      const navRect = nav.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+
+      nav.style.setProperty("--toc-marker-top", `${linkRect.top - navRect.top}px`);
+      nav.style.setProperty("--toc-marker-height", `${linkRect.height}px`);
+      nav.style.setProperty("--toc-marker-opacity", "1");
+    };
+
+    const updateAllMarkers = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        navs.forEach(updateMarker);
+      });
+    };
+
+    const observer = new MutationObserver(updateAllMarkers);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+      subtree: true,
+    });
+
+    window.addEventListener("scroll", updateAllMarkers, { passive: true });
+    window.addEventListener("resize", updateAllMarkers);
+    updateAllMarkers();
+
+    window.__siteTocMarkerCleanup = () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", updateAllMarkers);
+      window.removeEventListener("resize", updateAllMarkers);
+    };
+  }
+
 
 // 正常加载页面时运行
   document.addEventListener(
@@ -609,6 +714,8 @@
       function() {
         initScrollReveal();
         initLeadCardExpand();
+        initDetailNavigation();
+        initTocMarker();
       }
   );
 
@@ -619,6 +726,8 @@
     document$.subscribe(function() {
       initScrollReveal();
       initLeadCardExpand();
+      initDetailNavigation();
+      initTocMarker();
     });
 
   }
