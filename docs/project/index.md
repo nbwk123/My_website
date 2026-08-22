@@ -12,7 +12,7 @@
 
 <div class="section-heading-line">
   <h1>个人项目分享</h1>
-  <span style="color:rgb(232 108 8 / 0.25)!important;">PROJECT</span>
+  <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span>
 </div>
 
 记录并分享个人科研竞赛成果、项目等。
@@ -109,11 +109,11 @@
 <div class="side-card">
 <p class="side-h">类型</p>
 <div class="cat-list">
-  <a href="#" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
-  <a href="#" class="cat"><span>论文</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>设计作品</span><span class="cat__count">3</span></a>
-  <a href="#" class="cat"><span>竞赛成果</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
+  <a href="./" class="cat"><span>论文</span><span class="cat__count"></span></a>
+  <a href="costory/" class="cat"><span>设计作品</span><span class="cat__count">3</span></a>
+  <a href="My_website_design/" class="cat"><span>竞赛成果</span><span class="cat__count"></span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

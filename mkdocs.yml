@@ -31,16 +31,15 @@ nav:
   - D20全球设计院长峰会: blogs/2024D20.md
   - 日本·大阪·京都: blogs/Japan-travel.md
   - 关于: about/index.md
-  - English:
-      - Home: en/index.md
-      - Courses: en/course/index.md
-      - Projects: en/project/index.md
-      - Personal Website System: en/project/website-system.md
-      - COSTORY: en/project/costory.md
-      - Blog: en/blogs/index.md
-      - 2024 D20 Global Design Deans Summit: en/blogs/2024D20.md
-      - Japan · Osaka · Kyoto: en/blogs/Japan-travel.md
-      - About: en/about/index.md
+  - Home: en/index.md
+  - Courses: en/course/index.md
+  - Projects: en/project/index.md
+  - Personal Website System: en/project/website-system.md
+  - COSTORY: en/project/costory.md
+  - Blog: en/blogs/index.md
+  - 2024 D20 Global Design Deans Summit: en/blogs/2024D20.md
+  - Japan · Osaka · Kyoto: en/blogs/Japan-travel.md
+  - About: en/about/index.md
 
 markdown_extensions:
   - attr_list

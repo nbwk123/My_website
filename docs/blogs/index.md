@@ -14,7 +14,7 @@
 
 <h1>个人分享</h1>
 
-<span style="color:rgba(255,227,113,0.48)!important;">
+<span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">
 BLOG
 </span>
 
@@ -107,40 +107,7 @@ BLOG
 
 </article>
 
-
-<!-- 地球模块的容器 -->
-<div style="
-  background:#ffffff; 
-  border:1px solid #e5e7eb; 
-  border-radius:16px; 
-  padding:24px; 
-  margin-top:40px; 
-  width:100%; 
-  box-sizing: border-box; 
-  box-shadow:0 1px 3px rgba(0,0,0,0.05);
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  overflow: hidden;
-">
-  <div id="globeViz" style="display: flex; justify-content: center; align-items: center; width:100%; height:350px;"></div>
 </div>
-
-</div>
-
-<script src="//unpkg.com/globe.gl"></script>
-<script>
-const container = document.getElementById('globeViz');
-if(container){
-const myGlobe = Globe()(container)
-.globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-.bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-.width(container.clientWidth || 550)
-.height(350)
-.backgroundColor('rgba(0,0,0,0)');
-myGlobe.pointOfView({ altitude:3.5 });
-}
-</script>
 
 </div>
 
@@ -152,32 +119,11 @@ myGlobe.pointOfView({ altitude:3.5 });
 <p class="side-h">类型</p>
 
 <div class="cat-list">
-
-<a href="#" class="cat cat--active">
-<span>所有</span>
-<span class="cat__count">31</span>
-</a>
-
-<a href="#" class="cat">
-<span>旅行记录</span>
-<span class="cat__count"></span>
-</a>
-
-<a href="#" class="cat">
-<span>科研学术</span>
-<span class="cat__count">3</span>
-</a>
-
-<a href="#" class="cat">
-<span>会议展会</span>
-<span class="cat__count"></span>
-</a>
-
-<a href="#" class="cat">
-<span>日常生活</span>
-<span class="cat__count">3</span>
-</a>
-
+  <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
+  <a href="../course/technology-site/" class="cat"><span>技术类</span><span class="cat__count"></span></a>
+  <a href="../course/design-research/" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
+  <a href="2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 
 </div>

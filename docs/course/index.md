@@ -12,7 +12,7 @@
 
 <div class="section-heading-line">
   <h1>课程资源与学习总结</h1>
-  <span style="color:rgb(236 99 123 / 0.25)!important;">COURSE</span>
+  <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span>
 </div>
 
 记录正在学习和已经完成的课程，整理其中的内容、方法与反思。
@@ -27,7 +27,13 @@
                                                                                                                                             
 <div class="section-heading-line" style="margin-top: -1.2rem;">                                                                                                          
   <h2 style="font-size:32px !important; font-weight: 550; margin-bottom: -0.5vw !important;">秋冬学期</h2>                                      
-  <span style="color:rgb(236 99 123 / 0.25)!important; font-size:55px !important; --course-watermark-left: 85%;">2026--2027-1</span>              
+  <span style="color: rgb(236 99 123 / 0.25) !important;
+             font-size: 55px !important;
+             letter-spacing: 1px !important;
+             --course-watermark-left: 85%;
+             font-family: 'BlinkMacSystemFont', serif !important;">
+  2026-2027-1
+</span>              
 </div>                                                                                                                                      
                                                                                                                                             
 </section>                                                                                                                                  
@@ -93,11 +99,11 @@
 <div class="side-card">
 <p class="side-h">类型</p>
 <div class="cat-list">
-  <a href="#" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
-  <a href="#" class="cat"><span>技术类</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
-  <a href="#" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
+  <a href="technology-site/" class="cat"><span>技术类</span><span class="cat__count"></span></a>
+  <a href="design-research/" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
+  <a href="../blogs/2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

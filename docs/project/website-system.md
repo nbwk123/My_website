@@ -1,14 +1,40 @@
-# 个人网站系统
+<style>
+  .md-nav__item--active > .md-nav__link,
+  .md-nav__link--active {
+      color: rgb(255, 204, 0) !important;
+      font-weight: bold;
+  }
+</style>
 
-<div class="note-page" markdown="1">
+<div class="courses-page project-detail-page" markdown="1">
 
-<section class="page-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero">
+<div class="post_info">2026.08</div>
 
-# 个人网站系统
+<div class="section-heading-line">
 
-一个用 Vibe Coding 持续搭建和迭代的个人作品集系统。它不只是展示页面，而是把内容生产、设计判断、低代码维护和 GitHub 发布组织成一套可长期运行的流程。
+<h1>个人网站系统</h1>
+
+<span style="color:rgb(236 99 123 / 0.25)!important;">
+WEBSITE SYSTEM
+</span>
+
+</div>
+
+<div class="post-tags" style="margin-top:0.2rem">
+<span class="post-tag">个人</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">作品集</span>
+</div>
+
+<p style="font-size: 20px; font-weight:500 !important; margin-top:0.7rem">一个用 Vibe Coding 持续搭建和迭代的个人作品集系统。</p>
 
 </section>
+
+![个人网站系统](../assets/AI-design-card.png){: style="border-radius: 16px; margin-top:-1.3rem;" width="700" }
+
+<a href="https://github.com/nbwk123/My_website" style="color: rgb(255, 204, 0) !important; font-weight: normal;">
+GitHub 项目仓库
+</a>
 
 <section class="note-callout" markdown="1">
 **核心问题：** 对不擅长代码的人来说，个人网站最难的不是第一次做出来，而是之后能不能持续更新、调整结构、发布内容。

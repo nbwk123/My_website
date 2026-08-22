@@ -12,7 +12,7 @@
 
 <div class="section-heading-line">
   <h1>Personal Project Sharing</h1>
-  <span style="color:rgb(232 108 8 / 0.25)!important;">PROJECT</span>
+  <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span>
 </div>
 
 Recording and sharing personal research competition outcomes, projects, and related work.
@@ -109,11 +109,11 @@ Recording and sharing personal research competition outcomes, projects, and rela
 <div class="side-card">
 <p class="side-h">Type</p>
 <div class="cat-list">
-  <a href="#" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
-  <a href="#" class="cat"><span>Papers</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Design Works</span><span class="cat__count">3</span></a>
-  <a href="#" class="cat"><span>Competition Outcomes</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
+  <a href="./" class="cat"><span>Papers</span><span class="cat__count"></span></a>
+  <a href="costory/" class="cat"><span>Design Works</span><span class="cat__count">3</span></a>
+  <a href="My_website_design/" class="cat"><span>Competition Outcomes</span><span class="cat__count"></span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

@@ -29,9 +29,10 @@
       {% if is_en %}
         <a class="site-topbar__link{% if current_url == 'en/' or current_url == 'en/index.html' %} site-topbar__link--active{% endif %}" href="{{ 'en/' | url }}">Home</a>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Notes<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('en/course/') %} site-topbar__link--active{% endif %}" href="{{ 'en/course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="Notes submenu">
             <a href="{{ 'en/course/' | url }}">Overview</a>
+            <a href="{{ 'en/course/technology-site/' | url }}">Technology Notes</a>
             <a href="{{ 'en/course/design-research/' | url }}">Design Research</a>
             <a href="{{ 'en/course/example/' | url }}">Sample Note</a>
           </div>
@@ -61,6 +62,7 @@
           <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="课程子菜单">
             <a href="{{ 'course/' | url }}">课程总览</a>
+            <a href="{{ 'course/technology-site/' | url }}">技术类笔记</a>
             <a href="{{ 'course/design-research/' | url }}">设计研究</a>
             <a href="{{ 'course/example/' | url }}">示例课程文档</a>
           </div>

@@ -54,6 +54,10 @@ hide:
 </section>
 
 <section class="home-section home-manifesto">
+  <section class="lead-card" src="../assets/program2.png" data-expand-card>
+    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">Hello</h1>
+    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">Let us meet.</p>
+  </section>
   <p class="section-kicker">Site Direction</p>
   <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">Focused on sharing ideas, with projects as support.</p>
   <p>This site not only displays outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>

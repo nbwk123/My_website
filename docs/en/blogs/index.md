@@ -14,7 +14,7 @@
 
 <h1>Personal Sharing</h1>
 
-<span style="color:rgba(255,227,113,0.48)!important;">
+<span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">
 BLOG
 </span>
 
@@ -119,11 +119,11 @@ Recording and sharing personal academic experiences, life experiences, and relat
 <p class="side-h">Type</p>
 
 <div class="cat-list">
-  <a href="#" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
-  <a href="#" class="cat"><span>Technical</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Design</span><span class="cat__count">3</span></a>
-  <a href="#" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="#" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
+  <a href="../course/technology-site/" class="cat"><span>Technical</span><span class="cat__count"></span></a>
+  <a href="../course/design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
+  <a href="2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 
 </div>

@@ -4,7 +4,7 @@
 
 <div class="section-heading-line">
   <h1>Profile</h1>
-  <span>ABOUT</span>
+  <span style="letter-spacing: 0.01em !important;">ABOUT</span>
 </div>
 
 Hi, I am **Kai Wang**. I am building my personal website while learning how to connect technology, design, and expression. This site records my course notes, projects, tool practice, and stage-by-stage reflections.

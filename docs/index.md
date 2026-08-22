@@ -54,6 +54,10 @@ hide:
 </section>
 
 <section class="home-section home-manifesto">
+  <section class="lead-card" data-expand-card>
+    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">你好</h1>
+    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">我们见个面吧</p>
+  </section>
   <p class="section-kicker">网站的方向</p>
   <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">重在分享想法，兼项目展示。</p>
   <p>这个网站不仅展示结果，也记录我如何借助 AI 协作、低代码管理和设计评估，把一个个人空间持续打磨成可维护的作品集系统。</p>
