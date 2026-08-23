@@ -8,11 +8,11 @@
 
 <div class="courses-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>Course Resources and Learning Summaries</h1>
-  <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span>
+  <!-- <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span> -->
 </div>
 
 Recording courses I am currently taking and have completed, while organizing their content, methods, and reflections.

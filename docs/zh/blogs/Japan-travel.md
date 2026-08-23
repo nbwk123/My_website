@@ -62,4 +62,8 @@
 
 </div>
 
+<div class="pdf-embed" markdown="1">
+<iframe src="../../../assets/pdf/example.pdf" title="日本旅行 PDF"></iframe>
+</div>
+
 </div>

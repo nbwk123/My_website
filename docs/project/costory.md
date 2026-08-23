@@ -292,3 +292,9 @@ The exploration ring connects seeing and moving, so story progression does not d
 <p class="case-back-link"><a href="../">Back to Projects</a></p>
 
 </div>
+
+</section>
+
+
+
+</div>

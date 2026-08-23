@@ -9,7 +9,7 @@
 <div class="project-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero" style="margin-bottom: 1.3em;">
-<div class="post_info">2026.08-present</div>
+<div class="post_info">2026-08-present</div>
 
 <div class="section-heading-line">
 

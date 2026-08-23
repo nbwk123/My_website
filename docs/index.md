@@ -9,7 +9,7 @@ hide:
 <section class="home-hero">
   <div class="home-copy">
     <p class="home-kicker">Learning · Creating · Designing</p>
-    <h1>Code as Design</h1>
+    <h1 style="font-size: clamp(2.5rem, 2.0408163265306123rem + 1.9591836734693877vw, 4rem)!important;">Code as Design</h1>
     <p class="home-subtitle">A personal portfolio system that is continuously built and iterated, used to record learning, design judgment, and project practice.</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">View Projects</a>
@@ -55,14 +55,16 @@ hide:
 
 <section class="home-section home-manifesto">
   <section class="lead-card" src="assets/program2.png" data-expand-card>
-    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">Hello</h1>
-    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">Let us meet.</p>
+    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">Design in the AI era</h1>
+    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">So much creativity waiting for us to seek.</p>
+    <a href="project/" class="home-button home-button-primary">View Projects →</a>
   </section>
   <p class="section-kicker">Site Direction</p>
   <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">Focused on sharing ideas, with projects as support.</p>
   <p>This site not only displays outcomes. It also records how I use AI collaboration, low-code management, and design evaluation to keep shaping a maintainable portfolio system.</p>
 </section>
 
+<!--
 <section class="home-feature-grid">
   <a class="home-feature interaction-tilt" href="course/" data-tilt>
     <span>01</span>
@@ -80,6 +82,7 @@ hide:
     <p>Keep updating my direction, ability boundaries, and developing personal style.</p>
   </a>
 </section>
+-->
 
-<h1 style="font-weight: bold">Course Notes</h1>
-<h1 style="font-weight: bold">Projects</h1>
+<h1 class="home-section-title">Course Notes</h1>
+<h1 class="home-section-title">Projects</h1>

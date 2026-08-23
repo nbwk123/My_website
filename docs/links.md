@@ -1,10 +1,10 @@
 <div class="about-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>Friendly Links</h1>
-  <span style="letter-spacing: 0.01em !important;">LINKS</span>
+  <!-- <span style="letter-spacing: 0.01em !important;">LINKS</span> -->
 </div>
 
 Congratulations on discovering a hidden surprise! 🎉 Here I'll include some links that have been or are currently helping my studies and life. Feel free to browse them as needed! 👏

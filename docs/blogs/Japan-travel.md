@@ -22,8 +22,8 @@
 </div>
 
 <div class="post-tags" style="margin-top:0.2rem">
-<span class="post-tag">Personal</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
+<span class="post-tag">Travel</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">Culture</span>
 </div>
 
 <p style="font-size: 20px; font-weight:500 !important; margin-top:0.7rem">Design in the AI Era</p>
@@ -31,7 +31,7 @@
 </section>
 
 ![20250630-0704](../assets/Japan_Osaka_Kyoto.jpeg){: style="border-radius: 16px; margin-top:-1.3rem;" width="700" }
-*Tadao Ando Exhibition | Youth, VS. Grand Green Osaka*
+*Tadao Ando | Youth, VS. Grand Green Osaka*
 
 <div class="blog__posts">
 
@@ -60,6 +60,10 @@
 
 </section>
 
+</div>
+
+<div class="pdf-embed" markdown="1">
+<iframe src="../../assets/pdf/example.pdf" title="Japan travel PDF"></iframe>
 </div>
 
 </div>

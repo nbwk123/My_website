@@ -8,15 +8,13 @@
 
 <div class="blogs-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
 
 <h1>Personal Sharing</h1>
 
-<span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">
-BLOG
-</span>
+<!-- <span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">BLOG</span> -->
 
 </div>
 

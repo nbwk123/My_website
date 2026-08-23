@@ -1,10 +1,10 @@
 <div class="about-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>个人简介</h1>
-  <span style="letter-spacing: 0.01em !important;">ABOUT</span>
+  <!-- <span style="letter-spacing: 0.01em !important;">ABOUT</span> -->
 </div>
 
 你好，我是 **Kai Wang**。我正在搭建自己的个人网站，也在学习如何把技术、设计和表达结合起来。这个网站会记录我的课程笔记、项目作品、工具实践和阶段性思考。

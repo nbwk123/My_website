@@ -8,11 +8,11 @@
 
 <div class="courses-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>课程资源与学习总结</h1>
-  <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span>
+  <!-- <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span> -->
 </div>
 
 记录正在学习和已经完成的课程，整理其中的内容、方法与反思。

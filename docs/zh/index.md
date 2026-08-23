@@ -81,5 +81,5 @@ hide:
   </a>
 </section>
 
-<h1 style="font-weight: bold">课程笔记</h1>
-<h1 style="font-weight: bold">项目作品</h1>
+<h1 class="home-section-title">课程笔记</h1>
+<h1 class="home-section-title">项目作品</h1>

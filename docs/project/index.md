@@ -8,11 +8,11 @@
 
 <div class="project-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>Personal Project Sharing</h1>
-  <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span>
+  <!-- <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span> -->
 </div>
 
 Recording and sharing personal research competition outcomes, projects, and related work.

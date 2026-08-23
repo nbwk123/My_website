@@ -76,7 +76,7 @@
   let lightX = cursorX;
   let lightY = cursorY;
 
-  const moveLight = () => {
+  /*const moveLight = () => {
     lightX += (cursorX - lightX) * 0.18;
     lightY += (cursorY - lightY) * 0.18;
 
@@ -94,7 +94,7 @@
     document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
   });
 
-  moveLight();
+  moveLight();*/
 
   document.querySelectorAll("[data-tilt]").forEach((card) => {
     card.addEventListener("pointermove", (event) => {

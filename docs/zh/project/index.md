@@ -8,11 +8,11 @@
 
 <div class="project-page" markdown="1">
 
-<section class="page-hero page-hero--plain course-hero" markdown="1">
+<section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
   <h1>个人项目分享</h1>
-  <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span>
+  <!-- <span style="color:rgb(232 108 8 / 0.25)!important; letter-spacing: 0.01em !important;">PROJECT</span> -->
 </div>
 
 记录并分享个人科研竞赛成果、项目等。

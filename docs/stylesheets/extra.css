@@ -1,16 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap");
+
 :root {
     --site-ink: #111111;
     --site-muted: #6e6e73;
     --site-line: #e8e8ed;
     --site-soft: #f5f5f7;
     --site-blue: #0066cc;
-    --site-bg: #FAF8F5;
+    --site-bg: #f0eee6;
     --site-surface: #ffffff;
-    --site-surface-soft: #f5f5f3;
+    --site-surface-soft: #f0eee6;
     --site-purple: #7c3aed;
     --cursor-x: 50vw;
     --cursor-y: 50vh;
     --font-heading:
+            "Inter",
+            "Noto Sans SC",
             -apple-system,
             BlinkMacSystemFont,
             "PingFang SC",
@@ -19,6 +23,8 @@
             sans-serif;
 
     --font-body:
+            "Source Serif 4",
+            "Noto Serif SC",
             Georgia,
             "Songti SC",
             "STSong",
@@ -93,7 +99,7 @@ button {
     top: 0;
     overflow: visible;
     border-bottom: none;
-    background: #FAF8F5;
+    background: #f0eee6;
     box-shadow: none;
     color: var(--site-ink);
     backdrop-filter: saturate(180%) blur(18px);
@@ -112,7 +118,7 @@ button {
 .site-topbar__brand {
     display: inline-block;
     color: var(--site-ink);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Inter, "Noto Sans SC", sans-serif;
+    font-family: var(--font-heading), sans-serif;
     font-size: clamp(1.08rem, 1.55vw, 1.24rem);
     font-weight: 720;
     letter-spacing: -0.025em;
@@ -260,7 +266,7 @@ button {
 .detail-top-back {
     display: flex;
     width: fit-content;
-    margin: 0 0 clamp(2.2rem, 4vw, 3.6rem);
+    margin: 0 0 clamp(1.1rem, 2vw, 1.8rem);
     color: rgba(86, 54, 54, 0.86) !important;
     font-family: var(--font-heading), sans-serif;
     font-size: 0.88rem;
@@ -1307,27 +1313,27 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
     justify-content: center;
     min-height: 2.5rem;
     padding: 0.35rem 1rem;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    border-radius: 999px;
-    color: #7c3aed;
+    border: 1px solid #0F0F0E;
+    border-radius: 15px;
+    color: #0F0F0E;
     font-weight: 600;
     transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
 .md-typeset .home-button,
 .md-typeset .home-button:hover {
-    color: #7c3aed;
+    color: #0F0F0E;
 }
 
 .home-button:hover {
-    border-color: #7c3aed;
-    background: rgba(124, 58, 237, 0.06);
+    border-color: #0F0F0E;
+    background: #0F0F0E0C;
     transform: translateY(-1px);
 }
 
 .home-button-primary {
-    border-color: #7c3aed;
-    background: #7c3aed;
+    border-color: #0F0F0E;
+    background: #0F0F0E;
     color: #ffffff;
 }
 
@@ -1337,8 +1343,36 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
 }
 
 .home-button-primary:hover {
-    border-color: #6d28d9;
-    background: #6d28d9;
+    border-color: #0F0F0ECC;
+    background: #0F0F0ECC;
+}
+
+.md-typeset .home-section-title {
+    margin: 2.4rem 0 1.2rem;
+    color: #0F0F0E;
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(1.45rem, 1.18rem + 0.72vw, 2rem);
+    font-weight: 680;
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+.lead-card .home-button-primary {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: #0F0F0E;
+}
+
+.md-typeset .lead-card .home-button-primary,
+.md-typeset .lead-card .home-button-primary:hover {
+    color: #0F0F0E;
+}
+
+.lead-card .home-button-primary:hover {
+    border-color: #ffffff;
+    background: #f1f1f1;
+    box-shadow: none;
+    transform: none;
 }
 
 .home-visual {
@@ -2478,6 +2512,58 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
     white-space: nowrap !important;
 }
 
+.md-typeset .course-hero--no-watermark .section-heading-line::after {
+    content: none !important;
+    display: none !important;
+}
+
+@media screen and (min-width: 1220px) {
+    body:has(.course-hero--no-watermark) .md-main__inner,
+    .md-main__inner:has(.course-hero--no-watermark) {
+        width: min(76vw, 90rem) !important;
+        max-width: min(76vw, 90rem) !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        justify-content: center !important;
+    }
+
+    body:has(.course-hero--no-watermark) .md-sidebar--primary,
+    body:has(.course-hero--no-watermark) .md-sidebar--secondary,
+    .md-main__inner:has(.course-hero--no-watermark) .md-sidebar--primary,
+    .md-main__inner:has(.course-hero--no-watermark) .md-sidebar--secondary {
+        display: none !important;
+    }
+
+    body:has(.course-hero--no-watermark) .md-content,
+    .md-main__inner:has(.course-hero--no-watermark) .md-content {
+        flex: 0 1 100% !important;
+        min-width: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    body:has(.course-hero--no-watermark) .md-content__inner,
+    .md-main__inner:has(.course-hero--no-watermark) .md-content__inner {
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    body:has(.course-hero--no-watermark) :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page),
+    .md-content__inner:has(.course-hero--no-watermark) :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page),
+    body:has(.course-hero--no-watermark) :is(.side-layout, .side-main, .side-card, .blog__posts),
+    .md-content__inner:has(.course-hero--no-watermark) :is(.side-layout, .side-main, .side-card, .blog__posts) {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    body:has(.course-hero--no-watermark) .post,
+    .md-content__inner:has(.course-hero--no-watermark) .post {
+        grid-template-columns: minmax(280px, 34%) minmax(0, 1fr);
+    }
+}
+
 @media screen and (max-width: 900px) {
     .md-typeset .course-hero .section-heading-line {
         --course-watermark-size: clamp(3.6rem, 14vw, 4.9rem);
@@ -2626,6 +2712,7 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
 }
 
 body:has(.project-page),
+body:has(.project-page) .site-topbar,
 body:has(.project-page) .md-container,
 body:has(.project-page) .md-main,
 body:has(.project-page) .md-content,
@@ -2640,6 +2727,7 @@ body:has(.project-page) .md-sidebar__inner {
 }
 
 body:has(.blogs-page),
+body:has(.blogs-page) .site-topbar,
 body:has(.blogs-page) .md-container,
 body:has(.blogs-page) .md-main,
 body:has(.blogs-page) .md-content,
@@ -2654,6 +2742,7 @@ body:has(.blogs-page) .md-sidebar__inner {
 }
 
 body:has(.about-page),
+body:has(.about-page) .site-topbar,
 body:has(.about-page) .md-container,
 body:has(.about-page) .md-main,
 body:has(.about-page) .md-content,
@@ -2668,6 +2757,7 @@ body:has(.about-page) .md-sidebar__inner {
 }
 
 body:has(.courses-page),
+body:has(.courses-page) .site-topbar,
 body:has(.courses-page) .md-container,
 body:has(.courses-page) .md-main,
 body:has(.courses-page) .md-content,
@@ -2756,6 +2846,20 @@ body:has(.courses-page) .md-sidebar__inner {
     margin-top: 1.2rem;
 }
 
+.pdf-embed {
+    width: min(100%, 700px);
+    margin: 0.8rem 0 0;
+}
+
+.pdf-embed iframe {
+    display: block;
+    width: 100%;
+    min-height: 560px;
+    border: 1px solid rgba(15, 15, 14, 0.1);
+    border-radius: 16px;
+    background: #fff;
+}
+
 
 .post {
     display: grid;
@@ -2817,7 +2921,7 @@ body:has(.courses-page) .md-sidebar__inner {
     text-transform: uppercase;
     color: #af8d03 !important;
     margin: 0;
-    font-family: 'BlinkMacSystemFont', serif;
+    font-family: var(--font-heading), sans-serif;
 }
 
 .post__excerpt {
@@ -2846,7 +2950,7 @@ body:has(.courses-page) .md-sidebar__inner {
     text-transform: uppercase;
     color: #af8d03 !important;
     margin-bottom: 1rem;
-    font-family: “BlinkMacSystemFont”, serif;
+    font-family: var(--font-heading), sans-serif;
 }
 
 .blogs-page .cat:hover {
@@ -3006,6 +3110,7 @@ img + em {
 
 /* Dark mode refinements for section list pages. */
 html[data-site-theme-active="dark"] body:has(.project-page),
+html[data-site-theme-active="dark"] body:has(.project-page) .site-topbar,
 html[data-site-theme-active="dark"] body:has(.project-page) .md-container,
 html[data-site-theme-active="dark"] body:has(.project-page) .md-main,
 html[data-site-theme-active="dark"] body:has(.project-page) .md-content,
@@ -3017,6 +3122,7 @@ html[data-site-theme-active="dark"] .project-page {
 }
 
 html[data-site-theme-active="dark"] body:has(.blogs-page),
+html[data-site-theme-active="dark"] body:has(.blogs-page) .site-topbar,
 html[data-site-theme-active="dark"] body:has(.blogs-page) .md-container,
 html[data-site-theme-active="dark"] body:has(.blogs-page) .md-main,
 html[data-site-theme-active="dark"] body:has(.blogs-page) .md-content,
@@ -3028,6 +3134,7 @@ html[data-site-theme-active="dark"] .blogs-page {
 }
 
 html[data-site-theme-active="dark"] body:has(.courses-page),
+html[data-site-theme-active="dark"] body:has(.courses-page) .site-topbar,
 html[data-site-theme-active="dark"] body:has(.courses-page) .md-container,
 html[data-site-theme-active="dark"] body:has(.courses-page) .md-main,
 html[data-site-theme-active="dark"] body:has(.courses-page) .md-content,
@@ -3039,6 +3146,7 @@ html[data-site-theme-active="dark"] .courses-page {
 }
 
 html[data-site-theme-active="dark"] body:has(.about-page),
+html[data-site-theme-active="dark"] body:has(.about-page) .site-topbar,
 html[data-site-theme-active="dark"] body:has(.about-page) .md-container,
 html[data-site-theme-active="dark"] body:has(.about-page) .md-main,
 html[data-site-theme-active="dark"] body:has(.about-page) .md-content,
