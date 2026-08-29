@@ -102,8 +102,8 @@
   <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
   <a href="technology-site/" class="cat"><span>技术类</span><span class="cat__count"></span></a>
   <a href="design-research/" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
-  <a href="../blogs/2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="../blogs/2024D20/" class="cat"><span>活动</span><span class="cat__count"></span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>实验室生活</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

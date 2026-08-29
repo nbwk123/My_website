@@ -9,7 +9,7 @@
 <div class="blogs-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero">
-<div class="post_info">2025-06-30-07-04</div>
+<div class="post_info">2025-06-30～07-04</div>
 
 <div class="section-heading-line">
 

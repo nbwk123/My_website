@@ -9,7 +9,7 @@ hide:
 <section class="home-hero">
   <div class="home-copy">
     <p class="home-kicker">学习 · 创作 · 设计</p>
-    <h1>代码即设计</h1>
+    <h1 style="font-size: clamp(2.5rem, 2.0408163265306123rem + 1.9591836734693877vw, 4rem)!important;">代码即设计</h1>
     <p class="home-subtitle">一个持续搭建和迭代的个人作品集系统，用来记录学习、设计判断和项目实践。</p>
     <div class="home-actions">
       <a href="project/" class="home-button home-button-primary">查看项目</a>
@@ -54,15 +54,17 @@ hide:
 </section>
 
 <section class="home-section home-manifesto">
-  <section class="lead-card" data-expand-card>
-    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">你好</h1>
-    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">我们见个面吧</p>
+  <section class="lead-card" src="../assets/program2.png" data-expand-card>
+    <h1 style="color:#ffffff; font-weight:bold; font-size: 2rem; margin-bottom: 0 !important;">AI 时代的设计</h1>
+    <p style="color:#ffffff; font-weight:normal; font-size: 1rem;">还有很多创造力，等着我们去寻找。</p>
+    <a href="project/" class="home-button home-button-primary">查看项目 →</a>
   </section>
   <p class="section-kicker">网站的方向</p>
   <p class="home-tittle" style="font-size: 50px; margin: 1.2rem;">重在分享想法，兼项目展示。</p>
   <p>这个网站不仅展示结果，也记录我如何借助 AI 协作、低代码管理和设计评估，把一个个人空间持续打磨成可维护的作品集系统。</p>
 </section>
 
+<!--
 <section class="home-feature-grid">
   <a class="home-feature interaction-tilt" href="course/" data-tilt>
     <span>01</span>
@@ -80,6 +82,7 @@ hide:
     <p>持续更新我的方向、能力边界和正在形成的个人风格。</p>
   </a>
 </section>
+-->
 
 <h1 class="home-section-title">课程笔记</h1>
 <h1 class="home-section-title">项目作品</h1>

@@ -31,9 +31,8 @@
           <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
           <div class="site-topbar__menu-panel" aria-label="Notes submenu">
             <a href="{{ 'course/' | url }}">Overview</a>
-            <a href="{{ 'course/technology-site/' | url }}">Technology Notes</a>
-            <a href="{{ 'course/design-research/' | url }}">Design Research</a>
-            <a href="{{ 'course/example/' | url }}">Sample Note</a>
+            <a href="{{ 'course/' | url }}">Class Notes</a>
+            <a href="{{ 'course/hello-agents/' | url }}">Lessons About Agents</a>
           </div>
         </div>
         <div class="site-topbar__dropdown">
@@ -46,15 +45,20 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <button class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></button>
           <div class="site-topbar__menu-panel" aria-label="Blog submenu">
-            <a href="{{ 'blogs/' | url }}">Overview</a>
-            <a href="{{ 'blogs/2024D20/' | url }}">2024 D20 Summit</a>
-            <a href="{{ 'blogs/Japan-travel/' | url }}">Japan · Osaka · Kyoto</a>
-            <a href="{{ 'blogs/2025D20/' | url }}">2025 D20 Summit</a>
+            <a href="{{ 'blogs/exhibition/' | url }}">Exhibitions & Conferences</a>
+            <a href="{{ 'blogs/travel/' | url }}">Travels</a>
+            <a href="{{ 'blogs/book-notes/' | url }}">Book Notes</a>
           </div>
         </div>
-        <a class="site-topbar__link{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">About</a>
+      <div class="site-topbar__dropdown">
+        <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">About<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+        <div class="site-topbar__menu-panel" aria-label="About submenu">
+          <a href="{{ 'about/' | url }}">About Me</a>
+          <a href="{{ 'about/more-than-design/' | url }}">More Than Design</a>
+        </div>
+      </div>
       {% else %}
         <div class="site-topbar__dropdown">
           <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/course/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
@@ -81,6 +85,7 @@
             <a href="{{ 'zh/blogs/2024D20/' | url }}">2024年D20大会</a>
             <a href="{{ 'zh/blogs/Japan-travel/' | url }}">日本·大阪·京都</a>
             <a href="{{ 'zh/blogs/2025D20/' | url }}">2025年D20大会</a>
+            <a href="{{ 'zh/blogs/travel/' | url }}">旅行</a>
           </div>
         </div>
         <a class="site-topbar__link{% if current_url.startswith('zh/about/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/about/' | url }}">关于</a>

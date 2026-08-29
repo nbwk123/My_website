@@ -3,7 +3,7 @@
 <section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
-  <h1>Profile</h1>
+  <h1>About Me</h1>
   <!-- <span style="letter-spacing: 0.01em !important;">ABOUT</span> -->
 </div>
 

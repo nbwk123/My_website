@@ -49,7 +49,7 @@
 <p class="post__meta">2024-06-27～28·会议展会</p>
 <h2 class="post__title">2024年D20大会</h2>
 <p class="post__excerpt">AI时代的设计</p>
-<a href="../blogs/2024D20" class="post__link">阅读更多 →</a>
+<a href="2024D20/" class="post__link">阅读更多 →</a>
 
 </div>
 
@@ -74,7 +74,7 @@
 <p class="post__meta">2025-06-30～07-04·旅行</p>
 <h2 class="post__title">日本·大阪·京都</h2>
 <p class="post__excerpt">参加阿里巴巴设计委员会组织的D20大会</p>
-<a href="../blogs/Japan-travel" class="post__link">阅读更多 →</a>
+<a href="Japan-travel/" class="post__link">阅读更多 →</a>
 
 </div>
 
@@ -99,7 +99,7 @@
 <p class="post__meta">2025-07-11·会议展会</p>
 <h2 class="post__title">2025年D20大会</h2>
 <p class="post__excerpt">AI时代的设计师</p>
-<a href="../blogs/2025D20" class="post__link">阅读更多 →</a>
+<a href="2025D20/" class="post__link">阅读更多 →</a>
 
 </div>
 
@@ -120,8 +120,9 @@
   <a href="./" class="cat cat--active"><span>所有</span><span class="cat__count">31</span></a>
   <a href="../course/technology-site/" class="cat"><span>技术类</span><span class="cat__count"></span></a>
   <a href="../course/design-research/" class="cat"><span>设计类</span><span class="cat__count">3</span></a>
-  <a href="2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="2024D20/" class="cat"><span>活动</span><span class="cat__count"></span></a>
+  <a href="Japan-travel/" class="cat"><span>实验室生活</span><span class="cat__count">3</span></a>
+  <a href="travel/" class="cat"><span>旅行</span><span class="cat__count">3</span></a>
 </div>
 
 </div>

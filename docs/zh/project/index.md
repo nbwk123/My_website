@@ -113,7 +113,7 @@
   <a href="./" class="cat"><span>论文</span><span class="cat__count"></span></a>
   <a href="costory/" class="cat"><span>设计作品</span><span class="cat__count">3</span></a>
   <a href="My_website_design/" class="cat"><span>竞赛成果</span><span class="cat__count"></span></a>
-  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>实验室生活</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

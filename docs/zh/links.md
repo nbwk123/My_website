@@ -44,7 +44,7 @@
   <a href="http://www.idi.zju.edu.cn" class="cat"><span>设计机构</span><span class="cat__count"></span></a>
   <a href="../course/design-research/" class="cat"><span>设计课程</span><span class="cat__count">3</span></a>
   <a href="https://www.zju.edu.cn" class="cat"><span>设计资源</span><span class="cat__count"></span></a>
-  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="../blogs/Japan-travel/" class="cat"><span>实验室生活</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

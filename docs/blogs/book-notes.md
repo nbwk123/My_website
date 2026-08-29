@@ -12,7 +12,7 @@
 
 <div class="section-heading-line">
 
-<h1>Personal Sharing</h1>
+<h1>Exhibitions & Conferences</h1>
 
 <!-- <span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">BLOG</span> -->
 
@@ -35,7 +35,7 @@ Recording and sharing personal academic experiences, life experiences, and relat
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/2024D20.jpeg" alt="20240627-28 D20 Summit">
+<img class="post__img" src="../../assets/2024D20.jpeg" alt="20240627-28 D20 Summit">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -60,7 +60,7 @@ Recording and sharing personal academic experiences, life experiences, and relat
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/Japan_Osaka_Kyoto.jpeg" alt="Example post">
+<img class="post__img" src="../../assets/Japan_Osaka_Kyoto.jpeg" alt="Example post">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -85,7 +85,7 @@ Recording and sharing personal academic experiences, life experiences, and relat
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/2025D20.jpeg" alt="Example post">
+<img class="post__img" src="../../assets/2025D20.jpeg" alt="20250711 D20 Summit">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -109,26 +109,6 @@ Recording and sharing personal academic experiences, life experiences, and relat
 
 </div>
 
-<!-- Right type sidebar -->
-<aside class="sidebar">
-
-<div class="side-card">
-
-<p class="side-h">Type</p>
-
-<div class="cat-list">
-  <a href="./" class="cat cat--active"><span>All</span><span class="cat__count">31</span></a>
-  <a href="../course/technology-site/" class="cat"><span>Technical</span><span class="cat__count"></span></a>
-  <a href="../course/design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
-  <a href="2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
-
-</div>
-
-</aside>
-
-</div>
-<!-- side-layout end -->
 
 </div>

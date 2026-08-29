@@ -1,7 +1,7 @@
 <style>
   .md-nav__item--active > .md-nav__link,
   .md-nav__link--active {
-      color: rgb(255, 204, 0) !important;
+      color: rgb(236 99 123) !important;
       font-weight: bold;
   }
 </style>
@@ -32,7 +32,7 @@ DESIGN RESEARCH
 
 ![20240627-28-D20 Summit](../assets/design-research.jpg){: style="border-radius: 16px; margin-top:-1.3rem;" width="700" }
 
-<a href="https://notebook.google.com/notebook/70a5e216-da89-4e68-8f5f-668f0a5304fb" style="color: rgb(255, 204, 0) !important; font-weight: normal;">
+<a href="https://notebook.google.com/notebook/70a5e216-da89-4e68-8f5f-668f0a5304fb" style="color: rgb(236 99 123) !important; font-weight: normal;">
 Course Notes (Gemini Notebook)
 </a>
 

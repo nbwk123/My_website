@@ -11,7 +11,7 @@
 <section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
 <div class="section-heading-line">
-  <h1>Course Resources and Learning Summaries</h1>
+  <h1>Lessons About Agents</h1>
   <!-- <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span> -->
 </div>
 
@@ -27,7 +27,11 @@ Recording courses I am currently taking and have completed, while organizing the
 
 <div class="section-heading-line" style="margin-top: -1.2rem;">
   <h2 style="font-size:32px !important; font-weight: 550; margin-bottom: -0.5vw !important;">Autumn-Winter Semester</h2>
-  <span style="color: rgb(236 99 123 / 0.25) !important; font-size: 55px !important; letter-spacing: 1px !important; --course-watermark-left: 90%;">
+  <span style="color: rgb(236 99 123 / 0.25) !important;
+             font-size: 55px !important;
+             letter-spacing: 1px !important;
+             --course-watermark-left: 85%;
+             font-family: 'BlinkMacSystemFont', serif !important;">
   2026-2027-1
 </span>
 </div>
@@ -89,21 +93,6 @@ Recording courses I am currently taking and have completed, while organizing the
 </div>
 
 </div>
-
-<aside class="sidebar">
-
-<div class="side-card">
-<p class="side-h">Type</p>
-<div class="cat-list">
-  <a href="./" class="cat"><span>All</span><span class="cat__count">31</span></a>
-  <a href="technology-site/" class="cat cat--active"><span>Classes</span><span class="cat__count">2</span></a>
-  <a href="design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
-  <a href="../blogs/2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
-</div>
-</div>
-
-</aside>
 
 </div>
 
