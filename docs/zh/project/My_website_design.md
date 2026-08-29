@@ -2,20 +2,23 @@
 
 <section class="page-hero page-hero--plain course-hero">
 
-<div class="post_info">亲子即兴故事共创</div>
+<div class="post_info">个人网站系统</div>
 
-<h1 class="costory-wordmark costory-wordmark-page">COSTORY</h1>
+<div class="section-heading-line">
+<h1>个人网页设计</h1>
+<span style="color:rgba(124,58,237,0.1)!important; --course-watermark-left: 88%;">SYSTEM</span>
+</div>
 
 <div class="note-page costory-case" markdown="1">
 
-借助实体道具与 AI 辅助提供情节引导与反馈，让亲子在高质量互动中共创故事。
+一个持续搭建和迭代的个人作品集网站，用来记录学习过程、设计判断和项目实践。
 
 <div class="case-meta" markdown="1">
-<span>3 Weeks</span>
-<span>个人作品</span>
-<span>产品设计</span>
+<span>个人</span>
+<span>作品集</span>
+<span>网站系统</span>
 <span>交互设计</span>
-<span>AI 原型</span>
+<span>长期迭代</span>
 </div>
 
 </div>
@@ -33,7 +36,7 @@
 
 </section>
 
-首先要做个人网页并非单纯只想搭建一个展示
+首先要做个人网页并非单纯只想搭建一个展示页面，它也是一种把学习、项目和反思长期组织起来的个人系统。
 
 </div>
 

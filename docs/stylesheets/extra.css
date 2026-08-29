@@ -2713,7 +2713,7 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
 }
 
 .project-page {
-    background: #f1e9e3;
+    background: #f1ece6;
 }
 
 body:has(.project-page),
@@ -2724,11 +2724,11 @@ body:has(.project-page) .md-content,
 body:has(.project-page) .md-sidebar--primary,
 body:has(.project-page) .md-sidebar__scrollwrap,
 body:has(.project-page) .md-sidebar__inner {
-    background: #f1e9e3;
+    background: #f1ece6;
 }
 
 .blogs-page {
-    background: #faf6e9;
+    background: #f4f0e6;
 }
 
 body:has(.blogs-page),
@@ -2739,11 +2739,11 @@ body:has(.blogs-page) .md-content,
 body:has(.blogs-page) .md-sidebar--primary,
 body:has(.blogs-page) .md-sidebar__scrollwrap,
 body:has(.blogs-page) .md-sidebar__inner {
-    background: #faf6e9;
+    background: #f4f0e6;
 }
 
 .about-page {
-    background: #f8f6fb;
+    background: #f2eef1;
 }
 
 body:has(.about-page),
@@ -2754,7 +2754,7 @@ body:has(.about-page) .md-content,
 body:has(.about-page) .md-sidebar--primary,
 body:has(.about-page) .md-sidebar__scrollwrap,
 body:has(.about-page) .md-sidebar__inner {
-    background: #f8f6fb;
+    background: #f2eef1;
 }
 
 .more-design-detail {
@@ -2798,7 +2798,7 @@ body:has(.about-page) .md-sidebar__inner {
 }
 
 .courses-page {
-    background: rgb(248 238 240);
+    background: #f4eeeb;
 }
 
 body:has(.courses-page),
@@ -2809,7 +2809,7 @@ body:has(.courses-page) .md-content,
 body:has(.courses-page) .md-sidebar--primary,
 body:has(.courses-page) .md-sidebar__scrollwrap,
 body:has(.courses-page) .md-sidebar__inner {
-    background: rgb(248 238 240);
+    background: #f4eeeb;
 }
 
 /* 将左侧边栏当前激活项的背景色设为透明 */
@@ -3475,6 +3475,391 @@ html[data-site-theme-active="dark"] .post__excerpt {
     color: #d8d1dc !important;
 }
 
+/* Final correction: dropdown uses underline states; visible cards stay solid white. */
+.site-topbar__menu-panel {
+    background: #ffffff !important;
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent !important;
+    color: #0f0f0e !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
+}
+
+.profile-card,
+.profile-card-dark,
+.side-card,
+.friendly-link-card {
+    background: #ffffff !important;
+}
+
+.profile-card-dark {
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
+}
+
+/* Final correction: dropdown uses underline states; visible cards stay solid white. */
+.site-topbar__menu-panel {
+    background: #ffffff !important;
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent !important;
+    color: #0f0f0e !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
+}
+
+.profile-card,
+.profile-card-dark,
+.side-card,
+.friendly-link-card {
+    background: #ffffff !important;
+}
+
+.profile-card-dark {
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
+}
+
+/* Restore text-underline dropdown states and solid white cards. */
+.site-topbar__menu-panel {
+    background: #ffffff !important;
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent !important;
+    color: #0f0f0e !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
+}
+
+.profile-card,
+.profile-card-dark,
+.side-card,
+.friendly-link-card {
+    background: #ffffff !important;
+}
+
+.profile-card-dark {
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
+}
+
+/* Final selected overrides for the current consistency pass. */
+.site-topbar__link::after {
+    transform: scaleX(0);
+    transform-origin: right center;
+}
+
+.site-topbar__link:hover::after,
+.site-topbar__link--active::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+.site-topbar__menu-panel {
+    border-radius: var(--radius-md);
+    background: rgba(250, 247, 239, 0.9);
+    box-shadow: 0 1rem 2.6rem rgba(20, 18, 16, 0.08);
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0.55rem;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: rgba(20, 18, 16, 0.045);
+    text-decoration-line: none;
+}
+
+.md-typeset .course-hero--no-watermark {
+    margin-top: clamp(3.2rem, 5.4vw, 5.7rem);
+    margin-bottom: clamp(2.3rem, 4vw, 3.7rem);
+}
+
+.md-typeset .course-hero--no-watermark > p,
+.md-typeset .courses-page > .course-hero > p,
+.md-typeset .project-page > .course-hero > p,
+.md-typeset .blogs-page > .course-hero > p,
+.md-typeset .about-page > .course-hero > p {
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(0.9rem, 1.02vw, 1rem);
+    font-weight: 480;
+    line-height: 1.72;
+    color: var(--text-secondary) !important;
+}
+
+.side-card {
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.68);
+}
+
+.cat {
+    min-height: 2.05rem;
+    border-radius: var(--radius-md);
+    padding: 0.43rem 0.82rem;
+}
+
+.cat__count {
+    align-self: flex-start;
+    margin-top: -0.05rem;
+    color: rgba(17, 17, 15, 0.72);
+    font-size: 0.58rem;
+    line-height: 1;
+}
+
+.post:hover .post__img {
+    transform: scale(1.012);
+}
+
+.post:hover .post__link {
+    opacity: 0.72;
+}
+
+.profile-card {
+    padding: clamp(1.35rem, 2.8vw, 1.85rem);
+    border-color: rgba(124, 58, 237, 0.11);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.profile-card-dark {
+    background: linear-gradient(180deg, rgba(124, 58, 237, 0.065), rgba(255, 255, 255, 0.42));
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
+}
+
+html[data-site-theme-active="dark"] .site-topbar__menu-panel {
+    background: rgba(28, 25, 30, 0.92);
+}
+
+/* Editorial system refinement: selected adjustments from the design audit. */
+:root {
+    --bg-home: #f0eee6;
+    --bg-course: #f4eeeb;
+    --bg-project: #f1ece6;
+    --bg-blog: #f4f0e6;
+    --bg-about: #f2eef1;
+    --accent-course: #ec637b;
+    --accent-project: #e86c08;
+    --accent-blog: #b08a00;
+    --accent-about: #7c3aed;
+    --text-primary: #11110f;
+    --text-secondary: #716b78;
+    --text-muted: #9a939f;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --motion-fast: 180ms;
+    --motion-normal: 260ms;
+}
+
+.site-topbar__link::after {
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition:
+        opacity var(--motion-fast) ease,
+        transform var(--motion-normal) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-topbar__link:hover::after,
+.site-topbar__link--active::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+.site-topbar__menu-panel {
+    padding: 0.72rem;
+    border-color: rgba(20, 18, 16, 0.08);
+    border-radius: var(--radius-md);
+    background: rgba(250, 247, 239, 0.88);
+    box-shadow: 0 1rem 2.6rem rgba(20, 18, 16, 0.08);
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0.55rem;
+    transition:
+        background var(--motion-fast) ease,
+        color var(--motion-fast) ease;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: rgba(20, 18, 16, 0.045);
+    text-decoration-line: none;
+}
+
+.md-typeset .course-hero--no-watermark {
+    margin-top: clamp(3.2rem, 5.4vw, 5.7rem);
+    margin-bottom: clamp(2.3rem, 4vw, 3.7rem);
+}
+
+.md-typeset .course-hero--no-watermark > p,
+.md-typeset .courses-page > .course-hero > p,
+.md-typeset .project-page > .course-hero > p,
+.md-typeset .blogs-page > .course-hero > p,
+.md-typeset .about-page > .course-hero > p {
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(0.9rem, 1.02vw, 1rem);
+    font-weight: 480;
+    line-height: 1.72;
+    color: var(--text-secondary) !important;
+}
+
+.side-card {
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.68);
+}
+
+.side-h {
+    letter-spacing: 0.22em;
+}
+
+.cat {
+    min-height: 2.05rem;
+    border-radius: var(--radius-md);
+    padding: 0.43rem 0.82rem;
+}
+
+.cat__count {
+    align-self: flex-start;
+    margin-top: -0.05rem;
+    color: rgba(17, 17, 15, 0.72);
+    font-size: 0.58rem;
+    line-height: 1;
+}
+
+.post__img {
+    transition:
+        transform var(--motion-normal) cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow var(--motion-normal) ease;
+}
+
+.post:hover .post__img {
+    transform: scale(1.012);
+}
+
+.post:hover .post__link {
+    opacity: 0.72;
+}
+
+.profile-panel {
+    align-items: stretch;
+    gap: clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.profile-card {
+    padding: clamp(1.35rem, 2.8vw, 1.85rem);
+    border-color: rgba(124, 58, 237, 0.11);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.profile-card-dark {
+    background:
+        linear-gradient(180deg, rgba(124, 58, 237, 0.065), rgba(255, 255, 255, 0.42));
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
+}
+
+.profile-card h2,
+.profile-card h3 {
+    margin-top: 0;
+}
+
+.module-row:hover,
+.project-card:hover,
+.home-feature:hover {
+    transform: none !important;
+}
+
+html[data-site-theme-active="dark"] .site-topbar__menu-panel {
+    background: rgba(28, 25, 30, 0.92);
+}
+
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a:hover,
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a:focus,
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a[aria-current="page"],
+html[data-site-theme-active="dark"] .site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: rgba(255, 255, 255, 0.08);
+}
+
 html[data-site-theme-active="dark"] .post__img {
     box-shadow: 0 1rem 2.8rem rgba(0, 0, 0, 0.28);
 }
@@ -3551,4 +3936,285 @@ html[data-site-theme-active="dark"] .lead-card {
 
 html[data-site-theme-active="dark"] .lead-card.lead-card--expanded {
     box-shadow: none;
+}
+
+/* Cohesive page-system polish: keep content intact, align list/detail pages with the homepage tone. */
+:root {
+    --site-page-width: 68rem;
+    --site-list-width: 62rem;
+    --site-reading-width: 46rem;
+    --site-card-radius: 8px;
+    --site-subtle-shadow: 0 1.4rem 3.2rem rgba(20, 18, 16, 0.045);
+}
+
+@media screen and (min-width: 1220px) {
+    body:has(.course-hero--no-watermark) .md-main__inner,
+    .md-main__inner:has(.course-hero--no-watermark) {
+        width: min(76vw, var(--site-page-width)) !important;
+        max-width: min(76vw, var(--site-page-width)) !important;
+    }
+}
+
+.md-typeset :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page) {
+    max-width: var(--site-page-width) !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.md-typeset .page-hero--plain.course-hero {
+    margin-top: clamp(4.2rem, 7vw, 7rem);
+    margin-bottom: clamp(2.8rem, 5vw, 4.6rem);
+}
+
+.md-typeset .course-hero .section-heading-line {
+    margin-bottom: clamp(1rem, 1.8vw, 1.4rem) !important;
+}
+
+.md-typeset .course-hero .section-heading-line > :is(h1, h2),
+.md-typeset .course-hero .section-heading-line h1 {
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(2.05rem, 3.15vw, 3.3rem) !important;
+    font-weight: 790 !important;
+    line-height: 1.04 !important;
+    letter-spacing: 0 !important;
+}
+
+.md-typeset .page-hero p,
+.md-typeset .course-hero > p {
+    max-width: var(--site-reading-width);
+    color: #77717f !important;
+    font-size: clamp(0.98rem, 1.18vw, 1.12rem);
+    line-height: 1.82;
+}
+
+.side-layout {
+    gap: clamp(2.4rem, 4.6vw, 4rem);
+}
+
+.side-card {
+    max-width: var(--site-list-width) !important;
+    min-height: 3.7rem;
+    padding: 0.55rem 0.68rem;
+    border-color: rgba(20, 18, 16, 0.06);
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 1.1rem 2.8rem rgba(20, 18, 16, 0.035);
+}
+
+.side-h {
+    padding-left: 0.55rem;
+    color: #6f6878;
+    font-weight: 760;
+}
+
+.cat {
+    min-height: 2.25rem;
+    padding: 0.48rem 0.92rem;
+    color: #1a181d !important;
+    font-size: 0.74rem;
+    font-weight: 540;
+    transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+
+.cat:hover {
+    transform: none !important;
+}
+
+.cat__count {
+    font-size: 0.64rem;
+}
+
+.blog__posts {
+    width: 100%;
+    max-width: var(--site-list-width) !important;
+    gap: clamp(2.4rem, 5vw, 4.2rem);
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.post {
+    grid-template-columns: minmax(16rem, 19rem) minmax(0, 1fr);
+    gap: clamp(1.4rem, 3vw, 2.2rem);
+    align-items: start;
+    margin-top: 0;
+    padding-bottom: clamp(1.7rem, 3vw, 2.5rem);
+    border-bottom-color: rgba(20, 18, 16, 0.08);
+}
+
+.post__media {
+    gap: 0.9rem;
+}
+
+.post__img {
+    border-radius: var(--site-card-radius);
+    box-shadow: var(--site-subtle-shadow);
+}
+
+.post-tags {
+    gap: 0.48rem;
+}
+
+.post-tag {
+    padding: 0.24rem 0.65rem;
+    font-size: 0.62rem;
+    font-weight: 760;
+}
+
+.post__content {
+    padding-top: 0.35rem;
+}
+
+.post__meta,
+.post_info {
+    font-size: 0.68rem;
+    font-weight: 830;
+    letter-spacing: 0.14em;
+}
+
+h2.post__title,
+h3.post__title {
+    margin: 0.35rem 0 0.7rem;
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(1.18rem, 1.55vw, 1.55rem);
+    font-weight: 760;
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+.post__excerpt {
+    max-width: 34rem;
+    color: #5f5966 !important;
+    font-size: 0.9rem;
+    line-height: 1.72;
+}
+
+.post__link {
+    width: max-content;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.17em;
+}
+
+.post__link:hover {
+    opacity: 0.66;
+}
+
+.project-page .blog__posts {
+    max-width: 64rem !important;
+}
+
+.projects-page .case-hero,
+.case-hero,
+.case-opportunity,
+.case-opportunity-grid article,
+.case-detail-grid article,
+.case-stat,
+.module-row,
+.profile-card,
+.friendly-link-card {
+    border-radius: var(--site-card-radius);
+}
+
+.module-row,
+.case-opportunity-grid article,
+.case-detail-grid article,
+.case-stat,
+.profile-card:not(.profile-card-dark),
+.friendly-link-card {
+    box-shadow: none;
+}
+
+.module-row:hover,
+.project-card:hover,
+.home-feature:hover {
+    transform: none;
+    border-color: rgba(20, 18, 16, 0.16);
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 0.8rem 2rem rgba(20, 18, 16, 0.035);
+}
+
+.travel-map-card {
+    max-width: var(--site-page-width) !important;
+}
+
+.travel-map-grid {
+    align-items: start !important;
+}
+
+.travel-map-copy h2 {
+    font-size: clamp(1.55rem, 2.1vw, 2.35rem) !important;
+    font-weight: 780;
+}
+
+.travel-map {
+    border-radius: var(--site-card-radius);
+}
+
+.travel-city-card {
+    border-radius: var(--site-card-radius);
+}
+
+.travel-city-image {
+    border-radius: var(--site-card-radius);
+}
+
+@media screen and (max-width: 900px) {
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page),
+    .blog__posts,
+    .side-card {
+        max-width: 100%;
+    }
+
+    .post {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .post__content {
+        padding-top: 0;
+    }
+}
+
+html[data-site-theme-active="dark"] .post__excerpt {
+    color: #d8d1dc !important;
+}
+
+/* Final correction: dropdown uses underline states; visible cards stay solid white. */
+.site-topbar__menu-panel {
+    background: #ffffff !important;
+}
+
+.site-topbar__menu-panel a {
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.site-topbar__menu-panel a:hover,
+.site-topbar__menu-panel a:focus,
+.site-topbar__menu-panel a[aria-current="page"],
+.site-topbar__menu-panel a.site-topbar__menu-link--active {
+    background: transparent !important;
+    color: #0f0f0e !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.32em;
+}
+
+.profile-card,
+.profile-card-dark,
+.side-card,
+.friendly-link-card {
+    background: #ffffff !important;
+}
+
+.profile-card-dark {
+    color: var(--text-secondary);
+}
+
+.profile-card-dark h2,
+.profile-card-dark h3 {
+    color: var(--accent-about) !important;
+}
+
+.profile-card-dark p,
+.profile-card-dark li {
+    color: var(--text-secondary) !important;
 }

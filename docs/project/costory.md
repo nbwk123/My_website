@@ -1,34 +1,4 @@
-<style>
-  .md-nav__item--active > .md-nav__link,
-  .md-nav__link--active {
-      color: rgb(255, 204, 0) !important;
-      font-weight: bold;
-  }
-</style>
-
-<div class="blogs-page" markdown="1">
-
-<section class="page-hero page-hero--plain course-hero">
-<div class="post_info">2026-02</div>
-
-<div class="section-heading-line">
-
-<h1>Japan · Osaka · Kyoto</h1>
-
-<span style="color:rgba(255,227,113,0.48)!important; --course-watermark-left: 90%;">
-2025
-</span>
-
-</div>
-
-<div class="post-tags" style="margin-top:0.2rem">
-<span class="post-tag">Personal</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
-</div>
-
-<p style="font-size: 20px; font-weight:500 !important; margin-top:0.7rem">Design in the AI Era</p>
-
-<div class="blogs-page" markdown="1">
+<div class="projects-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero">
 

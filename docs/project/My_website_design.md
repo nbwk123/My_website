@@ -2,20 +2,23 @@
 
 <section class="page-hero page-hero--plain course-hero">
 
-<div class="post_info">Parent-child Improvisational Story Co-creation</div>
+<div class="post_info">Personal Website System</div>
 
-<h1 class="costory-wordmark costory-wordmark-page">COSTORY</h1>
+<div class="section-heading-line">
+<h1>Personal Website Design</h1>
+<span style="color:rgba(124,58,237,0.1)!important; --course-watermark-left: 88%;">SYSTEM</span>
+</div>
 
 <div class="note-page costory-case" markdown="1">
 
-Using a physical prop and AI assistance to provide plot guidance and feedback, helping parents and children co-create stories through high-quality interaction.
+A personal portfolio website that is continuously built and iterated, used to record learning, design judgment, and project practice.
 
 <div class="case-meta" markdown="1">
-<span>3 Weeks</span>
-<span>Individual Work</span>
-<span>Product Design</span>
+<span>Personal</span>
+<span>Portfolio</span>
+<span>Website System</span>
 <span>Interaction Design</span>
-<span>AI Prototype</span>
+<span>Long-term Iteration</span>
 </div>
 
 </div>
@@ -33,7 +36,7 @@ Using a physical prop and AI assistance to provide plot guidance and feedback, h
 
 </section>
 
-The first reason for building a personal website was not simply to create a display page.
+The first reason for building a personal website was not simply to create a display page. It is also a way to organize learning, projects, and reflection into a stable personal system.
 
 </div>
 
