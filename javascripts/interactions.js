@@ -76,7 +76,7 @@
   let lightX = cursorX;
   let lightY = cursorY;
 
-  const moveLight = () => {
+  /*const moveLight = () => {
     lightX += (cursorX - lightX) * 0.18;
     lightY += (cursorY - lightY) * 0.18;
 
@@ -94,7 +94,7 @@
     document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
   });
 
-  moveLight();
+  moveLight();*/
 
   document.querySelectorAll("[data-tilt]").forEach((card) => {
     card.addEventListener("pointermove", (event) => {
@@ -614,6 +614,7 @@
     const sectionIndex = pathParts.indexOf(sectionName);
     const slug = sectionIndex >= 0 ? pathParts[sectionIndex + 1] : "";
     const isDetailPage = (sectionName === "project" || sectionName === "blogs") && slug && slug !== "index.html";
+    const isTravelIndex = sectionName === "blogs" && slug === "travel";
 
     if (!isDetailPage) {
       return;
@@ -621,15 +622,28 @@
 
     document.body.classList.add("site-detail-page");
 
-    const parentUrl = new URL("../", window.location.href).href;
+    const parentUrl = slug === "Japan-travel"
+      ? new URL(isZh ? "../travel/" : "../travel/", window.location.href).href
+      : new URL("../", window.location.href).href;
     const backLabel = isZh ? "返回" : "Back";
     const hero = document.querySelector(".md-content__inner .page-hero");
 
-    if (hero) {
+    if (hero && !isTravelIndex) {
       const topBack = document.createElement("a");
       topBack.className = "detail-top-back";
       topBack.href = parentUrl;
-      topBack.textContent = `← ${backLabel}`;
+      topBack.setAttribute("aria-label", backLabel);
+
+      const backArrow = document.createElement("span");
+      backArrow.className = "detail-top-back__arrow";
+      backArrow.setAttribute("aria-hidden", "true");
+      backArrow.textContent = "←";
+
+      const backText = document.createElement("span");
+      backText.className = "detail-top-back__label";
+      backText.textContent = backLabel;
+
+      topBack.append(backArrow, backText);
       hero.prepend(topBack);
     }
   }
@@ -707,6 +721,60 @@
     };
   }
 
+  function initTravelMap() {
+    document.querySelectorAll("[data-travel-map]").forEach((map) => {
+      const pins = Array.from(map.querySelectorAll("[data-travel-city]"));
+      const panels = Array.from(map.querySelectorAll("[data-travel-panel]"));
+
+      if (!pins.length || !panels.length) {
+        return;
+      }
+
+      const activateCity = (city) => {
+        pins.forEach((pin) => {
+          const active = pin.dataset.travelCity === city;
+          pin.classList.toggle("travel-pin--active", active);
+          pin.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.travelPanel === city);
+        });
+      };
+
+      pins.forEach((pin) => {
+        pin.addEventListener("click", () => activateCity(pin.dataset.travelCity));
+      });
+    });
+  }
+
+  function initPostLinks() {
+    document.querySelectorAll(".post__link").forEach((link) => {
+      if (link.querySelector(".post__link-label")) {
+        return;
+      }
+
+      const rawText = link.textContent.trim();
+      const hasArrow = rawText.endsWith("→");
+      const labelText = hasArrow ? rawText.slice(0, -1).trim() : rawText;
+
+      link.textContent = "";
+
+      const label = document.createElement("span");
+      label.className = "post__link-label";
+      label.textContent = labelText;
+      link.append(label);
+
+      if (hasArrow) {
+        const arrow = document.createElement("span");
+        arrow.className = "post__link-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "→";
+        link.append(arrow);
+      }
+    });
+  }
+
 
 // 正常加载页面时运行
   document.addEventListener(
@@ -716,6 +784,8 @@
         initLeadCardExpand();
         initDetailNavigation();
         initTocMarker();
+        initTravelMap();
+        initPostLinks();
       }
   );
 
@@ -728,6 +798,8 @@
       initLeadCardExpand();
       initDetailNavigation();
       initTocMarker();
+      initTravelMap();
+      initPostLinks();
     });
 
   }
