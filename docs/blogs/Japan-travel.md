@@ -62,8 +62,10 @@
 
 </div>
 
+<!--
 <div class="pdf-embed" markdown="1">
 <iframe src="../../assets/pdf/example.pdf" title="Japan travel PDF"></iframe>
 </div>
+-->
 
 </div>

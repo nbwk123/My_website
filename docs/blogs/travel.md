@@ -63,31 +63,6 @@
 
 <div class="blog__posts" style="margin-top: 4rem;">
 
-<!-- Article 1 -->
-<article class="post">
-
-<div class="post__media">
-
-<img class="post__img" src="../../assets/2024D20.jpeg" alt="20240627-28 D20 Summit">
-
-<div class="post-tags">
-<span class="post-tag">Personal</span>
-<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
-</div>
-
-</div>
-
-<div class="post__content">
-
-<p class="post__meta">2024-06-27-28 · Travel</p>
-<h2 class="post__title">2024 D20 Summit</h2>
-<p class="post__excerpt">Design in the AI Era</p>
-<a href="2024D20/" class="post__link">Read More →</a>
-
-</div>
-
-</article>
-
 <!-- Article 2 -->
 <article class="post">
 
@@ -104,7 +79,7 @@
 
 <div class="post__content">
 
-<p class="post__meta">2025-06-30-07-04 · Travel</p>
+<p class="post__meta">2025-06-30～07-04 · Travel</p>
 <h2 class="post__title">Japan · Osaka · Kyoto</h2>
 <p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
 <a href="../Japan-travel/" class="post__link">Read More →</a>
@@ -133,6 +108,31 @@
 <h2 class="post__title">China · Hong Kong</h2>
 <p class="post__excerpt">Designers in the AI Era</p>
 <a href="2025D20/" class="post__link">Read More →</a>
+
+</div>
+
+</article>
+
+<!-- Article 1 -->
+<article class="post">
+
+<div class="post__media">
+
+<img class="post__img" src="../../assets/2024D20.jpeg" alt="singapore travel">
+
+<div class="post-tags">
+<span class="post-tag">Personal</span>
+<span class="post-tag" style="background:rgba(179, 238, 136, 0.46); color: rgb(44, 115, 11);">University</span>
+</div>
+
+</div>
+
+<div class="post__content">
+
+<p class="post__meta">2024-06-27-28 · Travel</p>
+<h2 class="post__title">Singapore · Singapore</h2>
+<p class="post__excerpt">Design in the AI Era</p>
+<a href="2024D20/" class="post__link">Read More →</a>
 
 </div>
 

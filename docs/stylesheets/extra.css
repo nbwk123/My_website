@@ -198,7 +198,7 @@ button {
     padding: 0.78rem;
     border: 1px solid rgba(17, 24, 39, 0.08);
     border-radius: 1rem;
-    background: rgba(255, 255, 255);
+    background: rgba(250, 249, 245);
     box-shadow: 0 1rem 2.6rem rgba(15, 23, 42, 0.12);
     opacity: 0;
     pointer-events: none;
@@ -1695,8 +1695,8 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
     min-height: 3.2rem;
     padding: 0 1.4rem;
     border-radius: 8px;
-    background: #7c3aed;
-    color: #ffffff;
+    background: #ffffff;
+    color: #111111;
     font-size: 0.8rem;
     font-weight: 900;
 }
@@ -2696,10 +2696,6 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
     }
 }
 
-.case-look {
-    color: #7c3aed !important;
-}
-
 /* 确保父容器使用 Flex 布局并垂直居中 */
 .site-footer__bottom {
     display: flex;
@@ -2713,7 +2709,7 @@ html[data-site-theme-active="dark"] .interaction-tilt::after {
 }
 
 .project-page {
-    background: #f1ece6;
+    background: rgb(250,249,245);
 }
 
 body:has(.project-page),
@@ -2724,11 +2720,11 @@ body:has(.project-page) .md-content,
 body:has(.project-page) .md-sidebar--primary,
 body:has(.project-page) .md-sidebar__scrollwrap,
 body:has(.project-page) .md-sidebar__inner {
-    background: #f1ece6;
+    background: rgb(250,249,245);
 }
 
 .blogs-page {
-    background: #f4f0e6;
+    background: rgb(250,249,245);
 }
 
 body:has(.blogs-page),
@@ -2739,11 +2735,11 @@ body:has(.blogs-page) .md-content,
 body:has(.blogs-page) .md-sidebar--primary,
 body:has(.blogs-page) .md-sidebar__scrollwrap,
 body:has(.blogs-page) .md-sidebar__inner {
-    background: #f4f0e6;
+    background: rgb(250,249,245);
 }
 
 .about-page {
-    background: #f2eef1;
+    background: rgb(250,249,245);
 }
 
 body:has(.about-page),
@@ -2754,7 +2750,7 @@ body:has(.about-page) .md-content,
 body:has(.about-page) .md-sidebar--primary,
 body:has(.about-page) .md-sidebar__scrollwrap,
 body:has(.about-page) .md-sidebar__inner {
-    background: #f2eef1;
+    background: rgb(250,249,245);
 }
 
 .more-design-detail {
@@ -2798,7 +2794,7 @@ body:has(.about-page) .md-sidebar__inner {
 }
 
 .courses-page {
-    background: #f4eeeb;
+    background: rgb(250,249,245);
 }
 
 body:has(.courses-page),
@@ -2809,7 +2805,7 @@ body:has(.courses-page) .md-content,
 body:has(.courses-page) .md-sidebar--primary,
 body:has(.courses-page) .md-sidebar__scrollwrap,
 body:has(.courses-page) .md-sidebar__inner {
-    background: #f4eeeb;
+    background: rgb(250,249,245);
 }
 
 /* 将左侧边栏当前激活项的背景色设为透明 */
@@ -2960,11 +2956,11 @@ body:has(.courses-page) .md-sidebar__inner {
 }
 
 .post__meta {
-    font-weight: bold;
+    font-weight: normal !important;
     font-size: 13px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #af8d03 !important;
+    color: #111111 !important;
     margin: 0;
     font-family: var(--font-heading), sans-serif;
 }
@@ -3477,7 +3473,7 @@ html[data-site-theme-active="dark"] .post__excerpt {
 
 /* Final correction: dropdown uses underline states; visible cards stay solid white. */
 .site-topbar__menu-panel {
-    background: #ffffff !important;
+    background: rgb(250,249,245) !important;
 }
 
 .site-topbar__menu-panel a {
@@ -3517,9 +3513,13 @@ html[data-site-theme-active="dark"] .post__excerpt {
     color: var(--text-secondary) !important;
 }
 
+.site-topbar__menu-panel {
+    background: rgb(250, 249, 245) !important;
+}
+
 /* Final correction: dropdown uses underline states; visible cards stay solid white. */
 .site-topbar__menu-panel {
-    background: #ffffff !important;
+    background: rgb(250, 249, 245) !important;
 }
 
 .site-topbar__menu-panel a {
@@ -4217,4 +4217,203 @@ html[data-site-theme-active="dark"] .post__excerpt {
 .profile-card-dark p,
 .profile-card-dark li {
     color: var(--text-secondary) !important;
+}
+
+.site-topbar__menu-panel {
+    background: rgb(250, 249, 245) !important;
+}
+
+/* Detail and sub-section pages sit closer to the top navigation. */
+.md-typeset .page-hero--plain.course-hero {
+    margin-top: clamp(2.1rem, 3.6vw, 3.4rem) !important;
+}
+
+.md-typeset .course-hero--no-watermark {
+    margin-top: clamp(1.9rem, 3.2vw, 3rem) !important;
+}
+
+.detail-top-back {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 0.24em !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 0 clamp(1.1rem, 2vw, 1.8rem) !important;
+    font-family: var(--font-body), serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    color: #11110f !important;
+    text-decoration: none !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 0.32em !important;
+    transform: none !important;
+    transition: color 160ms ease !important;
+}
+
+.detail-top-back:hover,
+.detail-top-back:focus {
+    color: #11110f !important;
+    text-decoration: none !important;
+    transform: none !important;
+}
+
+.detail-top-back__arrow {
+    text-decoration: none !important;
+}
+
+.detail-top-back__label {
+    text-decoration-line: none !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 0.32em !important;
+}
+
+.detail-top-back:hover .detail-top-back__label,
+.detail-top-back:focus .detail-top-back__label {
+    text-decoration-line: underline !important;
+}
+
+.post__link {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    gap: 0.28em !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    color: #11110f !important;
+    font-family: var(--font-body), serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: color 160ms ease !important;
+}
+
+.blogs-page .post__link,
+.courses-page .post__link,
+.project-page .post__link,
+.post__link[style] {
+    color: #11110f !important;
+}
+
+.post:hover .post__link,
+.post__link:hover,
+.post__link:focus {
+    color: #11110f !important;
+    text-decoration: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.post__link-label {
+    text-decoration-line: none !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 0.32em !important;
+}
+
+.post__link-arrow {
+    text-decoration: none !important;
+}
+
+.post__link:hover .post__link-label,
+.post__link:focus .post__link-label {
+    text-decoration-line: underline !important;
+}
+
+.md-typeset .page-hero > p,
+.md-typeset .course-hero > p,
+.md-typeset .course-hero--no-watermark > p,
+.md-typeset .courses-page > .course-hero > p,
+.md-typeset .project-page > .course-hero > p,
+.md-typeset .blogs-page > .course-hero > p,
+.md-typeset .about-page > .course-hero > p {
+    color: #11110f !important;
+    font-family: var(--font-body), serif !important;
+    font-weight: 400 !important;
+}
+
+.site-topbar__link::after {
+    content: none !important;
+}
+
+.site-topbar__link-label {
+    position: relative;
+    display: inline-block;
+}
+
+.site-topbar__link-label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.38em;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #0f0f0e;
+    opacity: 0;
+    transform: scaleX(0.72);
+    transform-origin: center;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.site-topbar__link:hover .site-topbar__link-label::after,
+.site-topbar__link--active .site-topbar__link-label::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.site-topbar__link--dropdown {
+    align-items: center !important;
+    gap: 0.22rem !important;
+}
+
+.site-topbar__chevron {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 0.72rem !important;
+    height: 0.72rem !important;
+    margin-top: 0.02rem !important;
+    overflow: visible !important;
+    color: currentColor !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 2.35 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    transition: transform 160ms ease !important;
+}
+
+.site-topbar__dropdown:hover .site-topbar__chevron,
+.site-topbar__dropdown:focus-within .site-topbar__chevron {
+    transform: rotate(180deg) !important;
+}
+
+.travel-city-card.is-active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+}
+
+.travel-city-card .travel-city-country {
+    margin: 0 0 0.62rem !important;
+}
+
+.travel-city-card h3 {
+    margin: 0 0 0.78rem !important;
+}
+
+.travel-city-card .travel-city-copy,
+.travel-city-card .travel-city-note-text {
+    margin-top: 0 !important;
+    margin-bottom: 0.92rem !important;
+}
+
+.travel-city-card .travel-city-image {
+    margin-top: 0 !important;
 }

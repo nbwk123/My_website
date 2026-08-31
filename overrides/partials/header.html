@@ -28,7 +28,7 @@
     <div class="site-topbar__nav" aria-label="主导航">
       {% if not is_zh %}
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('course/') %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}">Courses<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'course/' %} site-topbar__link--active{% endif %}" href="{{ 'course/' | url }}"><span class="site-topbar__link-label">Courses</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
           <div class="site-topbar__menu-panel" aria-label="Notes submenu">
             <a href="{{ 'course/' | url }}">Overview</a>
             <a href="{{ 'course/' | url }}">Class Notes</a>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('project/') %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}">Projects<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'project/' %} site-topbar__link--active{% endif %}" href="{{ 'project/' | url }}"><span class="site-topbar__link-label">Projects</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
           <div class="site-topbar__menu-panel" aria-label="Projects submenu">
             <a href="{{ 'project/' | url }}">Overview</a>
             <a href="{{ 'project/website-system/' | url }}">Personal Website System</a>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <button class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}">Blog<span class="site-topbar__chevron" aria-hidden="true">⌄</span></button>
+          <button class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'blogs/' %} site-topbar__link--active{% endif %}" href="{{ 'blogs/' | url }}"><span class="site-topbar__link-label">Blog</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
           <div class="site-topbar__menu-panel" aria-label="Blog submenu">
             <a href="{{ 'blogs/exhibition/' | url }}">Exhibitions & Conferences</a>
             <a href="{{ 'blogs/travel/' | url }}">Travels</a>
@@ -53,7 +53,7 @@
           </div>
         </div>
       <div class="site-topbar__dropdown">
-        <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('about/') %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}">About<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+        <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'about/' %} site-topbar__link--active{% endif %}" href="{{ 'about/' | url }}"><span class="site-topbar__link-label">About</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
         <div class="site-topbar__menu-panel" aria-label="About submenu">
           <a href="{{ 'about/' | url }}">About Me</a>
           <a href="{{ 'about/more-than-design/' | url }}">More Than Design</a>
@@ -61,7 +61,7 @@
       </div>
       {% else %}
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/course/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/course/' | url }}">课程<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'zh/course/' %} site-topbar__link--active{% endif %}" href="{{ 'zh/course/' | url }}"><span class="site-topbar__link-label">课程</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
           <div class="site-topbar__menu-panel" aria-label="课程子菜单">
             <a href="{{ 'zh/course/' | url }}">课程总览</a>
             <a href="{{ 'zh/course/technology-site/' | url }}">技术类笔记</a>
@@ -70,7 +70,7 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/project/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/project/' | url }}">项目<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'zh/project/' %} site-topbar__link--active{% endif %}" href="{{ 'zh/project/' | url }}"><span class="site-topbar__link-label">项目</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
           <div class="site-topbar__menu-panel" aria-label="项目子菜单">
             <a href="{{ 'zh/project/' | url }}">项目总览</a>
             <a href="{{ 'zh/project/website-system/' | url }}">个人网站系统</a>
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url.startswith('zh/blogs/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/blogs/' | url }}">博客<span class="site-topbar__chevron" aria-hidden="true">⌄</span></a>
+          <a class="site-topbar__link site-topbar__link--dropdown{% if current_url == 'zh/blogs/' %} site-topbar__link--active{% endif %}" href="{{ 'zh/blogs/' | url }}"><span class="site-topbar__link-label">博客</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
           <div class="site-topbar__menu-panel" aria-label="博客子菜单">
             <a href="{{ 'zh/blogs/' | url }}">博客总览</a>
             <a href="{{ 'zh/blogs/2024D20/' | url }}">2024年D20大会</a>
@@ -88,7 +88,7 @@
             <a href="{{ 'zh/blogs/travel/' | url }}">旅行</a>
           </div>
         </div>
-        <a class="site-topbar__link{% if current_url.startswith('zh/about/') %} site-topbar__link--active{% endif %}" href="{{ 'zh/about/' | url }}">关于</a>
+        <a class="site-topbar__link{% if current_url == 'zh/about/' %} site-topbar__link--active{% endif %}" href="{{ 'zh/about/' | url }}"><span class="site-topbar__link-label">关于</span></a>
       {% endif %}
     </div>
 

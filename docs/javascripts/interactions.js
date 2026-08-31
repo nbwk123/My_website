@@ -632,7 +632,18 @@
       const topBack = document.createElement("a");
       topBack.className = "detail-top-back";
       topBack.href = parentUrl;
-      topBack.textContent = `← ${backLabel}`;
+      topBack.setAttribute("aria-label", backLabel);
+
+      const backArrow = document.createElement("span");
+      backArrow.className = "detail-top-back__arrow";
+      backArrow.setAttribute("aria-hidden", "true");
+      backArrow.textContent = "←";
+
+      const backText = document.createElement("span");
+      backText.className = "detail-top-back__label";
+      backText.textContent = backLabel;
+
+      topBack.append(backArrow, backText);
       hero.prepend(topBack);
     }
   }
@@ -737,6 +748,33 @@
     });
   }
 
+  function initPostLinks() {
+    document.querySelectorAll(".post__link").forEach((link) => {
+      if (link.querySelector(".post__link-label")) {
+        return;
+      }
+
+      const rawText = link.textContent.trim();
+      const hasArrow = rawText.endsWith("→");
+      const labelText = hasArrow ? rawText.slice(0, -1).trim() : rawText;
+
+      link.textContent = "";
+
+      const label = document.createElement("span");
+      label.className = "post__link-label";
+      label.textContent = labelText;
+      link.append(label);
+
+      if (hasArrow) {
+        const arrow = document.createElement("span");
+        arrow.className = "post__link-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "→";
+        link.append(arrow);
+      }
+    });
+  }
+
 
 // 正常加载页面时运行
   document.addEventListener(
@@ -747,6 +785,7 @@
         initDetailNavigation();
         initTocMarker();
         initTravelMap();
+        initPostLinks();
       }
   );
 
@@ -760,6 +799,7 @@
       initDetailNavigation();
       initTocMarker();
       initTravelMap();
+      initPostLinks();
     });
 
   }
