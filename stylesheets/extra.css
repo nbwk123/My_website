@@ -4417,3 +4417,474 @@ html[data-site-theme-active="dark"] .post__excerpt {
 .travel-city-card .travel-city-image {
     margin-top: 0 !important;
 }
+
+.md-top:hover,
+.md-top:focus,
+.md-top:focus-visible,
+.md-top:active {
+    background: #0f0f0e !important;
+    color: #ffffff !important;
+    border-color: #0f0f0e !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(15, 15, 14, 0.2) !important;
+}
+
+.md-top:hover svg,
+.md-top:focus svg,
+.md-top:focus-visible svg,
+.md-top:active svg {
+    fill: currentColor !important;
+}
+
+.md-top {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.35rem !important;
+    top: auto !important;
+    right: 1.25rem !important;
+    bottom: 1.25rem !important;
+    left: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 2rem) !important;
+    height: auto !important;
+    min-height: 2.4rem !important;
+    max-height: 2.8rem !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.82rem !important;
+    border-radius: 999px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transform: none !important;
+}
+
+.md-top[hidden] {
+    transform: translateY(0.25rem) !important;
+}
+
+.md-top svg {
+    flex: 0 0 auto !important;
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+    vertical-align: middle !important;
+}
+
+/* Responsive refinement: keep the desktop composition, but make tablet and phone reading stable. */
+@media screen and (max-width: 1024px) {
+    :root {
+        --site-page-width: min(100%, 46rem);
+        --site-list-width: min(100%, 46rem);
+    }
+
+    .md-main__inner {
+        margin-top: 0 !important;
+    }
+
+    .md-content__inner {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding-right: 1.15rem !important;
+        padding-left: 1.15rem !important;
+    }
+
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page) {
+        width: 100% !important;
+        max-width: 46rem !important;
+    }
+
+    .md-typeset .page-hero--plain.course-hero {
+        margin-top: 2.6rem !important;
+        margin-bottom: 2.4rem !important;
+    }
+
+    .md-typeset .course-hero .section-heading-line > :is(h1, h2),
+    .md-typeset .course-hero .section-heading-line h1 {
+        font-size: 2.35rem !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+    }
+
+    .md-typeset .page-hero p,
+    .md-typeset .course-hero > p {
+        max-width: 38rem;
+        font-size: 1rem !important;
+        line-height: 1.75 !important;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 2.2rem;
+        padding-top: 2.2rem;
+        padding-bottom: 3.2rem;
+    }
+
+    .home-copy {
+        max-width: 36rem;
+    }
+
+    .home-visual {
+        width: min(100%, 42rem);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .home-card-stack {
+        min-height: 24rem;
+        margin-top: 0;
+    }
+
+    .post {
+        grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
+        gap: 1.35rem;
+    }
+
+    .travel-map-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+    }
+
+    .travel-city-panel {
+        max-width: 100%;
+    }
+
+    .travel-city-card {
+        aspect-ratio: auto !important;
+        min-height: 0 !important;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .site-topbar__inner {
+        grid-template-columns: 1fr auto;
+        min-height: 4.25rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .site-topbar__nav,
+    .site-topbar__search-wrap,
+    .site-topbar__theme,
+    .site-topbar__lang,
+    .site-topbar__mark {
+        display: none !important;
+    }
+
+    .site-topbar__menu {
+        display: inline-flex !important;
+        min-width: 2.6rem;
+        min-height: 2.6rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .blog__posts,
+    .project-page .blog__posts {
+        max-width: 100% !important;
+        gap: 2.1rem !important;
+    }
+
+    .post {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 1rem !important;
+        padding-bottom: 2rem;
+    }
+
+    .post__media {
+        width: 100%;
+    }
+
+    .post__img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .post__content {
+        padding-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .md-content__inner {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .md-typeset .page-hero--plain.course-hero {
+        margin-top: 1.9rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .md-typeset .course-hero .section-heading-line {
+        max-width: 100%;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .md-typeset .course-hero .section-heading-line > :is(h1, h2),
+    .md-typeset .course-hero .section-heading-line h1,
+    .home-hero h1 {
+        font-size: 2.05rem !important;
+        line-height: 1.1 !important;
+    }
+
+    .md-typeset .page-hero p,
+    .md-typeset .course-hero > p,
+    .home-subtitle,
+    .post__excerpt {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .home-hero {
+        padding-top: 1.3rem;
+        padding-bottom: 2.6rem;
+        text-align: left;
+    }
+
+    .home-copy {
+        text-align: left;
+    }
+
+    .home-mark,
+    .home-subtitle {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .home-actions {
+        justify-content: flex-start;
+        gap: 0.6rem;
+    }
+
+    .home-button {
+        min-height: 2.75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .home-card-stack {
+        min-height: 18rem;
+    }
+
+    .home-visual,
+    .home-visual img {
+        border-radius: 16px;
+    }
+
+    .home-visual img {
+        min-height: 18rem;
+    }
+
+    .side-card {
+        border-radius: 16px !important;
+        padding: 0.72rem !important;
+    }
+
+    .cat-list {
+        gap: 0.42rem;
+    }
+
+    .cat {
+        min-height: 2.45rem;
+        padding: 0.52rem 0.82rem;
+    }
+
+    .post-tags {
+        gap: 0.4rem;
+    }
+
+    .post-tag {
+        padding: 0.25rem 0.58rem;
+    }
+
+    h2.post__title,
+    h3.post__title {
+        font-size: 1.28rem !important;
+        line-height: 1.16 !important;
+    }
+
+    .travel-map-card {
+        margin-top: 1.6rem !important;
+    }
+
+    .travel-map {
+        aspect-ratio: 4 / 3;
+        border-radius: 16px !important;
+    }
+
+    .travel-pin {
+        width: 1.35rem;
+        height: 1.35rem;
+    }
+
+    .travel-city-card {
+        padding: 1.1rem !important;
+        border-radius: 16px !important;
+    }
+
+    .travel-city-card h3 {
+        font-size: 1.55rem !important;
+    }
+
+    .travel-city-image {
+        border-radius: 14px !important;
+    }
+
+    .md-typeset img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .md-top {
+        right: 1rem;
+        bottom: 1rem;
+        max-height: 2.65rem !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .site-topbar__brand {
+        font-size: 1.05rem !important;
+    }
+
+    .md-content__inner {
+        padding-right: 0.86rem !important;
+        padding-left: 0.86rem !important;
+    }
+
+    .md-typeset .course-hero .section-heading-line > :is(h1, h2),
+    .md-typeset .course-hero .section-heading-line h1,
+    .home-hero h1 {
+        font-size: 1.82rem !important;
+    }
+
+    .home-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-button {
+        width: 100%;
+    }
+
+    .home-card-stack,
+    .home-visual img {
+        min-height: 16rem;
+    }
+
+    .travel-map {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.mobile-drawer-nav {
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+    .md-sidebar--primary .md-sidebar__inner:has(.mobile-drawer-nav) .md-nav--primary > .md-nav__list {
+        display: none !important;
+    }
+
+    .mobile-drawer-nav {
+        display: block;
+        padding: 0.25rem 0 1.5rem;
+        border-top: 1px solid rgba(20, 18, 16, 0.08);
+    }
+
+    .mobile-drawer-nav__group {
+        border-bottom: 1px solid rgba(20, 18, 16, 0.08);
+    }
+
+    .mobile-drawer-nav__summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 3.8rem;
+        padding: 0 1rem;
+        color: #11110f;
+        font-family: var(--font-heading), sans-serif;
+        font-size: 1.14rem;
+        font-weight: 650;
+        line-height: 1.2;
+        list-style: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-drawer-nav__summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .mobile-drawer-nav__chevron {
+        flex: 0 0 auto;
+        width: 0.92rem;
+        height: 0.92rem;
+        color: currentColor;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transform: rotate(0deg);
+        transition: transform 160ms ease;
+    }
+
+    .mobile-drawer-nav__group[open] .mobile-drawer-nav__chevron {
+        transform: rotate(180deg);
+    }
+
+    .mobile-drawer-nav__list {
+        display: grid;
+        gap: 0;
+        padding: 0 1rem 0.8rem 1rem;
+    }
+
+    .mobile-drawer-nav__link {
+        display: block;
+        padding: 0.68rem 0 0.68rem 0.65rem;
+        border-left: 2px solid rgba(20, 18, 16, 0.1);
+        color: #302d34 !important;
+        font-family: var(--font-heading), sans-serif;
+        font-size: 0.94rem;
+        font-weight: 430;
+        line-height: 1.35;
+        text-decoration: none !important;
+    }
+
+    .mobile-drawer-nav__link:hover,
+    .mobile-drawer-nav__link:focus,
+    .mobile-drawer-nav__link--active {
+        border-left-color: #0f0f0e;
+        color: #0f0f0e !important;
+        font-weight: 560;
+    }
+
+    html[data-site-theme-active="dark"] .mobile-drawer-nav {
+        border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__group {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__summary,
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link:hover,
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link:focus,
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link--active {
+        color: #ffffff !important;
+    }
+
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link {
+        border-left-color: rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.72) !important;
+    }
+
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link:hover,
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link:focus,
+    html[data-site-theme-active="dark"] .mobile-drawer-nav__link--active {
+        border-left-color: #ffffff;
+    }
+}
