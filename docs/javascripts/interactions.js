@@ -775,6 +775,179 @@
     });
   }
 
+  function initMobileDrawerNav() {
+    const drawerInner = document.querySelector(".md-sidebar--primary .md-sidebar__inner");
+
+    if (!drawerInner) {
+      return;
+    }
+
+    drawerInner.querySelectorAll(".mobile-drawer-nav").forEach((nav) => nav.remove());
+
+    const path = window.location.pathname;
+    const isZh = path.includes("/zh/");
+    const rootPath = path.includes("/My_website/") ? "/My_website/" : "/";
+    const makeHref = (href) => new URL(`${rootPath}${href}`, window.location.origin).href;
+    const currentPath = path.endsWith("/") ? path : `${path}/`;
+    const normalizePath = (href) => {
+      const url = new URL(href, window.location.href);
+      return url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
+    };
+
+    const groups = isZh
+      ? [
+        {
+          title: "课程",
+          key: "/zh/course/",
+          items: [
+            ["课程总览", "zh/course/"],
+            ["技术类笔记", "zh/course/technology-site/"],
+            ["设计研究", "zh/course/design-research/"],
+            ["示例课程文档", "zh/course/example/"],
+          ],
+        },
+        {
+          title: "项目",
+          key: "/zh/project/",
+          items: [
+            ["项目总览", "zh/project/"],
+            ["个人网站系统", "zh/project/website-system/"],
+            ["COSTORY", "zh/project/costory/"],
+            ["个人网页搭建", "zh/project/My_website_design/"],
+          ],
+        },
+        {
+          title: "博客",
+          key: "/zh/blogs/",
+          items: [
+            ["博客总览", "zh/blogs/"],
+            ["2024年D20大会", "zh/blogs/2024D20/"],
+            ["日本·大阪·京都", "zh/blogs/Japan-travel/"],
+            ["2025年D20大会", "zh/blogs/2025D20/"],
+            ["旅行", "zh/blogs/travel/"],
+          ],
+        },
+        {
+          title: "关于",
+          key: "/zh/about/",
+          items: [
+            ["关于", "zh/about/"],
+          ],
+        },
+      ]
+      : [
+        {
+          title: "Courses",
+          key: "/course/",
+          items: [
+            ["Overview", "course/"],
+            ["Class Notes", "course/"],
+            ["Lessons About Agents", "course/hello-agents/"],
+          ],
+        },
+        {
+          title: "Projects",
+          key: "/project/",
+          items: [
+            ["Overview", "project/"],
+            ["Personal Website System", "project/website-system/"],
+            ["COSTORY", "project/costory/"],
+            ["Personal Website Design", "project/My_website_design/"],
+          ],
+        },
+        {
+          title: "Blog",
+          key: "/blogs/",
+          items: [
+            ["Exhibitions & Conferences", "blogs/exhibition/"],
+            ["Travels", "blogs/travel/"],
+            ["Book Notes", "blogs/book-notes/"],
+          ],
+        },
+        {
+          title: "About",
+          key: "/about/",
+          items: [
+            ["About Me", "about/"],
+            ["More Than Design", "about/more-than-design/"],
+          ],
+        },
+      ];
+
+    const mobileNav = document.createElement("nav");
+    mobileNav.className = "mobile-drawer-nav";
+    mobileNav.setAttribute("aria-label", isZh ? "移动端导航" : "Mobile navigation");
+
+    groups.forEach((group) => {
+      const groupPath = `${rootPath}${group.key.replace(/^\//, "")}`;
+      const isCurrentGroup = currentPath.startsWith(groupPath);
+      const details = document.createElement("details");
+      details.className = "mobile-drawer-nav__group";
+
+      if (isCurrentGroup) {
+        details.open = true;
+      }
+
+      const summary = document.createElement("summary");
+      summary.className = "mobile-drawer-nav__summary";
+
+      const title = document.createElement("span");
+      title.textContent = group.title;
+
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      icon.setAttribute("class", "mobile-drawer-nav__chevron");
+      icon.setAttribute("aria-hidden", "true");
+      icon.setAttribute("viewBox", "0 0 16 16");
+
+      const pathNode = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      pathNode.setAttribute("d", "M4 6.25 8 10l4-3.75");
+      icon.append(pathNode);
+
+      summary.append(title, icon);
+      details.append(summary);
+
+      const list = document.createElement("div");
+      list.className = "mobile-drawer-nav__list";
+
+      group.items.forEach(([label, href]) => {
+        const link = document.createElement("a");
+        const fullHref = makeHref(href);
+        const isActive = normalizePath(fullHref) === currentPath;
+
+        link.className = "mobile-drawer-nav__link";
+        link.href = fullHref;
+        link.textContent = label;
+
+        if (isActive) {
+          link.classList.add("mobile-drawer-nav__link--active");
+          link.setAttribute("aria-current", "page");
+        }
+
+        list.append(link);
+      });
+
+      details.append(list);
+      mobileNav.append(details);
+    });
+
+    mobileNav.querySelectorAll(".mobile-drawer-nav__group").forEach((group) => {
+      group.addEventListener("toggle", () => {
+        if (!group.open) {
+          return;
+        }
+
+        mobileNav.querySelectorAll(".mobile-drawer-nav__group[open]").forEach((openGroup) => {
+          if (openGroup !== group) {
+            openGroup.open = false;
+          }
+        });
+      });
+    });
+
+    const originalNav = drawerInner.querySelector(".md-nav--primary");
+    drawerInner.insertBefore(mobileNav, originalNav || drawerInner.firstChild);
+  }
+
 
 // 正常加载页面时运行
   document.addEventListener(
@@ -786,6 +959,7 @@
         initTocMarker();
         initTravelMap();
         initPostLinks();
+        initMobileDrawerNav();
       }
   );
 
@@ -800,6 +974,7 @@
       initTocMarker();
       initTravelMap();
       initPostLinks();
+      initMobileDrawerNav();
     });
 
   }
