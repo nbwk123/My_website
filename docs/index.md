@@ -85,4 +85,44 @@ hide:
 -->
 
 <h1 class="home-section-title">Course Notes</h1>
-<h1 class="home-section-title">Projects</h1>
+<section class="home-note-carousel" data-home-note-carousel aria-label="Course notes carousel">
+  <div class="home-note-carousel__head">
+    <p>Selected learning records, kept compact for browsing.</p>
+    <div class="home-note-carousel__controls" aria-label="Carousel controls">
+      <button type="button" class="home-note-carousel__button" data-home-note-prev aria-label="Previous notes">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button type="button" class="home-note-carousel__button" data-home-note-next aria-label="Next notes">
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+  <div class="home-note-carousel__track" tabindex="0">
+    <a class="home-note-card" href="course/design-research/">
+      <img src="assets/design-research.jpg" alt="Design Research course note">
+      <span class="home-note-card__meta">Course · 2026</span>
+      <strong>Design Research</strong>
+      <p>Course notes and design observations from research, events, and reflection.</p>
+    </a>
+    <a class="home-note-card" href="course/technology-site/">
+      <img src="assets/hero-interface.png" alt="Technology notes visual">
+      <span class="home-note-card__meta">Notes · System</span>
+      <strong>Technology Notes</strong>
+      <p>Website building, deployment, local tools, and repeatable maintenance workflows.</p>
+    </a>
+    <a class="home-note-card" href="course/hello-agents/">
+      <img src="assets/AI-design-card.png" alt="Lessons About Agents visual">
+      <span class="home-note-card__meta">AI · Method</span>
+      <strong>Lessons About Agents</strong>
+      <p>Organizing agent practice into methods, constraints, and reusable judgment.</p>
+    </a>
+    <a class="home-note-card" href="blogs/book-notes/">
+      <img src="assets/program2.png" alt="Book notes visual">
+      <span class="home-note-card__meta">Reading · Notes</span>
+      <strong>Book Notes</strong>
+      <p>Readable fragments from books, references, and long-term learning material.</p>
+    </a>
+  </div>
+</section>
+<h1 class="home-section-title">Interesting Projects</h1>
+<h1 class="home-section-title">Latest News</h1>

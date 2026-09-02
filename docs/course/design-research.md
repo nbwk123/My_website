@@ -16,7 +16,7 @@
 <h1>Design Research</h1>
 
 <span style="color:rgb(236 99 123 / 0.25)!important;">
-DESIGN RESEARCH
+2026.09.27-28
 </span>
 
 </div>

@@ -12,7 +12,7 @@
 
 <div class="section-heading-line">
 
-<h1>Exhibitions & Conferences</h1>
+<h1>Book Notes</h1>
 
 <!-- <span style="color:rgba(255,227,113,0.48)!important; letter-spacing: 0.01em !important;">BLOG</span> -->
 

@@ -14,10 +14,6 @@
 
 </section>
 
-<div class="side-layout">
-
-<div class="side-main">
-
 <div class="travel-map-card" data-travel-map>
 <div class="travel-map-copy">
 <h2 style="font-size: clamp(1.45rem, 1vw, 2.35rem) !important;">Places I have been to</h2>
@@ -59,7 +55,10 @@
 </div>
 </div>
 </div>
-</div>
+
+<div class="side-layout travel-list-layout">
+
+<div class="side-main">
 
 <div class="blog__posts" style="margin-top: 4rem;">
 
@@ -82,7 +81,7 @@
 <p class="post__meta">2025-06-30～07-04 · Travel</p>
 <h2 class="post__title">Japan · Osaka · Kyoto</h2>
 <p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
-<a href="../Japan-travel/" class="post__link">Read More →</a>
+<a href="../../Japan-travel/" class="post__link">Read More →</a>
 
 </div>
 
@@ -107,7 +106,7 @@
 <p class="post__meta">2025-07-11 · Travel</p>
 <h2 class="post__title">China · Hong Kong</h2>
 <p class="post__excerpt">Designers in the AI Era</p>
-<a href="2025D20/" class="post__link">Read More →</a>
+<a href="../2025D20/" class="post__link">Read More →</a>
 
 </div>
 
@@ -132,13 +131,34 @@
 <p class="post__meta">2024-06-27-28 · Travel</p>
 <h2 class="post__title">Singapore · Singapore</h2>
 <p class="post__excerpt">Design in the AI Era</p>
-<a href="2024D20/" class="post__link">Read More →</a>
+<a href="../2024D20/" class="post__link">Read More →</a>
 
 </div>
 
 </article>
 
 </div>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="side-card">
+
+<p class="side-h">Type</p>
+
+<div class="cat-list">
+  <a href="../" class="cat"><span>All</span><span class="cat__count">31</span></a>
+  <a href="../../course/technology-site/" class="cat"><span>Classes</span><span class="cat__count">2</span></a>
+  <a href="../../course/design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
+  <a href="../exhibition/" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="../Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="./" class="cat cat--active"><span>Travel</span><span class="cat__count">3</span></a>
+</div>
+
+</div>
+
+</aside>
 
 </div>
 

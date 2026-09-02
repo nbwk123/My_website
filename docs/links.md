@@ -31,6 +31,13 @@ Congratulations on discovering a hidden surprise! 🎉 Here I'll include some li
 <small>idi.zju.edu.cn →</small>
 </a>
 
+<a class="link-card friendly-link-card" href="https://ai.zju.edu.cn/">
+<span>COLLEGE</span>
+<h3>AI College of ZJU</h3>
+<p>Design discipline, institute updates, and learning resources.</p>
+<small>ai.zju.edu.cn →</small>
+</a>
+
 </div>
 
 </div>

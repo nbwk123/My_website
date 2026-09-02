@@ -41,7 +41,7 @@ Recording courses I am currently taking and have completed, while organizing the
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/design-research.jpg" alt="Design Research">
+<img class="post__img" src="../../assets/design-research.jpg" alt="Design Research">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -55,7 +55,7 @@ Recording courses I am currently taking and have completed, while organizing the
 <p class="post__meta">2026-2027 Academic Year · Autumn-Winter Semester</p>
 <h3 class="post__title">Design Research</h3>
 <p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
-<a href="../course/design-research" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
+<a href="../../course/design-research" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
 
 </div>
 
@@ -66,7 +66,7 @@ Recording courses I am currently taking and have completed, while organizing the
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/design-research.jpg" alt="Design Research">
+<img class="post__img" src="../../assets/design-research.jpg" alt="Design Research">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -80,7 +80,7 @@ Recording courses I am currently taking and have completed, while organizing the
 <p class="post__meta">2026-2027 Academic Year · Autumn-Winter Semester</p>
 <h3 class="post__title">Design Research</h3>
 <p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
-<a href="../blogs/2024D20" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
+<a href="../../blogs/2024D20" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
 
 </div>
 
@@ -96,10 +96,10 @@ Recording courses I am currently taking and have completed, while organizing the
 <p class="side-h">Type</p>
 <div class="cat-list">
   <a href="./" class="cat"><span>All</span><span class="cat__count">31</span></a>
-  <a href="technology-site/" class="cat cat--active"><span>Classes</span><span class="cat__count">2</span></a>
-  <a href="design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
-  <a href="../blogs/2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
-  <a href="../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
+  <a href="../technology-site/" class="cat cat--active"><span>Classes</span><span class="cat__count">2</span></a>
+  <a href="../design-research/" class="cat"><span>Design</span><span class="cat__count">3</span></a>
+  <a href="../../blogs/2024D20/" class="cat"><span>Events</span><span class="cat__count"></span></a>
+  <a href="../../blogs/Japan-travel/" class="cat"><span>Lab Life</span><span class="cat__count">3</span></a>
 </div>
 </div>
 

@@ -63,6 +63,37 @@
 })();
 
 (() => {
+  const finePointerQuery = window.matchMedia("(pointer: fine)");
+
+  const initTopbarDropdownBlur = () => {
+    if (!finePointerQuery.matches) {
+      return;
+    }
+
+    document.querySelectorAll(".site-topbar__dropdown").forEach((dropdown) => {
+      if (dropdown.dataset.dropdownBlurReady === "true") {
+        return;
+      }
+
+      dropdown.dataset.dropdownBlurReady = "true";
+      dropdown.addEventListener("pointerleave", () => {
+        const activeElement = document.activeElement;
+
+        if (activeElement instanceof HTMLElement && dropdown.contains(activeElement)) {
+          activeElement.blur();
+        }
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", initTopbarDropdownBlur);
+
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(initTopbarDropdownBlur);
+  }
+})();
+
+(() => {
   const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -230,6 +261,47 @@
       true
     );
   });
+})();
+
+(() => {
+  const initHomeNoteCarousels = () => {
+    document.querySelectorAll("[data-home-note-carousel]").forEach((carousel) => {
+      if (carousel.dataset.carouselReady === "true") {
+        return;
+      }
+
+      const track = carousel.querySelector(".home-note-carousel__track");
+      const prev = carousel.querySelector("[data-home-note-prev]");
+      const next = carousel.querySelector("[data-home-note-next]");
+
+      if (!track || !prev || !next) {
+        return;
+      }
+
+      carousel.dataset.carouselReady = "true";
+
+      const getStep = () => {
+        const firstCard = track.querySelector(".home-note-card");
+        const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : track.clientWidth * 0.8;
+        const gap = Number.parseFloat(window.getComputedStyle(track).columnGap || "0");
+        return cardWidth + gap;
+      };
+
+      prev.addEventListener("click", () => {
+        track.scrollBy({ left: -getStep(), behavior: "smooth" });
+      });
+
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: getStep(), behavior: "smooth" });
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", initHomeNoteCarousels);
+
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(initHomeNoteCarousels);
+  }
 })();
 
 (() => {
