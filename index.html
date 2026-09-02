@@ -109,16 +109,16 @@
     <div class="site-topbar__nav" aria-label="主导航">
       
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown" href="course/"><span class="site-topbar__link-label">Courses</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
-          <div class="site-topbar__menu-panel" aria-label="Notes submenu">
-            <a href="course/">Overview</a>
-            <a href="course/">Class Notes</a>
+          <button class="site-topbar__link site-topbar__link--dropdown" href="blogs/"><span class="site-topbar__link-label">Courses</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
+          <div class="site-topbar__menu-panel" aria-label="Course submenu">
+            <a href="course/class-notes/">Class Notes</a>
             <a href="course/hello-agents/">Lessons About Agents</a>
+            <a href="course/something-interesting/">Something Interesting</a>
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <a class="site-topbar__link site-topbar__link--dropdown" href="project/"><span class="site-topbar__link-label">Projects</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
-          <div class="site-topbar__menu-panel" aria-label="Projects submenu">
+          <button class="site-topbar__link site-topbar__link--dropdown" href="blogs/"><span class="site-topbar__link-label">Projects</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
+          <div class="site-topbar__menu-panel" aria-label="Project submenu">
             <a href="project/">Overview</a>
             <a href="project/website-system/">Personal Website System</a>
             <a href="project/costory/">COSTORY</a>
@@ -126,7 +126,7 @@
           </div>
         </div>
         <div class="site-topbar__dropdown">
-          <button class="site-topbar__link site-topbar__link--dropdown" href="blogs/"><span class="site-topbar__link-label">Blog</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
+          <button class="site-topbar__link site-topbar__link--dropdown" href="blogs/"><span class="site-topbar__link-label">Blogs</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
           <div class="site-topbar__menu-panel" aria-label="Blog submenu">
             <a href="blogs/exhibition/">Exhibitions & Conferences</a>
             <a href="blogs/travel/">Travels</a>
@@ -134,7 +134,7 @@
           </div>
         </div>
       <div class="site-topbar__dropdown">
-        <a class="site-topbar__link site-topbar__link--dropdown" href="about/"><span class="site-topbar__link-label">About</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></a>
+        <button class="site-topbar__link site-topbar__link--dropdown" href="blogs/"><span class="site-topbar__link-label">About</span><svg class="site-topbar__chevron" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M4 6.25 8 10l4-3.75" /></svg></button>
         <div class="site-topbar__menu-panel" aria-label="About submenu">
           <a href="about/">About Me</a>
           <a href="about/more-than-design/">More Than Design</a>
@@ -1056,7 +1056,47 @@
 -->
 
 <h1 class="home-section-title">Course Notes</h1>
-<h1 class="home-section-title">Projects</h1>
+<section class="home-note-carousel" data-home-note-carousel aria-label="Course notes carousel">
+  <div class="home-note-carousel__head">
+    <p>Selected learning records, kept compact for browsing.</p>
+    <div class="home-note-carousel__controls" aria-label="Carousel controls">
+      <button type="button" class="home-note-carousel__button" data-home-note-prev aria-label="Previous notes">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button type="button" class="home-note-carousel__button" data-home-note-next aria-label="Next notes">
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+  <div class="home-note-carousel__track" tabindex="0">
+    <a class="home-note-card" href="course/design-research/">
+      <img src="assets/design-research.jpg" alt="Design Research course note">
+      <span class="home-note-card__meta">Course · 2026</span>
+      <strong>Design Research</strong>
+      <p>Course notes and design observations from research, events, and reflection.</p>
+    </a>
+    <a class="home-note-card" href="course/technology-site/">
+      <img src="assets/hero-interface.png" alt="Technology notes visual">
+      <span class="home-note-card__meta">Notes · System</span>
+      <strong>Technology Notes</strong>
+      <p>Website building, deployment, local tools, and repeatable maintenance workflows.</p>
+    </a>
+    <a class="home-note-card" href="course/hello-agents/">
+      <img src="assets/AI-design-card.png" alt="Lessons About Agents visual">
+      <span class="home-note-card__meta">AI · Method</span>
+      <strong>Lessons About Agents</strong>
+      <p>Organizing agent practice into methods, constraints, and reusable judgment.</p>
+    </a>
+    <a class="home-note-card" href="blogs/book-notes/">
+      <img src="assets/program2.png" alt="Book notes visual">
+      <span class="home-note-card__meta">Reading · Notes</span>
+      <strong>Book Notes</strong>
+      <p>Readable fragments from books, references, and long-term learning material.</p>
+    </a>
+  </div>
+</section>
+<h1 class="home-section-title">Interesting Projects</h1>
+<h1 class="home-section-title">Latest News</h1>
 
 
 
