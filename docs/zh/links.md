@@ -1,4 +1,4 @@
-<div class="about-page" markdown="1">
+<div class="about-page links-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
@@ -7,7 +7,7 @@
   <!-- <span>LINKS</span> -->
 </div>
 
-恭喜你发现了隐藏惊喜🎉。在这里我会放置一些曾经或正在对我的学习生活产生帮助的链接，欢迎大家按需取阅👏！
+<p class="link-hero-intro">恭喜你发现了隐藏惊喜🎉。在这里我会放置一些曾经或正在对我的学习生活产生帮助的链接，欢迎大家按需取阅👏！</p>
 
 </section>
 

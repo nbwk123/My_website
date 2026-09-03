@@ -7,13 +7,13 @@
   <!-- <span style="letter-spacing: 0.01em !important;">ABOUT</span> -->
 </div>
 
-Hi, I am **Kai Wang**. I am building my personal website while learning how to connect technology, design, and expression. This site records my course notes, projects, tool practice, and stage-by-stage reflections.
+<p class="about-hero-intro">Hi, I am <strong>Kai Wang</strong>. I am building my personal website while learning how to connect technology, design, and expression. This site records my course notes, projects, tool practice, and stage-by-stage reflections.</p>
 
 </section>
 
 <div class="profile-panel" markdown="1">
 
-<section class="profile-card profile-card-dark" markdown="1">
+<section class="profile-card" markdown="1">
 
 ## Current Position
 

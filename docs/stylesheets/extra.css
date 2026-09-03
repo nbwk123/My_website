@@ -769,19 +769,7 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
 }
 
 .cursor-light {
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    left: 0;
-    width: 20rem;
-    height: 20rem;
-    pointer-events: none;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 102, 204, 0.12), rgba(255, 255, 255, 0) 62%);
-    opacity: 0.82;
-    transform: translate3d(var(--cursor-x), var(--cursor-y), 0);
-    translate: -50% -50%;
-    mix-blend-mode: multiply;
+    display: none;
 }
 
 .md-typeset h1,
@@ -1096,7 +1084,29 @@ html[data-site-theme-active="dark"] .site-search-results__highlight {
 }
 
 .about-page .page-hero p {
-    max-width: 100%;
+    max-width: 58rem;
+}
+
+.links-page .page-hero .link-hero-intro {
+    max-width: 58rem;
+    margin: 1.55rem 0 0;
+    color: #11110f !important;
+    font-family: var(--font-body), serif !important;
+    font-size: 0.98rem !important;
+    font-weight: 400 !important;
+    line-height: 1.85 !important;
+}
+
+.md-typeset :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page) > .page-hero > p,
+.md-typeset :is(.courses-page, .project-page, .blogs-page, .about-page, .links-page) > .course-hero > p {
+    max-width: 58rem !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.md-typeset .about-page > .course-hero > .about-hero-intro {
+    width: 100%;
+    max-width: var(--site-page-width) !important;
 }
 
 .module-list {
@@ -4456,6 +4466,64 @@ html[data-site-theme-active="dark"] .post__excerpt {
     font-weight: 400 !important;
 }
 
+.ai-history-page .ai-history-image {
+    display: block;
+    width: 100%;
+    max-width: var(--site-page-width);
+    height: auto;
+    border-radius: 18px;
+}
+
+.ai-history-page .ai-history-cover {
+    margin: clamp(2.3rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3.4rem);
+}
+
+.ai-history-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 24rem);
+    align-items: center;
+    gap: clamp(1.8rem, 4vw, 3.8rem);
+    width: 100%;
+    max-width: var(--site-page-width);
+    margin: clamp(1.2rem, 3vw, 2.4rem) 0 clamp(2.4rem, 5vw, 4rem);
+}
+
+.ai-history-feature__copy {
+    max-width: 36rem;
+}
+
+.ai-history-kicker {
+    margin: 0 0 0.8rem !important;
+    color: #11110f !important;
+    font-family: var(--font-body), serif !important;
+    font-size: 0.74rem !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.ai-history-feature__copy h3 {
+    margin: 0 0 1rem;
+    color: #11110f;
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+    line-height: 1.08;
+}
+
+.ai-history-feature__copy p,
+.ai-history-feature__copy {
+    color: #11110f;
+    font-family: var(--font-body), serif;
+    font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+    line-height: 1.82;
+}
+
+.ai-history-feature__image {
+    max-width: 24rem;
+    justify-self: end;
+    object-fit: cover;
+}
+
 .site-topbar__link::after {
     content: none !important;
 }
@@ -4858,6 +4926,21 @@ html[data-site-theme-active="dark"] .post__excerpt {
         height: auto;
     }
 
+    .ai-history-page .ai-history-image {
+        border-radius: 14px;
+    }
+
+    .ai-history-feature {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .ai-history-feature__image {
+        max-width: min(100%, 22rem);
+        justify-self: start;
+    }
+
     .md-top {
         top: 4.55rem !important;
         max-height: 2.65rem !important;
@@ -5030,6 +5113,10 @@ html[data-site-theme-active="dark"] .post__excerpt {
         z-index: 1;
     }
 
+    .md-typeset .travel-page .travel-list-layout .sidebar {
+        margin-top: 4rem;
+    }
+
     .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-main,
     .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-layout > .blog__posts {
         grid-column: 1;
@@ -5112,6 +5199,18 @@ html[data-site-theme-active="dark"] .post__excerpt {
         color: inherit !important;
         font-size: 0.62rem;
         opacity: 0.72;
+    }
+
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-layout > .page-hero:first-child,
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-layout > .blog__posts > .page-hero:first-child,
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-main > .page-hero:first-child,
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-main > .blog__posts > .page-hero:first-child {
+        margin-top: 0 !important;
+    }
+
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-layout > .blog__posts > .page-hero:first-child .section-heading-line,
+    .md-typeset :is(.courses-page, .project-page, .blogs-page, .links-page) .side-main > .blog__posts > .page-hero:first-child .section-heading-line {
+        margin-top: 0 !important;
     }
 }
 

@@ -1,4 +1,4 @@
-<div class="about-page" markdown="1">
+<div class="about-page links-page" markdown="1">
 
 <section class="page-hero page-hero--plain course-hero course-hero--no-watermark" markdown="1">
 
@@ -7,7 +7,7 @@
   <!-- <span style="letter-spacing: 0.01em !important;">LINKS</span> -->
 </div>
 
-Congratulations on discovering a hidden surprise! 🎉 Here I'll include some links that have been or are currently helping my studies and life. Feel free to browse them as needed! 👏
+<p class="link-hero-intro">Congratulations on discovering this hidden surprise!🎉 Here are some links that have helped me with my studies and life. Feel free to browse them as needed! 👏</p>
 
 </section>
 
@@ -24,18 +24,18 @@ Congratulations on discovering a hidden surprise! 🎉 Here I'll include some li
 <small>zju.edu.cn →</small>
 </a>
 
-<a class="link-card friendly-link-card" href="http://www.idi.zju.edu.cn">
-<span>DESIGN</span>
-<h3>ZJU Design</h3>
-<p>Design discipline, institute updates, and learning resources.</p>
-<small>idi.zju.edu.cn →</small>
-</a>
-
 <a class="link-card friendly-link-card" href="https://ai.zju.edu.cn/">
 <span>COLLEGE</span>
 <h3>AI College of ZJU</h3>
 <p>Design discipline, institute updates, and learning resources.</p>
 <small>ai.zju.edu.cn →</small>
+</a>
+
+<a class="link-card friendly-link-card" href="http://www.idi.zju.edu.cn">
+<span>DESIGN</span>
+<h3>ZJU Design</h3>
+<p>Design discipline, institute updates, and learning resources.</p>
+<small>idi.zju.edu.cn →</small>
 </a>
 
 </div>

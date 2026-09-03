@@ -38,7 +38,7 @@
                                                                                                                                             
 </section>                                                                                                                                  
 
-<div class="blog__posts" style="margin-top: -4rem;">                                                                                   
+<div class="blog__posts" style="margin-top: 1.6rem;">                                                                                   
 
 <!-- 第一篇文章 -->                                                                                              
 <article class="post">                                                                                      

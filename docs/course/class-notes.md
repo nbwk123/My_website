@@ -34,7 +34,7 @@ Recording courses I am currently taking and have completed, while organizing the
 
 </section>
 
-<div class="blog__posts" style="margin-top: -4rem;">
+<div class="blog__posts" style="margin-top: 1.6rem;">
 
 <!-- Article 1 -->
 <article class="post">

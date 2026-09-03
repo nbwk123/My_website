@@ -15,7 +15,8 @@
   <!-- <span style="color:rgb(236 99 123 / 0.25)!important; letter-spacing: 0.01em !important;">COURSE</span> -->
 </div>
 
-Recording courses I am currently taking and have completed, while organizing their content, methods, and reflections.
+In this section, I would like to share some knowledge with you about **artificial intelligence** and **agents**, as well as recommending some related courses and books. 
+Tips: Some knowledge can be fun and interesting, while other knowledge can be boring or even incorrect. So just enjoy it with your coffee! ☕
 
 </section>
 
@@ -23,29 +24,14 @@ Recording courses I am currently taking and have completed, while organizing the
 
 <div class="blog__posts">
 
-<section class="page-hero page-hero--plain course-hero" style="margin-top: -2rem" markdown="1">
-
-<div class="section-heading-line" style="margin-top: -1.2rem;">
-  <h2 style="font-size:32px !important; font-weight: 550; margin-bottom: -0.5vw !important;">Autumn-Winter Semester</h2>
-  <span style="color: rgb(236 99 123 / 0.25) !important;
-             font-size: 55px !important;
-             letter-spacing: 1px !important;
-             --course-watermark-left: 85%;
-             font-family: 'BlinkMacSystemFont', serif !important;">
-  2026-2027-1
-</span>
-</div>
-
-</section>
-
-<div class="blog__posts" style="margin-top: -4rem;">
+<div class="blog__posts" style="margin-top: 1.6rem;">
 
 <!-- Article 1 -->
 <article class="post">
 
 <div class="post__media">
 
-<img class="post__img" src="../assets/design-research.jpg" alt="Design Research">
+<img class="post__img" src="../../assets/ai-history-cover.png" alt="AI History">
 
 <div class="post-tags">
 <span class="post-tag">Personal</span>
@@ -57,9 +43,9 @@ Recording courses I am currently taking and have completed, while organizing the
 <div class="post__content">
 
 <p class="post__meta">2026-2027 Academic Year · Autumn-Winter Semester</p>
-<h3 class="post__title">Design Research</h3>
+<h3 class="post__title">The History of AI</h3>
 <p class="post__excerpt">Attending the D20 Summit organized by the Alibaba Design Committee.</p>
-<a href="../course/design-research" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
+<a href="../agents/ai-history/" class="post__link" style="color:rgb(236 99 123) !important;">Read More →</a>
 
 </div>
 
